@@ -4,48 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Creative Website</title>
+    <title>Home</title>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        .bg {
+            position: fixed;
+            background-size: 5%;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            opacity: 1;
+            z-index: -1;
+        }
+
+        .vignette {
+            background-image: url("images/vignette.png");
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: .8;
+        }
+
+        .content {
+            position: relative;
+        }
+    </style>
 </head>
 
-<body style="background-color: #333;">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #222;">
-        <a class="navbar-brand" href="#">My Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+<body style="font-family: 'Share Tech Mono', monospace;">
+    <div class="bg" style="background-image: url(/images/unnamed.png);"></div>
+    <div class="vignette"></div>
+    <div class="content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #222;">
+            <a class="navbar-brand" href="#">Code</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chess</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blank</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1 class="text-light text-center mt-5" style="font-family: 'Share Tech Mono', monospace;">Hello, World</h1>
+
+        <!-- Footer -->
+        <div class="footer fixed-bottom text-white text-center py-2" style="background-color: #222;">
+            &copy; 2023 Flexus INC | All Right Reserved
         </div>
-    </nav>
-
-    <!-- Footer -->
-    <div class="footer fixed-bottom text-white text-center py-2" style="background-color: #222;">
-        &copy; 2023 My Website
     </div>
-
-</container>
     <!-- Bootstrap JS and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
+<script src="index.js"></script>
 
 </html>
