@@ -5,7 +5,7 @@ console.log(bgElement);
 // Set the initial position of the background
 var bgPosition = 0;
 // Set the width of the background image
-const bgWidth = 512;
+const bgWidth = 256;
 
 // Set the scroll speed of the background
 const scrollSpeed = 0.5
