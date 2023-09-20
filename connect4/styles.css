@@ -1,0 +1,113 @@
+.bg {
+    position: fixed;
+    background-size: 256px;
+    /* background-size: 200vh; */
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    opacity: 1;
+    z-index: -1;
+}
+
+.vignette {
+    background-image: url("../images/vignette.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .90;
+}
+
+.content {
+    position: relative;
+}
+
+body {
+    background-color: #222;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* Center the carousel arrows horizontally */
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Adjust the positioning of the previous arrow */
+.carousel-control-prev {
+    left: 20%;
+    /* Adjust the left distance as needed */
+}
+
+/* Adjust the positioning of the next arrow */
+.carousel-control-next {
+    right: 20%;
+    /* Adjust the right distance as needed */
+}
+
+/* Default styling for the carousel arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    font-size: 2rem;
+    /* Adjust the font size as needed */
+    position: absolute;
+    top: 50%;
+    /* Vertically center the arrows */
+    transform: translateY(-50%);
+    z-index: 2;
+    /* Ensure arrows are above the images */
+}
+
+/* Hide the arrows on screens with a maximum width of 768px (phones) */
+@media (max-width: 768px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+* {
+	border: 0;
+	padding: 0;
+}
+
+#game-board {
+	background: #0074B3;
+	width: 700px;
+    height: 600px;
+	cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.column {
+	width: 100px;
+	display: inline-block;
+}
+
+.column:hover  circle.free{
+	fill: #D5E4ED;
+}
+
+circle.free {
+	fill: #fff;
+}
+
+circle.red {
+	fill: #D50000;
+}
+
+circle.yellow {
+	fill: #DAD400;
+}
+
+@media (max-width: 768px) {
+    #game-board {
+        width: 90%; /* Adjust the width as needed for smaller screens */
+    }
+}
