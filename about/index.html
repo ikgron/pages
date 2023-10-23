@@ -21,7 +21,7 @@
     <div class="vignette"></div>
     <div class="content">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #222;">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top pb-1" style="background-color: #222;">
             <a class="navbar-brand" href="/">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,68 +53,64 @@
         <!-- <hr class="mb-2" style="border-top: 3px solid white; width: 33%; margin: auto;"> -->
 
         <!-- Carousel -->
-        <div id="imageCarousel" class="carousel slide mt-5" data-ride="carousel">
-            <!-- Indicators (optional) -->
-            <ol class="carousel-indicators" style="position: absolute; top: 54vh;">
-                <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#imageCarousel" data-slide-to="1"></li>
-                <li data-target="#imageCarousel" data-slide-to="2"></li>
-            </ol>
+        <div id="imageCarousel" class="carousel slide" data-ride="carousel">
 
-            <!-- Slides -->
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-                        <img src="/images/car.png" class="d-block mx-auto" alt="Car 1" style="max-width: 90%;">
+
+            <!-- Carousel -->
+            <div id="imageCarousel" class="carousel slide mt-1" data-ride="carousel" data-interval="false">
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+                            <img src="/images/car.png" class="d-block mx-auto" alt="Car 1" style="max-width: 90%;">
+                        </div>
                     </div>
+
+                    <!-- Slide 2 -->
+                    <!-- <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+                            <img src="/images/car1.jpeg" class="d-block mx-auto" alt="Car 2" style="max-width: 90%;">
+                        </div>
+                    </div> -->
+
+                    <!-- Slide 3 -->
+                    <!-- <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+                            <img src="/images/car2.jpeg" class="d-block mx-auto" alt="Car 3" style="max-width: 90%;">
+                        </div>
+                    </div> -->
                 </div>
 
+                <!-- Navigation Arrows (if needed)
+    <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" ariahidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a> -->
 
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-                        <img src="/images/car1.jpeg" class="d-block mx-auto" alt="Car 2" style="max-width: 90%;">
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-                        <img src="/images/car2.jpeg" class="d-block mx-auto" alt="Car 3" style="max-width: 90%;">
-                    </div>
-                </div>
+                <script>
+                    $(document).ready(function () {
+                        // Initialize the carousel with touch support
+                        $('#imageCarousel').touchcarousel();
+                    });
+                </script>
             </div>
 
-            <!-- Navigation Arrows -->
-            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
 
-            <script>
-                $(document).ready(function () {
-                    // Initialize the carousel with touch support
-                    $('#imageCarousel').touchcarousel();
-                });
-            </script>
+            <!-- Footer -->
+            <div class="footer fixed-bottom text-white text-center py-1 bg-transparent" style="background-color: #222;">
+                &copy; 2023 ikgron INC | All Right Reserved
+            </div>
 
         </div>
-
-        <!-- Footer -->
-        <div class="footer fixed-bottom text-white text-center py-2" style="background-color: #222;">
-            &copy; 2023 ikgron INC | All Right Reserved
-        </div>
-
-    </div>
-    <!-- Bootstrap JS and jQuery Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS and jQuery Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 

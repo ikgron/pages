@@ -1,1 +1,137 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Connect 4</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/connect4/styles.css"></head><body><div class="bg" style="background-image: url(/images/deepslate_bricks.png);"></div><div class="vignette"></div><div class="content"><nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #222;"><a class="navbar-brand" href="/">Home</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about/">About</a></li><li class="nav-item"><a class="nav-link" href="/chess/">Chess</a></li><li class="nav-item"><a class="nav-link" href="/connect4/">Connect 4</a></li></ul></div></nav><h1 class="text-light text-center" style="font-family: 'Share Tech Mono', monospace; margin-top: 15vh; font-size: 5rem">Connect 4</h1><div class="text-center" id="game-board"><div class="column" id="column-0" data-x="0"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div><div class="column" id="column-1" data-x="1"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div><div class="column" id="column-2" data-x="2"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div><div class="column" id="column-3" data-x="3"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div><div class="column" id="column-4" data-x="4"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div><div class="column" id="column-5" data-x="5"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div><div class="column" id="column-6" data-x="6"><svg class="row-5" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-4" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-3" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-2" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-1" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg><svg class="row-0" height="100" width="100"><circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle></svg></div></div><div class="footer fixed-bottom text-white text-center py-2" style="background-color: #222;">&copy; 2023 ikgron INC | All Right Reserved</div></div></body><script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script><script src="../index.js"></script><script src="./connect4.js"></script></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/connect4/styles.css">
+</head>
+
+<body>
+    <div class="bg" style="background-image: url(/images/deepslate_bricks.png);"></div>
+    <div class="vignette"></div>
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #222;"><a
+                class="navbar-brand" href="/">Home</a><button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/chess/">Chess</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/connect4/">Connect 4</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="text-light text-center"
+            style="font-family: 'Share Tech Mono', monospace; margin-top: 15vh; font-size: 5rem">Connect 4</h1>
+        <div class="text-center" id="game-board">
+            <div class="column" id="column-0" data-x="0"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+            <div class="column" id="column-1" data-x="1"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+            <div class="column" id="column-2" data-x="2"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+            <div class="column" id="column-3" data-x="3"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+            <div class="column" id="column-4" data-x="4"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+            <div class="column" id="column-5" data-x="5"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+            <div class="column" id="column-6" data-x="6"><svg class="row-5" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-4" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-3" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-2" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-1" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg><svg class="row-0" height="100" width="100">
+                    <circle class="free" cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3"></circle>
+                </svg></div>
+        </div>
+        <div class="footer fixed-bottom text-white text-center py-1 bg-transparent" style="background-color: #222;">&copy; 2023 ikgron
+            INC | All Right Reserved</div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../index.js"></script>
+<script src="./connect4.js"></script>
+
+</html>
