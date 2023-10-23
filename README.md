@@ -6,11 +6,10 @@
 - [Features](#features)
 - [Usage](#usage)
 - [Deployment](#deployment)
-- [Built With](#https://pugjs.org/api/getting-started.html)
 
 ## About
 
-Just messing around.
+- Built using [Pug](#https://pugjs.org/api/getting-started.html)
 
 ## Features
 
