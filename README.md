@@ -9,7 +9,7 @@
 
 ## About
 
-- Built using [Pug](#https://pugjs.org/api/getting-started.html)
+- Built using [Pug](https://pugjs.org/api/getting-started.html)
 
 ## Features
 
