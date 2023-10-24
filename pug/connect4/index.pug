@@ -1,54 +1,52 @@
-//- doctype html
-//- html(lang="en")
-//-   head
-//-     meta(charset="UTF-8")
-//-     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-//-     title Connect 4
-//-     //- Bootstrap CSS Link
-//-     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
-//-     link(rel="preconnect" href="https://fonts.googleapis.com")
-//-     link(rel="preconnect" href="https://fonts.gstatic.com", crossorigin)
-//-     link(href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet")
-//-     link(rel="stylesheet" href="/connect4/styles.css")
-//-   body
-//-     .bg(style="background-image: url(/images/deepslate_bricks.png);")
-//-     .vignette
-//-     .content
-//-       //- Navbar
-//-       nav.navbar.navbar-expand-lg.navbar-dark.fixed-top(style="background-color: #222;")
-//-         a.navbar-brand(href="/") Home
-//-         button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
-//-           span.navbar-toggler-icon
-//-         .collapse.navbar-collapse#navbarNav
-//-           ul.navbar-nav.ml-auto
-//-             li.nav-item
-//-               a.nav-link(href="/") Home
-//-             li.nav-item
-//-               a.nav-link(href="/about/") About
-//-             li.nav-item
-//-               a.nav-link(href="/chess/") Chess
-//-             li.nav-item
-//-               a.nav-link(href="/connect4/") Connect 4
-//-       h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 15vh; font-size: 5rem") Connect 4
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Connect 4
+    //- Bootstrap CSS Link
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/connect4/styles.css")
+  body
+    .bg(style="background-image: url(/images/deepslate_bricks.png);")
+    .vignette
+    .content
+      //- Navbar
+      nav.navbar.navbar-expand-lg.navbar-dark.fixed-top(style="background-color: #222;")
+        a.navbar-brand(href="/") Home
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNav
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href="/about/") About
+            li.nav-item
+              a.nav-link(href="/chess/") Chess
+            li.nav-item
+              a.nav-link(href="/connect4/") Connect 4
+      h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem") Connect 4
 
-//-       //- Generate the game board using loops
-//-       - var numRows = 6;
-//-       - var numCols = 7;
-//-       #game-board.text-center
-//-         - for (var col = 0; col < numCols; col++)
-//-           .column(id=`column-${col}`, data-x=col)
-//-             - for (var row = numRows - 1; row >= 0; row--)
-//-               svg(height="100" width="100", class=`row-${row}`)
-//-                 circle(cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free")
+      //- Generate the game board using loops
+      - var numRows = 6;
+      - var numCols = 7;
+      #game-board.text-center
+        - for (var col = 0; col < numCols; col++)
+          .column(id=`column-${col}`, data-x=col)
+            - for (var row = numRows - 1; row >= 0; row--)
+              svg(height="5vw" width="5vw", class=`row-${row}`)
+                circle(cx="50%" cy="50%" r="1.4vw" stroke="#0B4E72" stroke-width="3" class="free")
 
 
-//-       //- Footer
-//-       .footer.fixed-bottom.text-white.text-center.py-2(style="background-color: #222;")
-//-         | &copy; 2023 ikgron INC | All Right Reserved
+      //- Footer
+      .footer.fixed-bottom.text-white.text-center.py-2
+        | &copy; 2023 ikgron INC | All Right Reserved
 
-//-   //- Bootstrap JS and jQuery Scripts
-//-   script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
-//-   script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js")
-//-   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
-//-   script(src="../index.js")
-//-   script(src="./connect4.js")
+  //- Bootstrap JS and jQuery Scripts
+  script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+  script(src="../index.js")
+  script(src="./connect4.js")

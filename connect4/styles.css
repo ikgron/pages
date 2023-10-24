@@ -34,15 +34,15 @@ body {
 
 #game-board {
 	background: #0074B3;
-	width: 800px;
-    height: 600px;
+	width: 40vw;
+    height: 30vw;
 	cursor: pointer;
     margin-left: auto;
     margin-right: auto;
 }
 
 .column {
-	width: 100px;
+	width: 4.23vw;
 	display: inline-block;
 }
 
