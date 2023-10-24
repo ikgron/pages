@@ -4,7 +4,9 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Connect 4
-    //- Bootstrap CSS Link
+    
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com", crossorigin)
@@ -27,17 +29,18 @@ html(lang="en")
               a.nav-link(href="/chess/") Chess
             li.nav-item
               a.nav-link(href="/connect4/") Connect 4
+      
+        //- Header
       h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem") Connect 4
 
-      //- Generate the game board using loops
       - var numRows = 6;
       - var numCols = 7;
       #game-board.text-center
         - for (var col = 0; col < numCols; col++)
           .column(id=`column-${col}`, data-x=col)
             - for (var row = numRows - 1; row >= 0; row--)
-              svg(height="5vw" width="5vw", class=`row-${row}`)
-                circle(cx="50%" cy="50%" r="1.4vw" stroke="#0B4E72" stroke-width="3" class="free")
+              svg(height="16.666%" width="100%", class=`row-${row}`)
+                circle(cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3" class="free")
 
 
       //- Footer
