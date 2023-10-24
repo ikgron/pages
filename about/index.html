@@ -1,142 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <!-- Bootstrap CSS Link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchcarousel/1.2.11/bootstrap-touchcarousel.min.js"></script>
-    <link rel="stylesheet" href="../styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchcarousel/1.2.11/bootstrap-touchcarousel.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
 </head>
-
-<body>
-    <div class="bg" style="background-image: url(/images/deepslate_bricks.png);"></div>
-    <div class="vignette"></div>
-    <div class="content">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top pb-0" style="background-color: #222;">
-            <a class="navbar-brand" href="/">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about/">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/chess/">Chess</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/connect4/">Connect 4</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <h1 class="text-light text-center"
-            style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem">About</h1>
-        <h2 class="text-light text-center">2010 Lexus ES350</h2>
-        <h4 class="text-light text-center">Satin Cashmere Metallic</h4>
-        <h4 class="text-light text-center">2GR-FE 3.5L V6 6 Speed Automatic with Overdrive</h4>
-        <!-- <hr class="mb-2" style="border-top: 3px solid white; width: 33%; margin: auto;"> -->
-
-
-
-
-        <!-- Carousel -->
-        <div id="imageCarousel" class="carousel slide mt-1" data-ride="carousel" data-interval="2000">
-            <!-- Slides -->
-            <div class="carousel-inner">
-
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 55vh;">
-                        <img src="/images/car.png" class="d-block mx-auto" alt="Car 1" style="max-width: 90%;">
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 55vh;">
-                        <img src="/images/car1.png" class="d-block mx-auto" alt="Car 2" style="max-width: 90%;">
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 55vh;">
-                        <img src="/images/car2.png" class="d-block mx-auto" alt="Car 3" style="max-width: 90%;">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Footer -->
-        <div class="footer fixed-bottom text-white text-center py-1 bg-transparent">
-            &copy; 2023 ikgron INC | All Right Reserved
-        </div>
-
+<div class="bg" style="background-image: url(/images/deepslate_bricks.png);"></div>
+<div class="vignette"></div>
+<div class="content">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top pb-0" style="background-color: #222;"><a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/chess/">Chess</a></li>
+        <li class="nav-item"><a class="nav-link" href="/connect4/">Connect 4</a></li>
+      </ul>
     </div>
-    <!-- Bootstrap JS and jQuery Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- JavaScript for touch swipe and preserving data-interval -->
-    <script>
-        var touchStartX = null;
-        var intervalId = null;
-
-        // Store a reference to the carousel element
-        var carousel = $('#imageCarousel');
-
-        // Add an event listener to start the interval when the document is ready
-        $(document).ready(function () {
-            startCarouselInterval();
-        });
-
-        // Function to start the carousel interval
-        function startCarouselInterval() {
-            intervalId = setInterval(function () {
-                carousel.carousel('next');
-            }, 4000); // 4 seconds
-        }
-
-        // Add touchstart event listener
-        carousel.on('touchstart', function (e) {
-            touchStartX = e.originalEvent.touches[0].clientX;
-            // Clear the interval when the user starts swiping
-            clearInterval(intervalId);
-        });
-
-        // Add touchend event listener
-        carousel.on('touchend', function (e) {
-            var touchEndX = e.originalEvent.changedTouches[0].clientX;
-            if (touchStartX - touchEndX > 50) {
-                carousel.carousel('next');
-            } else if (touchStartX - touchEndX < -50) {
-                carousel.carousel('prev');
-            }
-            // Restart the interval when the user releases the swipe
-            startCarouselInterval();
-        });
-    </script>
-
-
-
-</body>
-
+  </nav>
+  <h1 class="text-light text-center" style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem">About</h1>
+  <h2 class="text-light text-center">2010 Lexus ES350</h2>
+  <h4 class="text-light text-center">Satin Cashmere Metallic</h4>
+  <h4 class="text-light text-center">2GR-FE 3.5L V6 6 Speed Automatic with Overdrive</h4>
+  <div class="carousel slide mt-1" id="imageCarousel" data-ride="carousel" data-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center align-items-center" style="height: 55vh;"><img class="d-block mx-auto" src="/images/car.png" alt="Car 1" style="max-width: 90%;"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center align-items-center" style="height: 55vh;"><img class="d-block mx-auto" src="/images/car1.png" alt="Car 2" style="max-width: 90%;"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center align-items-center" style="height: 55vh;"><img class="d-block mx-auto" src="/images/car2.png" alt="Car 3" style="max-width: 90%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  var touchStartX = null;
+  var intervalId = null;
+  
+  // Store a reference to the carousel element
+  var carousel = $('#imageCarousel');
+  
+  // Add an event listener to start the interval when the document is ready
+  $(document).ready(function () {
+  startCarouselInterval();
+  });
+  
+  // Function to start the carousel interval
+  function startCarouselInterval() {
+  intervalId = setInterval(function () {
+  carousel.carousel('next');
+  }, 4000); // 4 seconds
+  }
+  
+  // Add touchstart event listener
+  carousel.on('touchstart', function (e) {
+  touchStartX = e.originalEvent.touches[0].clientX;
+  
+  // Clear the interval when the user starts swiping
+  clearInterval(intervalId);
+  });
+  
+  // Add touchend event listener
+  carousel.on('touchend', function (e) {
+  var touchEndX = e.originalEvent.changedTouches[0].clientX;
+  if (touchStartX - touchEndX > 50) {
+  carousel.carousel('next');
+  } else if (touchStartX - touchEndX < -50) {
+  carousel.carousel('prev');
+  }
+  
+  // Restart the interval when the user releases the swipe
+  startCarouselInterval();
+  });
+</script>
 <script src="../index.js"></script>
-
-</html>
