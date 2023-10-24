@@ -28,3 +28,43 @@ body {
     background: #222;
     font-family: 'Share Tech Mono', monospace;
 }
+
+#game-board {
+    background: #0074B3;
+    width: 40vw;
+    height: 30vw;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50vh;
+}
+
+.column {
+    width: 11%;
+    height: 100%;
+    display: inline-block;
+}
+
+.column:hover circle.free {
+    fill: #D5E4ED;
+}
+
+circle.free {
+    fill: #fff;
+}
+
+circle.red {
+    fill: #D50000;
+}
+
+circle.yellow {
+    fill: #DAD400;
+}
+
+
+@media screen and (max-width: 1000px) {
+    #game-board {
+        width: 90%;
+        height: 60vw;
+    }
+}
