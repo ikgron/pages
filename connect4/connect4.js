@@ -20,16 +20,16 @@
 				});
 			});
 
-			for (var x = 0; x < numCols; x++) { // Update loop limits for columns
+			for (var x = 0; x <= numRows; x++) {
 
 				gameBoard[x] = {};
 
-				for (var y = 0; y < numRows; y++) { // Update loop limits for rows
+				for (var y = 0; y <= numCols; y++) {
 					gameBoard[x][y] = 'free';
 				}
 			}
-		};
 
+		};
 
 		var markNextFree = function (x) {
 
