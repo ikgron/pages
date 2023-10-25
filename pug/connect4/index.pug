@@ -16,6 +16,7 @@ html(lang="en")
         .bg(style="background-image: url(/images/deepslate_bricks.png);")
         .vignette
         .content
+            
             //- Navbar
             nav.navbar.navbar-expand-lg.navbar-dark.fixed-top(style="background-color: #222;")
                 a.navbar-brand(href="/") Home
@@ -30,7 +31,7 @@ html(lang="en")
                         li.nav-item
                             a.nav-link(href="/connect4/") Connect 4
 
-                //- Header
+            //- Header
             h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem") Connect 4
 
             - var numRows = 6;
@@ -42,11 +43,25 @@ html(lang="en")
                             svg(height="16.666%" width="100%", class=`row-${row}`)
                                 circle(cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3" class="free")
 
+                .container
+                  .row
+                    .col.text-center
+                      button#toggleButton.btn.btn-lg.btn-primary.mx-auto.mt-5 Player vs Bot
+    
+    script.
+      document.getElementById("toggleButton").addEventListener("click", function () {
+      var button = document.getElementById("toggleButton");
+      if (button.innerHTML === "Player vs Bot") {
+      button.innerHTML = "Player vs Player";
+      } else {
+      button.innerHTML = "Player vs Bot";
+      }
+      });
 
 
-        //- Bootstrap JS and jQuery Scripts
-        script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
-        script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js")
-        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
-        script(src="../index.js")
-        script(src="./connect4.js")
+//- Bootstrap JS and jQuery Scripts
+script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
+script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+script(src="../index.js")
+script(src="./connect4.js")

@@ -167,12 +167,31 @@
             <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
           </svg>
         </div>
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <button class="btn btn-lg btn-primary mx-auto mt-5" id="toggleButton">Player vs Bot</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../index.js"></script>
-    <script src="./connect4.js"></script>
   </body>
+  <script>
+    document.getElementById("toggleButton").addEventListener("click", function () {
+    var button = document.getElementById("toggleButton");
+    if (button.innerHTML === "Player vs Bot") {
+    button.innerHTML = "Player vs Player";
+    } else {
+    button.innerHTML = "Player vs Bot";
+    }
+    });
+    
+    
+  </script>
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../index.js"></script>
+<script src="./connect4.js"></script>
