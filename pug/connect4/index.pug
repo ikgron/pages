@@ -43,20 +43,17 @@ html(lang="en")
                             svg(height="16.666%" width="100%", class=`row-${row}`)
                                 circle(cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3" class="free")
 
-                .container
-                  .row
-                    .col.text-center
-                      button#toggleButton.btn.btn-lg.btn-primary.mx-auto.mt-5 Player vs Bot
-    
-    script.
-      document.getElementById("toggleButton").addEventListener("click", function () {
-      var button = document.getElementById("toggleButton");
-      if (button.innerHTML === "Player vs Bot") {
-      button.innerHTML = "Player vs Player";
-      } else {
-      button.innerHTML = "Player vs Bot";
-      }
-      });
+                document.getElementById(&quot;toggleButton&quot;).addEventListener(&quot;click&quot;, function () {
+                    var button = document.getElementById(&quot;toggleButton&quot;);
+                    if (button.innerHTML === &quot;Player vs Bot&quot;) {
+                        button.innerHTML = &quot;Player vs Player&quot;;
+                        gameMode = &quot;player vs player&quot;;
+                        } else {
+                            button.innerHTML = &quot;Player vs Bot&quot;;
+                            gameMode = &quot;player vs bot&quot;;
+                            }
+                            });
+
 
 
 //- Bootstrap JS and jQuery Scripts

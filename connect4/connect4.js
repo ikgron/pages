@@ -1,84 +1,88 @@
 (function () {
 	var ConnectFour = function () {
-	  gameBoard = {};
-	  currentPlayer = 'red';
-	  numRows = 6;
-	  numCols = 7;
-	  numTurns = 0;
-  
-	  _init = function () {
-		var columns;
-		columns = document.querySelectorAll('.column');
-  
-		Array.prototype.forEach.call(columns, function (col) {
-		  col.addEventListener('click', function () {
-			markNextFree(col.getAttribute('data-x'));
-		  });
-		});
-  
-		for (var x = 0; x <= numRows; x++) {
-		  gameBoard[x] = {};
-		  for (var y = 0; y <= numCols; y++) {
-			gameBoard[x][y] = 'free';
-		  }
-		}
-  
-		// Start the game with the red player's turn.
-		playRedTurn();
-	  };
-  
-	  var playRedTurn = function () {
-		// Red player's turn
+		gameBoard = {};
 		currentPlayer = 'red';
-	  };
-  
-	  var playYellowTurn = function () {
-		// Yellow player's turn
-		currentPlayer = 'yellow';
-		var randomColumn = Math.floor(Math.random() * numCols);
-		markNextFree(randomColumn);
-	  };
-  
-	  var markNextFree = function (x) {
-		var nextY = false;
-		for (var y = 0; y < numRows; y++) {
-		  if (gameBoard[x][y] === 'free') {
-			nextY = y;
-			break;
-		  }
-		}
-  
-		if (nextY === false) {
-		  alert('No free spaces in this column. Try another.');
-		  return false;
-		}
-  
-		gameBoard[x][nextY] = currentPlayer;
-		document.querySelector('#column-' + x + ' .row-' + nextY + ' circle').setAttribute(
-		  'class', currentPlayer
-		);
-  
-		if (isWinner(parseInt(x), nextY)) {
-		  alert(currentPlayer + ' wins!');
-		  clearBoard();
-		  return true;
-		}
-  
-		numTurns = numTurns + 1;
-  
-		if (numTurns >= numRows * numCols) {
-		  alert("It's a tie!");
-		  clearBoard();
-		  return true;
-		}
-  
-		// Switch turns between red and yellow
-		if (currentPlayer === 'red') {
-		  playYellowTurn();
-		} else {
-		  playRedTurn();
-		}
-	  };
+		numRows = 6;
+		numCols = 7;
+		numTurns = 0;
+
+		_init = function () {
+			var columns;
+			columns = document.querySelectorAll('.column');
+
+			Array.prototype.forEach.call(columns, function (col) {
+				col.addEventListener('click', function () {
+					markNextFree(col.getAttribute('data-x'));
+				});
+			});
+
+			for (var x = 0; x <= numRows; x++) {
+				gameBoard[x] = {};
+				for (var y = 0; y <= numCols; y++) {
+					gameBoard[x][y] = 'free';
+				}
+			}
+
+			// Start the game with the red player's turn.
+			playRedTurn();
+		};
+
+		var playRedTurn = function () {
+			// Red player's turn
+			currentPlayer = 'red';
+		};
+
+		var playYellowTurn = function () {
+			// Yellow player's turn
+			currentPlayer = 'yellow';
+
+			setTimeout(function () {
+				var randomColumn = Math.floor(Math.random() * numCols);
+				markNextFree(randomColumn);
+			}, 600);
+		};
+
+
+		var markNextFree = function (x) {
+			var nextY = false;
+			for (var y = 0; y < numRows; y++) {
+				if (gameBoard[x][y] === 'free') {
+					nextY = y;
+					break;
+				}
+			}
+
+			if (nextY === false) {
+				// alert('No free spaces in this column. Try another.');
+				return false;
+			}
+
+			gameBoard[x][nextY] = currentPlayer;
+			document.querySelector('#column-' + x + ' .row-' + nextY + ' circle').setAttribute(
+				'class', currentPlayer
+			);
+
+			if (isWinner(parseInt(x), nextY)) {
+				alert(currentPlayer + ' wins!');
+				clearBoard();
+				return true;
+			}
+
+			numTurns = numTurns + 1;
+
+			if (numTurns >= numRows * numCols) {
+				alert("It's a tie!");
+				clearBoard();
+				return true;
+			}
+
+			// Switch turns between red and yellow
+			if (currentPlayer === 'red') {
+				playYellowTurn();
+			} else {
+				playRedTurn();
+			}
+		};
 
 		var clearBoard = function () {
 
