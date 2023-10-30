@@ -4,7 +4,6 @@
 ## Table of Contents
 - [About](#about)
 - [Features](#features)
-- [Usage](#usage)
 - [Deployment](#deployment)
 
 ## About
@@ -14,7 +13,11 @@
 ## Features
 
 - Chess
-- Car 
+- Car
+
+## Deployment
+
+[Deployment](https://github.com/ikgron/ikgron-site/deployments/github-pages)
 
 ## Getting Started
 
