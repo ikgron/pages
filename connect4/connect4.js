@@ -43,7 +43,7 @@
 			setTimeout(function () {
 				var randomColumn = Math.floor(Math.random() * numCols);
 				markNextFree(randomColumn);
-			}, 600);
+			}, 450);
 		};
 
 		function displayWinMessage(player) {
@@ -51,6 +51,12 @@
 			var capitalizedPlayer = player.charAt(0).toUpperCase() + player.slice(1);
 			winMessage.textContent = capitalizedPlayer + " wins!";
 			winMessage.style.fontSize = "2rem";
+		}
+
+		function displayTieMessage() {
+			var winMessage = document.getElementById("winMessage");
+			winMessage.textContent = "Tie!";
+			winMessage.style.fontSize = "2rem"; // Adjust the font size as desired
 		}
 
 
@@ -65,7 +71,7 @@
 
 			if (nextY === false) {
 				// alert('No free spaces in this column. Try another.');
-				gameInProgress = false; // Allow input again
+				gameInProgress = false;
 				return false;
 			}
 
@@ -82,8 +88,7 @@
 			numTurns = numTurns + 1;
 
 			if (numTurns >= numRows * numCols) {
-				alert("It's a tie!");
-				clearBoard();
+				displayTieMessage(currentPlayer);
 				return true;
 			}
 
