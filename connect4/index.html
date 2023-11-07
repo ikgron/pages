@@ -167,25 +167,28 @@
             <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
           </svg>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col text-center">
-              <button class="btn btn-lg btn-primary mx-auto mt-5" id="toggleButton">Player vs Bot</button>
-            </div>
-          </div>
-        </div>
+        <button class="btn btn-primary mt-4" id="toggleButton">Player vs Bot</button>
+        <div class="container mt-3"></div>
+        <button class="btn btn-danger" id="clearBoardButton">Reset Board</button>
       </div>
     </div>
   </body>
   <script>
     document.getElementById("toggleButton").addEventListener("click", function () {
-    var button = document.getElementById("toggleButton");
-    if (button.innerHTML === "Player vs Bot") {
-    button.innerHTML = "Player vs Player";
-    } else {
-    button.innerHTML = "Player vs Bot";
-    }
-    });
+        var button = document.getElementById("toggleButton");
+        if (button.innerHTML === "Player vs Bot") {
+            button.innerHTML = "Player vs Player";
+            gameMode = "player vs player";
+        } else {
+            button.innerHTML = "Player vs Bot";
+            gameMode = "player vs bot";
+        }
+    })
+        document.getElementById("clearBoardButton").addEventListener("click", function () {
+            console.log('worked?')
+            clearBoard();
+        });
+    
     
     
   </script>

@@ -109,6 +109,8 @@
 
 		};
 
+		this.clearBoard = clearBoard
+
 		var isWinner = function (currentX, currentY) {
 			return checkDirection(currentX, currentY, 'vertical') ||
 				checkDirection(currentX, currentY, 'diagonal') ||
