@@ -13,7 +13,7 @@
 
 			Array.prototype.forEach.call(columns, function (col) {
 				col.addEventListener('click', function () {
-					if (gameInProgress) return; // Don't allow clicks while a move is being processed
+					if (gameInProgress) return;
 					markNextFree(col.getAttribute('data-x'));
 				});
 			});
@@ -32,31 +32,49 @@
 		var playRedTurn = function () {
 			// Red player's turn
 			currentPlayer = 'red';
-			gameInProgress = false; // Enable input for the current player
+			gameInProgress = false;
 		};
 
 		var playYellowTurn = function () {
 			// Yellow player's turn
 			currentPlayer = 'yellow';
-			gameInProgress = true; // Disable input while AI move is being processed
+			gameInProgress = true;
 
 			setTimeout(function () {
-				var randomColumn = Math.floor(Math.random() * numCols);
-				markNextFree(randomColumn);
+				var validColumns = [];
+				for (var x = 0; x < numCols; x++) {
+					for (var y = numRows - 1; y >= 0; y--) {
+						if (gameBoard[x][y] === 'free') {
+							validColumns.push(x);
+							break;
+						}
+					}
+				}
+
+				if (validColumns.length > 0) {
+					var randomIndex = Math.floor(Math.random() * validColumns.length);
+					var randomColumn = validColumns[randomIndex];
+					markNextFree(randomColumn);
+				}
 			}, 450);
 		};
+
 
 		function displayWinMessage(player) {
 			var winMessage = document.getElementById("winMessage");
 			var capitalizedPlayer = player.charAt(0).toUpperCase() + player.slice(1);
 			winMessage.textContent = capitalizedPlayer + " wins!";
 			winMessage.style.fontSize = "2rem";
+			winMessage.style.display = "block";
+			gameInProgress = true;
 		}
 
 		function displayTieMessage() {
 			var winMessage = document.getElementById("winMessage");
 			winMessage.textContent = "Tie!";
-			winMessage.style.fontSize = "2rem"; // Adjust the font size as desired
+			winMessage.style.fontSize = "2rem";
+			winMessage.style.display = "block";
+			gameInProgress = true;
 		}
 
 
@@ -116,7 +134,7 @@
 			}
 
 			numTurns = 0;
-			gameInProgress = false; // Reset the game in progress flag
+			gameInProgress = false;
 		};
 
 		this.clearBoard = clearBoard;
@@ -142,7 +160,7 @@
 					[-1, 0], [1, 0]
 				],
 				diagonal: [
-					[-1, -1], [1, 1], [-1, 1], [1, -1]
+					[-1, -1], [1, 1] // Check only the two diagonal directions
 				]
 			};
 
@@ -151,8 +169,7 @@
 			directions[direction].forEach(function (coords) {
 				var i = 1;
 				while (isBounds(currentX + (coords[0] * i), currentY + (coords[1] * i)) &&
-					(gameBoard[currentX + (coords[0] * i)][currentY + (coords[1] * i)] === currentPlayer)
-				) {
+					gameBoard[currentX + (coords[0] * i)][currentY + (coords[1] * i)] === currentPlayer) {
 					chainLength = chainLength + 1;
 					i = i + 1;
 				}

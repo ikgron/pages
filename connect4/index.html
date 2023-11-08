@@ -189,8 +189,9 @@
         }
     })
         document.getElementById("clearBoardButton").addEventListener("click", function () {
-            console.log('worked?')
             clearBoard();
+            document.getElementById("winMessage").style.display = "none";
+            
         });
     
     
