@@ -1,0 +1,43 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+    title Checkers | ikgron
+
+    //- Bootstrap CSS Link
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='../styles.css')
+.bg(style='background-image: url(/images/deepslate_bricks.png);')
+.vignette
+.content
+
+    //- Navbar
+    nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.pb-0(style='background-color: #222;')
+        a.navbar-brand(href='/') Home
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href='/about/') About
+                li.nav-item
+                    a.nav-link(href='/checkers/') Checkers
+                li.nav-item
+                    a.nav-link(href='/connect4') Connect 4
+
+    h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem") Checkers
+
+    h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 2rem") Coming Soon
+
+
+
+
+    //- Bootstrap JS and jQuery Scripts
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+    script(src='../index.js')

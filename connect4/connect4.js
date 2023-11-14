@@ -62,14 +62,18 @@
 
 		function displayWinMessage(player) {
 			var winMessage = document.getElementById("winMessage");
+			// Gets winMessage text block, capitalizes 1st letter
 			var capitalizedPlayer = player.charAt(0).toUpperCase() + player.slice(1);
 			winMessage.textContent = capitalizedPlayer + " wins!";
 			winMessage.style.fontSize = "2rem";
+			// uses "block" to show after being hidden with display = "none"
 			winMessage.style.display = "block";
+			// Prevents game from being played after someone wins until clearBoard() is called
 			gameInProgress = true;
 		}
 
 		function displayTieMessage() {
+			// Same format as displayWinMessage
 			var winMessage = document.getElementById("winMessage");
 			winMessage.textContent = "Tie!";
 			winMessage.style.fontSize = "2rem";
@@ -88,7 +92,6 @@
 			}
 
 			if (nextY === false) {
-				// alert('No free spaces in this column. Try another.');
 				gameInProgress = false;
 				return false;
 			}
@@ -160,7 +163,7 @@
 					[-1, 0], [1, 0]
 				],
 				diagonal: [
-					[-1, -1], [1, 1] // Check only the two diagonal directions
+					[-1, -1], [1, 1]
 				]
 			};
 

@@ -9,15 +9,17 @@
 ## About
 
 - Built using [Pug](https://pugjs.org/api/getting-started.html)
+- Parts of Connect 4 from [Codepen](https://codepen.io/r00k/pen/pvRaGq)
 
 ## Features
 
-- Chess
 - Car
+- Chess
+- Connect 4
 
 ## Deployment
 
-[Deployment](https://github.com/ikgron/ikgron-site/deployments/github-pages)
+[Github Pages](https://github.com/ikgron/ikgron-site/deployments/github-pages)
 
 ## Getting Started
 
