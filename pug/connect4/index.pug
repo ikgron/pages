@@ -60,16 +60,16 @@ html(lang="en")
                     button#clearBoardButton.btn.btn-danger Reset Board
 
     script.
-        document.getElementById("toggleButton").addEventListener("click", function () {
-            var button = document.getElementById("toggleButton");
-            if (button.innerHTML === "Player vs Bot") {
-                button.innerHTML = "Player vs Player";
-                gameMode = "player vs player";
-            } else {
-                button.innerHTML = "Player vs Bot";
-                gameMode = "player vs bot";
-            }
-        })
+        //- document.getElementById("toggleButton").addEventListener("click", function () {
+        //-     var button = document.getElementById("toggleButton");
+        //-     if (button.innerHTML === "Player vs Bot") {
+        //-         button.innerHTML = "Player vs Player";
+        //-         gameMode = "player vs player";
+        //-     } else {
+        //-         button.innerHTML = "Player vs Bot";
+        //-         gameMode = "player vs bot";
+        //-     }
+        //- })
             document.getElementById("clearBoardButton").addEventListener("click", function () {
                 clearBoard();
                 document.getElementById("winMessage").style.display = "none";
