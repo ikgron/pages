@@ -14,6 +14,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com", crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet")
         link(rel='stylesheet' href='../styles.css')
+        
     body
         .bg(style="background-image: url(/images/deepslate_bricks.png);")
         .vignette
@@ -50,11 +51,11 @@ html(lang="en")
                 - for (var col = 0; col < numCols; col++)
                     .column(id=`column-${col}`, data-x=col)
                         - for (var row = numRows - 1; row >= 0; row--)
-                            svg(height="15.5%" width="100%", class=`row-${row}`)
+                            svg(height="15.45%" width="100%", class=`row-${row}`)
                                 circle(cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3" class="free")
 
                 .container.text-center.mt-4
-                    button#toggleButton(class="btn btn-primary mt-0") Player vs Bot
+                    //- button#toggleButton(class="btn btn-primary mt-0") Player vs Bot
                     .container.mt-4
                     button#clearBoardButton.btn.btn-danger Reset Board
 
