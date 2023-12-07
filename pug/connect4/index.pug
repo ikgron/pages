@@ -21,26 +21,32 @@ html(lang="en")
         .content
             
             nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.pb-1(style='background-color: #1b1b1b; align-items: center;')
-                a.navbar-brand(href='/') Home
-                a.navbar-brand.ml-auto.mt-auto(href='https://github.com/ikgron' target='_blank')
-                  img(src='/images/github.png' alt='GitHub' width='30' height='30')
-                button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-                  span.navbar-toggler-icon
-                #navbarNav.collapse.navbar-collapse
-                  ul.navbar-nav.ml-auto
+              a.navbar-brand(href='/') Home
+              a.navbar-brand.ml-auto.mt-auto(href='https://github.com/ikgron' target='_blank')
+                img(src='/images/github.png' alt='GitHub' width='30' height='30')
+              button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+              #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav.ml-auto
 
-                    li.nav-item.dropdown
-                      a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                        | About
-                      .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
-                        a.dropdown-item.text-light.bg-transparent(href='/car/') Car
-                    li.nav-item.dropdown
-                      a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                        | Games
-                      .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
-                        a.dropdown-item.text-light.bg-transparent(href='/checkers/') Checkers
-                        a.dropdown-item.text-light.bg-transparent(href='/connect4/') Connect 4
+                  li.nav-item.dropdown.d-lg-none
+                    a#navbarDropdown.nav-link(href='/car/') Car
+                  li.nav-item.dropdown.d-lg-none
+                    a#navbarDropdown.nav-link(href='/chess/') Chess
+                  li.nav-item.dropdown.d-lg-none
+                    a#navbarDropdown.nav-link(href='/checkers/') Checkers
+                  li.nav-item.dropdown.d-lg-none
+                    a#navbarDropdown.nav-link(href='/connect4/') Connect 4
+                  li.nav-item.dropdown.d-lg-none
 
+                  li.nav-item.dropdown.d-none.d-lg-block
+                    a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                        | Menu
+                    .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
+                      a.dropdown-item.text-light.bg-transparent(href='/car/') Car
+                      a.dropdown-item.text-light.bg-transparent(href='/chess/') Chess
+                      a.dropdown-item.text-light.bg-transparent(href='/checkers/') Checkers
+                      a.dropdown-item.text-light.bg-transparent(href='/connect4/') Connect 4
             h1.text-white.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 11vh; font-size: 5rem") Connect 4
                 div#winMessage.text-center
 

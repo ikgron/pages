@@ -25,17 +25,24 @@ head
       #navbarNav.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
 
-          li.nav-item.dropdown
+          li.nav-item.dropdown.d-lg-none
+            a#navbarDropdown.nav-link(href='/car/') Car
+          li.nav-item.dropdown.d-lg-none
+            a#navbarDropdown.nav-link(href='/chess/') Chess
+          li.nav-item.dropdown.d-lg-none
+            a#navbarDropdown.nav-link(href='/checkers/') Checkers
+          li.nav-item.dropdown.d-lg-none
+            a#navbarDropdown.nav-link(href='/connect4/') Connect 4
+          li.nav-item.dropdown.d-lg-none
+
+          li.nav-item.dropdown.d-none.d-lg-block
             a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                | About
+                | Menu
             .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
               a.dropdown-item.text-light.bg-transparent(href='/car/') Car
-          li.nav-item.dropdown
-            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                | Games
-            .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
-                a.dropdown-item.text-light.bg-transparent(href='/checkers/') Checkers
-                a.dropdown-item.text-light.bg-transparent(href='/connect4/') Connect 4
+              a.dropdown-item.text-light.bg-transparent(href='/chess/') Chess
+              a.dropdown-item.text-light.bg-transparent(href='/checkers/') Checkers
+              a.dropdown-item.text-light.bg-transparent(href='/connect4/') Connect 4
 
     h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 11vh; font-size: 5rem") Car
     h2.text-light.text-center 2010 Lexus ES350
