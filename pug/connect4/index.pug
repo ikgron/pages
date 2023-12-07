@@ -46,11 +46,11 @@ html(lang="en")
             - var numRows = 6;
             - var numCols = 7;
             #game-board.text-center
-
+            
                 - for (var col = 0; col < numCols; col++)
                     .column(id=`column-${col}`, data-x=col)
                         - for (var row = numRows - 1; row >= 0; row--)
-                            svg(height="auto" width="100%", class=`row-${row}`)
+                            svg(height="15.5%" width="100%", class=`row-${row}`)
                                 circle(cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3" class="free")
 
                 .container.text-center.mt-4
