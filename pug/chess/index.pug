@@ -5,8 +5,7 @@ head
 
     title Chess | ikgron
 
-    //- Bootstrap CSS Link
-    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
     link(href='https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap' rel='stylesheet')
@@ -15,7 +14,7 @@ head
 .vignette
 .content
 
-    //- Navbar
+    //- navbar
     nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.pb-0(style='background-color: #222;')
         a.navbar-brand(href='/') Home
         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
@@ -29,10 +28,8 @@ head
                 li.nav-item
                     a.nav-link(href='/connect4') Connect 4
 
-    h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem") Chess
+    h1.text-light.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 11vh; font-size: 5rem") Chess
 
-
-    //- Bootstrap JS and jQuery Scripts
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
     script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="/images/car_favicon2.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | ikgron</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Car | ikgron</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
@@ -13,21 +14,24 @@
 <div class="bg" style="background-image: url(/images/deepslate_bricks.png);"></div>
 <div class="vignette"></div>
 <div class="content">
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top pb-0" style="background-color: #222;"><a class="navbar-brand" href="/">Home</a>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top pb-1" style="background-color: #1b1b1b; align-items: center;"><a class="navbar-brand" href="/">Home</a><a class="navbar-brand ml-auto mt-auto" href="https://github.com/ikgron" target="_blank"><img src="/images/github.png" alt="GitHub" width="30" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/checkers/">Checkers</a></li>
-        <li class="nav-item"><a class="nav-link" href="/connect4/">Connect 4</a></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown"><a class="dropdown-item text-light bg-transparent" href="/car/">Car</a></div>
+        </li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Games</a>
+          <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown"><a class="dropdown-item text-light bg-transparent" href="/checkers/">Checkers</a><a class="dropdown-item text-light bg-transparent" href="/connect4/">Connect 4</a></div>
+        </li>
       </ul>
     </div>
   </nav>
-  <h1 class="text-light text-center" style="font-family: 'Share Tech Mono', monospace; margin-top: 7vh; font-size: 5rem">About</h1>
+  <h1 class="text-light text-center" style="font-family: 'Share Tech Mono', monospace; margin-top: 11vh; font-size: 5rem">Car</h1>
   <h2 class="text-light text-center">2010 Lexus ES350</h2>
   <h4 class="text-light text-center">Satin Cashmere Metallic</h4>
   <h4 class="text-light text-center">2GR-FE 3.5L V6 6 Speed Automatic with Overdrive</h4>
-  <div class="carousel slide mt-1" id="imageCarousel" data-ride="carousel" data-interval="2000">
+  <div class="carousel slide mt-1" id="imageCarousel" data-ride="carousel" data-interval="3000">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="d-flex justify-content-center align-items-center" style="height: 55vh;"><img class="d-block mx-auto" src="/images/car.png" alt="Car 1" style="max-width: 90%;"></div>
@@ -48,30 +52,27 @@
   var touchStartX = null;
   var intervalId = null;
   
-  // Store a reference to the carousel element
   var carousel = $('#imageCarousel');
   
-  // Add an event listener to start the interval when the document is ready
   $(document).ready(function () {
   startCarouselInterval();
   });
   
-  // Function to start the carousel interval
   function startCarouselInterval() {
   intervalId = setInterval(function () {
   carousel.carousel('next');
-  }, 4000); // 4 seconds
+  }, 4000);
   }
   
-  // Add touchstart event listener
+  // wait for touch
   carousel.on('touchstart', function (e) {
   touchStartX = e.originalEvent.touches[0].clientX;
   
-  // Clear the interval when the user starts swiping
+  // restart interval when swiped
   clearInterval(intervalId);
   });
   
-  // Add touchend event listener
+  // wait for swipe end
   carousel.on('touchend', function (e) {
   var touchEndX = e.originalEvent.changedTouches[0].clientX;
   if (touchStartX - touchEndX > 50) {
@@ -80,7 +81,7 @@
   carousel.carousel('prev');
   }
   
-  // Restart the interval when the user releases the swipe
+  // restart interval after swipe
   startCarouselInterval();
   });
 </script>

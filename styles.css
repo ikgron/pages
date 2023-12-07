@@ -68,3 +68,15 @@ circle.yellow {
         height: 60vw;
     }
 }
+
+@media (max-width: 768px) {
+
+    .row-0,
+    .row-1,
+    .row-2,
+    .row-3,
+    .row-4,
+    .row-5 {
+        height: 26.3px;
+    }
+}
