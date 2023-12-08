@@ -5,7 +5,6 @@
 - [About](#about)
 - [Features](#features)
 - [Deployment](#deployment)
-- [Getting Started](#Getting Started)
 
 
 ## About
