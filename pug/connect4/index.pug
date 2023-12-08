@@ -1,52 +1,15 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        link(rel='icon' href='/images/conect4_favicon.png' type='image/x-icon')
-
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Connect 4 | ikgron
-
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-
-        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com", crossorigin)
-        link(href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet")
-        link(rel='stylesheet' href='../styles.css')
+        include ../partials/head.pug
         
     body
         .bg(style="background-image: url(/images/deepslate_bricks.png);")
         .vignette
         .content
-            
-            nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.pb-1(style='background-color: #1b1b1b; align-items: center;')
-              a.navbar-brand(href='/') Home
-              a.navbar-brand.ml-auto.mt-auto(href='https://github.com/ikgron' target='_blank')
-                img(src='/images/github.png' alt='GitHub' width='30' height='30')
-              button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-                span.navbar-toggler-icon
-              #navbarNav.collapse.navbar-collapse
-                ul.navbar-nav.ml-auto
+            include ../partials/navbar.pug
 
-                  li.nav-item.dropdown.d-lg-none
-                    a#navbarDropdown.nav-link(href='/car/') Car
-                  li.nav-item.dropdown.d-lg-none
-                    a#navbarDropdown.nav-link(href='/chess/') Chess
-                  li.nav-item.dropdown.d-lg-none
-                    a#navbarDropdown.nav-link(href='/checkers/') Checkers
-                  li.nav-item.dropdown.d-lg-none
-                    a#navbarDropdown.nav-link(href='/connect4/') Connect 4
-                  li.nav-item.dropdown.d-lg-none
-
-                  li.nav-item.dropdown.d-none.d-lg-block
-                    a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                        | Menu
-                    .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
-                      a.dropdown-item.text-light.bg-transparent(href='/car/') Car
-                      a.dropdown-item.text-light.bg-transparent(href='/chess/') Chess
-                      a.dropdown-item.text-light.bg-transparent(href='/checkers/') Checkers
-                      a.dropdown-item.text-light.bg-transparent(href='/connect4/') Connect 4
             h1.text-white.text-center(style="font-family: 'Share Tech Mono', monospace; margin-top: 11vh; font-size: 5rem") Connect 4
                 div#winMessage.text-center
 
@@ -60,10 +23,10 @@ html(lang="en")
                             svg(height="15.45%" width="100%", class=`row-${row}`)
                                 circle(cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3" class="free")
 
-                .container.text-center.mt-4
+                    //- .container.text-center.mt-4
                     //- button#toggleButton(class="btn btn-primary mt-0") Player vs Bot
-                    .container.mt-4
-                    button#clearBoardButton.btn.btn-danger Reset Board
+                .container.mt-4
+                button#clearBoardButton.btn.btn-danger Reset Board
 
     script.
         //- document.getElementById("toggleButton").addEventListener("click", function () {
@@ -83,8 +46,5 @@ html(lang="en")
             });
 
 
-script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
-script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js")
-script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
-script(src="../index.js")
+include ../partials/scripts.pug
 script(src="./connect4.js")
