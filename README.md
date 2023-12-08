@@ -5,6 +5,8 @@
 - [About](#about)
 - [Features](#features)
 - [Deployment](#deployment)
+- [Getting Started](#Getting Started)
+
 
 ## About
 
@@ -15,11 +17,12 @@
 
 - Car
 - Chess
+- Checkers
 - Connect 4
 
 ## Deployment
 
-[Github Pages](https://github.com/ikgron/ikgron-site/deployments/github-pages)
+[Github Pages](https://pages.github.com/)
 
 ## Getting Started
 
