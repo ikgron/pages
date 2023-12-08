@@ -19,7 +19,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.pb-1(style='background-color: 
 
             li.nav-item.dropdown.d-none.d-lg-block
                 a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                    | Menu
+                    //- | Menu
+                    span.navbar-toggler-icon
+
                 .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
                     a.dropdown-item.text-light.bg-transparent(href='/car/') Car
                     a.dropdown-item.text-light.bg-transparent(href='/chess/') Chess

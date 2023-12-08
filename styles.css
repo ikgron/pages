@@ -71,3 +71,8 @@ circle.yellow {
         height: 14.2%;
       }
 }
+
+#menuToggle.menu-open .navbar-toggler-icon {
+    transform: rotate(90deg);
+  }
+  
