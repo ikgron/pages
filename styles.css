@@ -1,29 +1,3 @@
-.bg {
-    position: fixed;
-    background-size: 256px;
-    top: 0;
-    left: 0;
-    width: 300%;
-    height: 100%;
-    opacity: 1;
-    z-index: -1;
-}
-
-.vignette {
-    background-image: url("../images/vignette.png");
-    background-size: 100% 100%;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: .90;
-}
-
-.content {
-    position: relative;
-}
-
 body {
     background: black;
     font-family: 'Share Tech Mono', monospace;
@@ -60,7 +34,6 @@ circle.red {
 circle.yellow {
     fill: #DAD400;
 }
-
 
 @media screen and (max-width: 1000px) {
     #game-board {
