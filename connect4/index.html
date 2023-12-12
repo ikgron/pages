@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
-    <div class="bg" style="background-color: black"></div>
+    <div class="bg"></div>
     <div class="content">
       <style>
         .nav-link {
@@ -24,7 +24,7 @@
         .nav-link:focus,
         .nav-link:hover,
         .navbar-brand:hover {
-        color: rgb(82, 82, 237);
+        color: rgb(14, 87, 237);
         text-decoration: underline; 
         }
         
@@ -33,7 +33,7 @@
         }
         
         .dropdown-item:hover {
-        background-color: rgb(82, 82, 237);
+        background-color: rgb(14, 87, 237);
         color: white;
         }
         
@@ -42,12 +42,12 @@
         }
         
       </style>
-      <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(82, 82, 237); font-size: 2vh;"><a class="navbar-brand" style="padding-left: 1vh; font-size: 2vh;" href="/">ikgron</a>
+      <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(14, 87, 237); font-size: 2vh;"><a class="navbar-brand" style="padding-left: 1vh; font-size: 2vh;" href="/">ikgron</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" style="color: white"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav" style="margin-left: auto;">
-            <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="#">Work</a></li>
-            <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="#">Examples</a></li>
+            <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="/work">My Work</a></li>
+            <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="/examples">Examples</a></li>
             <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" style="padding-left: 1vh;" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
               <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/car">Car</a>
                 <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/checkers">Checkers</a>
@@ -57,148 +57,148 @@
           </ul>
         </div>
       </nav>
-      <h1 class="text-white text-center" style="font-family: 'Share Tech Mono', monospace; margin-top: 11vh; font-size: 5rem">Connect 4
+      <h1 class="text-white text-center" style="margin-top: 11vh; font-size: 5rem">Connect 4
         <div class="text-center" id="winMessage"></div>
       </h1>
       <div class="text-center" id="game-board">
         <div class="column" id="column-0" data-x="0">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="column" id="column-1" data-x="1">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="column" id="column-2" data-x="2">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="column" id="column-3" data-x="3">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="column" id="column-4" data-x="4">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="column" id="column-5" data-x="5">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="column" id="column-6" data-x="6">
           <svg class="row-5" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-4" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-3" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-2" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-1" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
           <svg class="row-0" height="17%" width="100%">
-            <circle class="free" cx="50%" cy="50%" r="38%" stroke="#0B4E72" stroke-width="3"></circle>
+            <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
         <div class="container mt-4"></div>

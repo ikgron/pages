@@ -25,7 +25,7 @@
 }
 
 body {
-    background: #222;
+    background: black;
     font-family: 'Share Tech Mono', monospace;
 }
 
@@ -46,11 +46,11 @@ body {
 }
 
 .column:hover circle.free {
-    fill: #D5E4ED;
+    fill: #94999c;
 }
 
 circle.free {
-    fill: #fff;
+    fill: #bbb8b8;
 }
 
 circle.red {
