@@ -1,32 +1,3 @@
-//- nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.pb-1(style='background-color: #1b1b1b; align-items: center;')
-//-     a.navbar-brand(href='/') Home
-//-     a.navbar-brand.ml-auto.mt-auto(href='https://github.com/ikgron' target='_blank')
-//-         img(src='/images/github.png' alt='GitHub' width='30' height='30')
-//-     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-//-         span.navbar-toggler-icon
-//-     #navbarNav.collapse.navbar-collapse
-//-         ul.navbar-nav.ml-auto
-
-//-             li.nav-item.dropdown.d-lg-none
-//-                 a#navbarDropdown.nav-link(href='/car/') Car
-//-             li.nav-item.dropdown.d-lg-none
-//-                 a#navbarDropdown.nav-link(href='/chess/') Chess
-//-             li.nav-item.dropdown.d-lg-none        
-//-                 a#navbarDropdown.nav-link(href='/checkers/') Checkers
-//-             li.nav-item.dropdown.d-lg-none
-//-                 a#navbarDropdown.nav-link(href='/connect4/') Connect 4
-//-             li.nav-item.dropdown.d-lg-none
-
-//-             li.nav-item.dropdown.d-none.d-lg-block
-//-                 a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-//-                     //- | Menu
-//-                     span.navbar-toggler-icon
-
-//-                 .dropdown-menu.dropdown-menu-right.bg-dark(aria-labelledby='navbarDropdown')
-//-                     a.dropdown-item.text-light.bg-transparent(href='/car/') Car
-//-                     a.dropdown-item.text-light.bg-transparent(href='/chess/') Chess
-//-                     a.dropdown-item.text-light.bg-transparent(href='/checkers/') Checkers
-//-                     a.dropdown-item.text-light.bg-transparent(href='/connect4/') Connect 4
 - var color = "rgb(82, 82, 237)"
 style.
     .nav-link {
@@ -41,7 +12,7 @@ style.
     .nav-link:hover,
     .navbar-brand:hover {
     color: #{color};
-    /* text-decoration: underline; */
+    text-decoration: underline; 
     }
 
     .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
@@ -52,12 +23,17 @@ style.
     background-color: rgb(82, 82, 237);
     color: white;
     }
+
+    .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
 nav.navbar.navbar-expand-lg.fixed-top(style='background-color: black; border-bottom: 2px solid rgb(82, 82, 237); font-size: 2vh;')
 
   a.navbar-brand(style='padding-left: 1vh; font-size: 2vh;' href='/') ikgron
   
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
+    span.navbar-toggler-icon(style="color: white")
   #navbarNav.collapse.navbar-collapse
     ul.navbar-nav(style='margin-left: auto;')
       li.nav-item
@@ -65,7 +41,10 @@ nav.navbar.navbar-expand-lg.fixed-top(style='background-color: black; border-bot
       li.nav-item
         a.nav-link(style='padding-left: 1vh;' href='#') Examples
       li.nav-item.dropdown(style='position: relative')
-        a#navbarDropdown.nav-link.dropdown-toggle(style='padding-left: 1vh;' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') More
+
+        a#navbarDropdown.nav-link.dropdown-toggle(style='padding-left: 1vh;' href='#' role='button'
+
+        data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') More
         .dropdown-menu.dropdown-menu-end(style='right: 0; background-color: black;' aria-labelledby='navbarDropdown')
           a.dropdown-item(style='color: white; padding-left: 1vh;' href='/car') Car
           .dropdown-divider

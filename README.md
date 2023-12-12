@@ -15,7 +15,6 @@
 ## Features
 
 - Car
-- Chess
 - Checkers
 - Connect 4
 
