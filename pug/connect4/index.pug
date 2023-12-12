@@ -5,8 +5,7 @@ html(lang="en")
         include ../partials/head.pug
         
     body
-        .bg(style="background-image: url(/images/deepslate_bricks.png);")
-        .vignette
+        .bg(style="background-color: black")
         .content
             include ../partials/navbar.pug
 
@@ -27,6 +26,8 @@ html(lang="en")
                     //- button#toggleButton(class="btn btn-primary mt-0") Player vs Bot
                 .container.mt-4
                 button#clearBoardButton.btn.btn-danger Reset Board
+
+
 
     script.
         //- document.getElementById("toggleButton").addEventListener("click", function () {

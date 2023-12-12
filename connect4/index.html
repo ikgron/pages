@@ -10,40 +10,43 @@
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
-    <div class="bg" style="background-image: url(/images/deepslate_bricks.png);"></div>
-    <div class="vignette"></div>
+    <div class="bg" style="background-color: black"></div>
     <div class="content">
       <style>
         .nav-link {
         color: white;
         }
+        
         .navbar-brand {
         color: white
         }
+        
         .nav-link:focus,
         .nav-link:hover,
         .navbar-brand:hover {
         color: rgb(82, 82, 237);
         /* text-decoration: underline; */
         }
+        
         .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
         display: block;
         }
+        
         .dropdown-item:hover {
         background-color: rgb(82, 82, 237);
         color: white;
         }
       </style>
-      <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(82, 82, 237); font-size: 1.5vh;"><a class="navbar-brand" style="padding-left: 1vh; font-size: 1.5vh;" href="/">ikgron</a>
+      <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(82, 82, 237); font-size: 2vh;"><a class="navbar-brand" style="padding-left: 1vh; font-size: 2vh;" href="/">ikgron</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav" style="margin-left: auto;">
             <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="#">Work</a></li>
             <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="#">Examples</a></li>
             <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" style="padding-left: 1vh;" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-              <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="#">Option 1</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="#">Option 2</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="#">Option 3</a>
+              <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/car">Car</a>
+                <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/checkers">Checkers</a>
+                <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/connect4">Connect 4</a>
               </div>
             </li>
           </ul>
