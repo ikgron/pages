@@ -14,6 +14,8 @@
 
 ## Features
 
+- My Work
+- Examples
 - Car
 - Checkers
 - Connect 4
