@@ -1,13 +1,12 @@
 include /partials/variables.pug
 style.
-    .nav-link {
+    .nav-link,
+    .navbar-brand,
+    .dropdown-item {
     color: white;
+    font-size: 2.5vh;
     }
     
-    .navbar-brand {
-    color: white
-    }
-
     .nav-link:focus,
     .nav-link:hover,
     .navbar-brand:hover {
@@ -28,17 +27,19 @@ style.
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bottom: 2px solid ${color}; font-size: 2vh;`)
+    
+
+nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bottom: 2px solid ${color};`)
 
 
-  a.navbar-brand(style='padding-left: 2vh; font-size: 2vh;' href='/') ikgron
+  a.navbar-brand(style='padding-left: 2vh;' href='/') ikgron
   
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon(style="color: white")
   #navbarNav.collapse.navbar-collapse
     ul.navbar-nav(style='margin-left: auto;')
       li.nav-item
-        a.nav-link(style='padding-left: 1vh;' href='/work') My Work
+        a.nav-link(style='padding-left: 1vh;' href='/work') Work
       li.nav-item
         a.nav-link(style='padding-left: 1vh;' href='/examples') Examples
       li.nav-item.dropdown(style='position: relative')
@@ -47,8 +48,8 @@ nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bot
 
         data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') More
         .dropdown-menu.dropdown-menu-end(style='right: 0; background-color: black;' aria-labelledby='navbarDropdown')
-          a.dropdown-item(style='color: white; padding-left: 1vh;' href='/car') Car
+          a.dropdown-item(style='padding-left: 1vh;' href='/car') Car
           .dropdown-divider
-          a.dropdown-item(style='color: white; padding-left: 1vh;' href='/checkers') Checkers
+          a.dropdown-item(style='padding-left: 1vh;' href='/checkers') Checkers
           .dropdown-divider
-          a.dropdown-item(style='color: white; padding-left: 1vh;' href='/connect4') Connect 4
+          a.dropdown-item(style='padding-left: 1vh;' href='/connect4') Connect 4

@@ -1,11 +1,10 @@
 
 <style>
-  .nav-link {
+  .nav-link,
+  .navbar-brand,
+  .dropdown-item {
   color: white;
-  }
-  
-  .navbar-brand {
-  color: white
+  font-size: 2.5vh;
   }
   
   .nav-link:focus,
@@ -28,17 +27,19 @@
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
   
+  
+  
 </style>
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(14, 87, 237); font-size: 2vh;"><a class="navbar-brand" style="padding-left: 2vh; font-size: 2vh;" href="/">ikgron</a>
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(14, 87, 237);"><a class="navbar-brand" style="padding-left: 2vh;" href="/">ikgron</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" style="color: white"></span></button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav" style="margin-left: auto;">
-      <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="/work">My Work</a></li>
+      <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="/work">Work</a></li>
       <li class="nav-item"><a class="nav-link" style="padding-left: 1vh;" href="/examples">Examples</a></li>
       <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" style="padding-left: 1vh;" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-        <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/car">Car</a>
-          <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/checkers">Checkers</a>
-          <div class="dropdown-divider"></div><a class="dropdown-item" style="color: white; padding-left: 1vh;" href="/connect4">Connect 4</a>
+        <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="padding-left: 1vh;" href="/car">Car</a>
+          <div class="dropdown-divider"></div><a class="dropdown-item" style="padding-left: 1vh;" href="/checkers">Checkers</a>
+          <div class="dropdown-divider"></div><a class="dropdown-item" style="padding-left: 1vh;" href="/connect4">Connect 4</a>
         </div>
       </li>
     </ul>
