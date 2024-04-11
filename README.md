@@ -23,7 +23,8 @@
 
 ## Deployment
 
-[Github Pages](https://pages.github.com/)
+- ~~[Github Pages](https://pages.github.com/)~~
+- [Codeberg Pages](https://codeberg.page/) (soon)
 
 ## Getting Started
 
