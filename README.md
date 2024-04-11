@@ -24,7 +24,7 @@
 ## Deployment
 
 - ~~[Github Pages](https://pages.github.com/)~~
-- [Codeberg Pages](https://codeberg.page/) (soon)
+- [Codeberg Pages](https://docs.codeberg.org/codeberg-pages/) (soon)
 
 ## Getting Started
 
