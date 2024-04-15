@@ -17,7 +17,6 @@
 - My Work
 - Info
 - Car
-- Checkers
 - Connect 4
 
 ## Deployment
