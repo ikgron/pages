@@ -21,7 +21,7 @@
 
 ## Deployment
 
-- [Codeberg Pages](https://docs.codeberg.org/codeberg-pages/)
+- [Codeberg Pages](https://codeberg.page/)
 
 ## Getting Started
 
