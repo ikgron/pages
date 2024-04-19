@@ -1,13 +1,17 @@
-include ../partials/variables.pug
+include /partials/variables.pug
 doctype html
+html(lang="en")
 head
-    title Page Not Found
-    include ../partials/head.pug
+  title Page Not Found
+  include /partials/head.pug
 
 .bg
+.vignette
 .content
-  include ../partials/navbar.pug
-
+  include /partials/navbar.pug
+  - const currentPage = 'home'
+  
+            
   h1.text-light(style="margin-top: 15vh; font-size: 3rem; margin-left: 2vh") 404
 
   h1.text-light(style="margin-top: 1vh; font-size: 1.3rem; margin-left: 2vh") Are you sure you're in the right place?
@@ -15,5 +19,6 @@ head
   div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
 
 
-include ../partials/scripts.pug
+  div.
 
+include /partials/scripts.pug
