@@ -9,6 +9,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link href="https://fonts.bunny.net/css?family=aldrich" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <style>
+      body {
+          background: black;
+          font-family: 'aldrich', monospace;
+      }
+    </style>
+    <style>
+      #game-board {
+          background: transparent;
+          width: 40vw;
+          height: 30vw;
+          cursor: pointer;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 10vh;
+      }
+      .column {
+          width: 11%;
+          height: 100%;
+          display: inline-block;
+      }
+      .column:hover circle.free {
+          fill: #94999c;
+      }
+      circle.free {
+          fill: #bbb8b8;
+      }
+      circle.red {
+          fill: #D50000;
+      }
+      circle.yellow {
+          fill: #DAD400;
+      }
+      @media screen and (max-width: 1000px) {
+          #game-board {
+              width: 90%;
+              height: 60vw;
+          }
+      }
+      
+    </style>
   </head>
   <body>
     <div class="bg"></div>
@@ -202,28 +243,17 @@
             <circle class="free" cx="50%" cy="50%" r="38%" stroke="rgb(14, 87, 237)" stroke-width="3"></circle>
           </svg>
         </div>
-        <div class="container mt-4"></div>
-        <button class="btn btn-danger" id="clearBoardButton">Reset Board</button>
+        <div class="container mt-4">
+          <button class="btn btn-danger" id="clearBoardButton">Reset Board</button>
+        </div>
       </div>
     </div>
   </body>
   <script>
-    //- document.getElementById("toggleButton").addEventListener("click", function () {
-    //-     var button = document.getElementById("toggleButton");
-    //-     if (button.innerHTML === "Player vs Bot") {
-    //-         button.innerHTML = "Player vs Player";
-    //-         gameMode = "player vs player";
-    //-     } else {
-    //-         button.innerHTML = "Player vs Bot";
-    //-         gameMode = "player vs bot";
-    //-     }
-    //- })
-        document.getElementById("clearBoardButton").addEventListener("click", function () {
-            clearBoard();
-            document.getElementById("winMessage").style.display = "none";
-            
-        });
-    
+    document.getElementById("clearBoardButton").addEventListener("click", function () {
+        clearBoard();
+        document.getElementById("winMessage").style.display = "none";
+    });
     
   </script>
 </html>
