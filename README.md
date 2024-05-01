@@ -16,7 +16,6 @@
 - My Work
 - Info
 - Car
-- Connect 4
 
 ## Deployment
 

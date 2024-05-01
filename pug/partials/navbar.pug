@@ -27,15 +27,16 @@ style.
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
+    .mobile-link: active {
+      color: #{color};
+    }
+
     
 
 nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bottom: 2px solid ${color};`)
 
 
   a.navbar-brand(style='padding-left: 2vh;' href='/') ikgron
-
-  //- a.navbar-brand(href='https://codeberg.org/parser/', target='_blank' class='align-left') 
-  //-   img(style='padding-left:', src='../images/test.png', width='32', height='32')
   
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon(style="color: white")
@@ -52,7 +53,4 @@ nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bot
         data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') More
         .dropdown-menu.dropdown-menu-end(style='right: 0; background-color: black;' aria-labelledby='navbarDropdown')
           a.dropdown-item(style='padding-left: 2vh;' href='/car') Car
-          .dropdown-divider
-          //- a.dropdown-item(style='padding-left: 2vh;' href='/checkers') Checkers
           //- .dropdown-divider
-          a.dropdown-item(style='padding-left: 2vh;' href='/connect4') Connect 4
