@@ -8,4 +8,4 @@
 ## Features
 
 - My Work
-- Info
+- About Me
