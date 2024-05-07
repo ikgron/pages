@@ -4,7 +4,7 @@ style.
     .navbar-brand,
     .dropdown-item {
     color: white;
-    font-size: 2.7vh;
+    font-size: ;
     }
     
     .nav-link:focus,
@@ -27,25 +27,25 @@ style.
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-
     
 
 nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bottom: 2px solid ${color};`)
 
-
-  a.navbar-brand(style='padding-left: 2vh;' href='/') ikgron
+  a.nav-link(style=`padding-left: 2vh; font-size: ${lfont};` href='/') ikgron
   
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon(style="color: white")
   #navbarNav.collapse.navbar-collapse
     ul.navbar-nav(style='margin-left: auto;')
-      a.navbar-brand(style='padding-left: 2vh;' href='/work') Work
-      a.navbar-brand(style='padding-left: 2vh;' href='/about') About
-      li.nav-item.dropdown(style='position: relative; margin-top: -0.2vw')
+      li.nav-item
+        a.nav-link(style=`padding-left: 2vh; font-size: ${lfont};` href='/work') Work
+      li.nav-item
+        a.nav-link(style=`padding-left: 2vh; font-size: ${lfont};` href='/about') About
+      li.nav-item.dropdown(style='position: relative')
 
-        a#navbarDropdown.nav-link.dropdown-toggle(style='padding-left: 2vh; padding-right: 2vh;' href='#' role='button'
+        a#navbarDropdown.nav-link.dropdown-toggle(style=`padding-left: 2vh; padding-right: 2vh; font-size: ${lfont}` href='#' role='button'
 
         data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') More
         .dropdown-menu.dropdown-menu-end(style='right: 0; background-color: black;' aria-labelledby='navbarDropdown')
-          a.dropdown-item(style='padding-left: 2vh;' href='/car') Car
+          a.dropdown-item(style=`padding-left: 2vh; font-size: ${lfont};` href='/car') Car
           //- .dropdown-divider
