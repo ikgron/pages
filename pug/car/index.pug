@@ -14,23 +14,23 @@ head
     h2.text-light(style=`margin-top: 1vh; font-size: ${sfont}; margin-left: 2vh`) - Satin Cashmere Metallic
     h2.text-light(style=`margin-top: 1vh; font-size: ${sfont}; margin-left: 2vh`) - 2GR-FE 3.5L V6 6 Speed Automatic with Overdrive
 
-    #imageCarousel.carousel.slide.mt-1(data-ride='carousel' data-interval='0')
+    #imageCarousel.carousel.slide.mt-1(data-ride='carousel' data-interval='5000')
         .carousel-inner
             //- Slide 1
             .carousel-item.active
                 .d-flex.justify-content-center.align-items-center(style='height: 55vh;')
-                    img.d-block.mx-auto(src='/images/car1.jpeg' alt='Car 1' style='max-width: 90%;')
+                    img.d-block.mx-auto(src='/images/car.jpg' alt='Car 1' style='max-width: 90%;')
             //- Slide 2
             .carousel-item
                 .d-flex.justify-content-center.align-items-center(style='height: 55vh;')
-                    img.d-block.mx-auto(src='/images/car1.jpeg' alt='Car 2' style='max-width: 90%;')
-            //- Slide 3
-            .carousel-item
-                .d-flex.justify-content-center.align-items-center(style='height: 55vh;')
-                    img.d-block.mx-auto(src='/images/car1.jpeg' alt='Car 3' style='max-width: 90%;')
+                    img.d-block.mx-auto(src='/images/car2.jpg' alt='Car 2' style='max-width: 90%;')
+            //- //- Slide 3
+            //- .carousel-item
+            //-     .d-flex.justify-content-center.align-items-center(style='height: 55vh;')
+            //-         img.d-block.mx-auto(src='/images/car.jpeg' alt='Car 3' style='max-width: 90%;')
 
 //- swipe through pictures
-//- script.
+script.
     var touchStartX = null;
     var intervalId = null;
 
