@@ -53,7 +53,7 @@
     
     
   </style>
-  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(14, 87, 237);"><a class="nav-link" style="padding-left: 2vh; font-size: 30px;" href="/">ikgron</a>
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid rgb(14, 87, 237);"><a class="nav-link" style="padding-left: 1.5vh; font-size: 30px;" href="/">ikgron</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" style="color: white"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav" style="margin-left: auto;">
@@ -66,8 +66,38 @@
     </div>
   </nav>
   <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; margin-left: 2vh">My Work</h1>
-  <h1 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">Check out my <a href="https://codeberg.org/parser/" target="_blank" style="text-decoration: underline; color: ${color};">Codeberg</a></h1>
+  <h1 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">- <a href="https://codeberg.org/parser/" target="_blank" style="text-decoration: underline; color: ${color};">Codeberg</a></h1>
+  <h1 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">- <a href="https://github.com/ikgron" target="_blank" style="text-decoration: underline; color: ${color};">Github</a></h1>
   <div style="border-bottom: 2px solid rgb(14, 87, 237); margin-top: 15vh;"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<footer class="footer fixed-bottom text-center" style="background-color: transparent; display: none;">
+  <div style="border-bottom: 2px solid rgb(14, 87, 237); margin-bottom: 1vh"></div>
+  <div>
+    <h1 class="text-light" style="display: inline; font-size: 20px; vertical-align: middle;">This page doesn't use cookies. Why would it?</h1>
+    <button class="btn btn-sm" type="button" onclick="hideFooter()" style="background-color: rgb(14, 87, 237); margin-left: 1vh; height: 20px1vh; vertical-align: middle; padding: 0 20px; line-height: 20px1vh;">OK</button>
+  </div>
+  <div style="margin-bottom: 1vh"></div>
+</footer>
+<script>
+  function hideFooter() {
+    // Hide footer
+    var footer = document.querySelector("footer");
+    footer.style.display = `none`;
+  
+    // Store the acknowledgement in local storage
+    localStorage.setItem("footerAcknowledged", "true");
+  }
+  
+  // Check if footer is acknowledged and hide it if they have
+  window.onload = function() {
+    var acknowledged = localStorage.getItem("footerAcknowledged");
+    if (!acknowledged) {
+        var footer = document.querySelector("footer");
+        footer.style.display = `block`
+    }
+  };
+  
+    
+</script>

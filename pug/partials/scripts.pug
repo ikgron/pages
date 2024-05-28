@@ -10,3 +10,31 @@
 
 script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+
+footer.footer.fixed-bottom.text-center(style=`background-color: transparent; display: none;`)
+  div(style=`border-bottom: 2px solid ${color}; margin-bottom: 1vh`)
+  div
+    h1.text-light(style=`display: inline; font-size: ${sfont}; vertical-align: middle;`) This page doesn't use cookies. Why would it?
+    button(type='button' class='btn btn-sm' onclick='hideFooter()' style=`background-color: ${color}; margin-left: 1vh; height: ${sfont+ `1vh`}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont + `1vh`};`) OK
+  div(style=`margin-bottom: 1vh`)
+
+script. 
+  function hideFooter() {
+    // Hide footer
+    var footer = document.querySelector("footer");
+    footer.style.display = `none`;
+
+    // Store the acknowledgement in local storage
+    localStorage.setItem("footerAcknowledged", "true");
+  }
+
+  // Check if footer is acknowledged and hide it if they have
+  window.onload = function() {
+    var acknowledged = localStorage.getItem("footerAcknowledged");
+    if (!acknowledged) {
+        var footer = document.querySelector("footer");
+        footer.style.display = `block`
+    }
+  };
+
+    
