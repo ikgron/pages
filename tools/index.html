@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<html lang="en"></html>
 <head>
-  <title>Car | ikgron</title>
+  <title>Home | ikgron</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/out.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/images/out.ico" style="width: 180px; height: 180px;">
@@ -22,6 +23,7 @@
   </style>
 </head>
 <div class="bg"></div>
+<div class="vignette"></div>
 <div class="content">
   <style>
     .nav-link,
@@ -60,70 +62,21 @@
         <li class="nav-item"><a class="nav-link" style="padding-left: 2vh; font-size: 30px;" href="/work">Work</a></li>
         <li class="nav-item"><a class="nav-link" style="padding-left: 2vh; font-size: 30px;" href="/about">About</a></li>
         <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" style="padding-left: 2vh; padding-right: 2vh; font-size: 30px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-          <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="padding-left: 2vh; font-size: 30px;" href="/car">Car</a></div>
+          <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="padding-left: 2vh; font-size: 30px;" href="/tools">Tools</a></div>
         </li>
       </ul>
     </div>
   </nav>
-  <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; margin-left: 2vh">Car</h1>
-  <h2 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">- 2010 Lexus ES350</h2>
-  <h2 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">- Satin Cashmere Metallic</h2>
-  <h2 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">- 2GR-FE 3.5L V6 6 Speed Automatic with Overdrive</h2>
-  <div class="carousel slide mt-1" id="imageCarousel" data-ride="carousel" data-interval="5000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="d-flex justify-content-center align-items-center" style="height: 55vh;"><img class="d-block mx-auto" src="/images/car.jpg" alt="Car 1" style="max-width: 90%;"></div>
-      </div>
-      <div class="carousel-item">
-        <div class="d-flex justify-content-center align-items-center" style="height: 55vh;"><img class="d-block mx-auto" src="/images/car2.jpg" alt="Car 2" style="max-width: 90%;"></div>
-      </div>
-    </div>
-  </div>
+  <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; margin-left: 2vh">Tools</h1>
+  <h1 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">Coming soon...</h1>
+  <div style="border-bottom: 2px solid rgb(14, 87, 237); margin-top: 15vh;"></div>
 </div>
-<script>
-  var touchStartX = null;
-  var intervalId = null;
-  
-  var carousel = $('#imageCarousel');
-  
-  $(document).ready(function () {
-  startCarouselInterval();
-  });
-  
-  function startCarouselInterval() {
-  intervalId = setInterval(function () {
-  carousel.carousel('next');
-  }, 4000);
-  }
-  
-  // wait for touch
-  carousel.on('touchstart', function (e) {
-  touchStartX = e.originalEvent.touches[0].clientX;
-  
-  // restart interval when swiped
-  clearInterval(intervalId);
-  });
-  
-  // wait for swipe end
-  carousel.on('touchend', function (e) {
-  var touchEndX = e.originalEvent.changedTouches[0].clientX;
-  if (touchStartX - touchEndX > 50) {
-  carousel.carousel('next');
-  } else if (touchStartX - touchEndX < -50) {
-  carousel.carousel('prev');
-  }
-  
-  // restart interval after swipe
-  startCarouselInterval();
-  });
-  
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <footer class="footer fixed-bottom text-center" style="background-color: transparent; display: none;">
   <div style="border-bottom: 2px solid rgb(14, 87, 237); margin-bottom: 1vh"></div>
   <div>
-    <h1 class="text-light" style="display: inline; font-size: 20px; vertical-align: middle;">This page doesn't use cookies. Why would it?</h1>
+    <h1 class="text-light" style="display: inline; font-size: 20px; vertical-align: middle;">This site doesn't use cookies. Why would it?</h1>
     <button class="btn btn-sm" type="button" onclick="hideFooter()" style="background-color: rgb(14, 87, 237); margin-left: 1vh; height: 20px1vh; vertical-align: middle; padding: 0 20px; line-height: 20px1vh;">OK</button>
   </div>
   <div style="margin-bottom: 1vh"></div>
