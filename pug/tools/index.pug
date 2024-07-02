@@ -4,22 +4,61 @@ html(lang="en")
 head
   title Home | ikgron
   include /partials/head.pug
+  style.
+    .btn {
+          background-color: black;
+          color: #{color}; 
+          border: 3px solid #{color};
+          transition: background-color 0.3s ease; 
+          margin-bottom: 4vh;
+          margin-left: 2vh;
+          margin-right: 2vh;
+          display: inline-block;
+      }
+
+      .btn-animate {
+          transition: transform 0.2s ease-in-out;
+      }
+      
+      .btn-animate:hover {
+          transform-origin: center;
+          background-color: #{color};
+          color: black;
+          border: 2px solid white;
+      }
+
+      .btn:focus,
+      .btn.focus, {
+        background-color: #{color};
+        color: black;
+        border: 2px solid white;
+      }
+      
   include /partials/styles.pug
+  
 
 .bg
 .vignette
 .content
   include /partials/navbar.pug
-  - const currentPage = 'home'
   
             
-  h1.text-light(style=`margin-top: 15vh; font-size: ${lfont}; margin-left: 2vh`) Tools
+  h1.text-light(style=`margin-top: 15vh; font-size: ${xlfont}; text-align: center;`) Tools
 
-  h1.text-light(style=`margin-top: 1vh; font-size: ${sfont}; margin-left: 2vh`) Coming soon...
+  .row
+    .col(style=`text-align: center; margin-top: 2vh`)
+      button.btn.btn-animate.btn-clickable(type="button" class="btn" style=`font-size: ${xlfont}; margin-top: 1vh;` onclick="window.location.href= `/tools/alphabetizer`") Alphabetizer
+      
+      //- button.btn.btn-animate.btn-clickable(type="button" class="btn" style=`font-size: ${xlfont};`) Button 2
+      
+      //- button.btn.btn-animate.btn-clickable(type="button" class="btn" style=`font-size: ${xlfont};`) Button 3  
+
+
+
 
   div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
 
 
-
-
 include /partials/scripts.pug
+
+

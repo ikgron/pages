@@ -15,7 +15,7 @@ footer.footer.fixed-bottom.text-center(style=`background-color: transparent; dis
   div(style=`border-bottom: 2px solid ${color}; margin-bottom: 1vh`)
   div
     h1.text-light(style=`display: inline; font-size: ${sfont}; vertical-align: middle;`) This site doesn't use cookies. Why would it?
-    button(type='button' class='btn btn-sm' onclick='hideFooter()' style=`background-color: ${color}; margin-left: 1vh; height: ${sfont+ `1vh`}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont + `1vh`};`) OK
+    button(type='button' class='btn btn-sm' onclick='hideFooter()' style=`color: white; background-color: ${color}; margin-left: 1vh; height: ${sfont+ `1vh`}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont + `1vh`};`) OK
   div(style=`margin-bottom: 1vh`)
 
 script. 
@@ -28,7 +28,7 @@ script.
     localStorage.setItem("footerAcknowledged", "true");
   }
 
-  // Check if footer is acknowledged and hide it if they have
+  // Check if footer is acknowledged and hide it if it is
   window.onload = function() {
     var acknowledged = localStorage.getItem("footerAcknowledged");
     if (!acknowledged) {
