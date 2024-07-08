@@ -26,9 +26,6 @@
           background-color: black;
           color: #0E57ED; 
           border: 2px solid #0E57ED;
-          margin-bottom: 4vh;
-          margin-left: 2vh;
-          margin-right: 2vh;
           display: inline-block;
       }
     
@@ -87,39 +84,49 @@
   <h1 class="text-light" style="margin-top: 15vh; font-size: 40px; text-align: center;">Tools</h1>
   <div class="row">
     <div class="col" style="text-align: center; margin-top: 2vh">
-      <button class="btn btn" type="button" style="font-size: 40px; margin-top: 1vh;" onclick="window.location.href= '/tools/alphabetizer'">Alphabetizer</button>
+      <button class="btn btn" type="button" style="font-size: 40px;" onclick="window.location.href= '/tools/alphabetizer'">Alphabetizer</button>
     </div>
   </div>
-  <div style="border-bottom: 2px solid #0E57ED; margin-top: 15vh;"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<footer class="footer fixed-bottom text-center" style="background-color: transparent; display: none;">
-  <div style="border-bottom: 2px solid #0E57ED; margin-bottom: 1vh"></div>
-  <div>
-    <h1 class="text-light" style="display: inline; font-size: 20px; vertical-align: middle;">This site doesn't use cookies. Why would it?</h1>
-    <button class="btn btn-sm" type="button" onclick="hideFooter()" style="color: white; background-color: #0E57ED; margin-left: 1vh; height: 20px1vh; vertical-align: middle; padding: 0 20px; line-height: 20px1vh;">OK</button>
-  </div>
-  <div style="margin-bottom: 1vh"></div>
-</footer>
+<div class="footer fixed-bottom text-centered" id="line" style="border-bottom: 2px solid #0E57ED; margin-bottom: 3.8vh;">
+  <footer class="footer fixed-bottom text-center" style="background-color: transparent;">
+    <div style="border-bottom: 2px solid ${color}; margin-bottom: 1vh;"></div>
+    <div>
+      <h1 class="text-light" style="display: inline; font-size: 20px; vertical-align: middle;">This site doesn't use cookies. Why would it?</h1>
+      <button class="btn btn-sm" type="button" style="color: white; background-color: #0E57ED; margin-left: 1vh; height: 20px1vh; vertical-align: middle; padding: 0 20px; line-height: 20px1vh;" onclick="hideFooter()">OK</button>
+    </div>
+    <div style="margin-bottom: 1vh;"></div>
+  </footer>
+</div>
 <script>
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector(`footer`);
-    footer.style.display = `none`;
+    var footer = document.querySelector('.footer.fixed-bottom.text-center');
+    footer.style.display = 'none';
   
-    // Store the acknowledgement in local storage
-    localStorage.setItem(`footerAcknowledged`, `true`);
+    var line = document.getElementById('line');
+    line.style.display = 'block';
+  
+    localStorage.setItem('footerAcknowledged', 'true');
   }
   
-  // Check if footer is acknowledged and hide it if it is
   window.onload = function() {
-    var acknowledged = localStorage.getItem(`footerAcknowledged`);
-    if (!acknowledged) {
-        var footer = document.querySelector(`footer`);
-        footer.style.display = `block`
+    var acknowledged = localStorage.getItem('footerAcknowledged');
+    if (acknowledged) {
+      var footer = document.querySelector('.footer.fixed-bottom.text-center');
+      footer.style.display = 'none';
+  
+      var line = document.getElementById('line');
+      line.style.display = 'block';
     }
   };
+  
+  
+  
+  
+  
   
   
   

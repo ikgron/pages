@@ -41,32 +41,7 @@ function updateSortedOutput(inputValue) {
     outputBox.value = outputValue;
 
 
-    document.getElementById("output").onclick = function () {
-        document.getElementById("output").select();
-        document.execCommand('copy');
 
-        notify();
-    }
-
-    function notify() {
-        var copiedText = "Copied to clipboard!";
-
-        var outputBox = document.getElementById("output");
-
-        if (outputBox.value == "") {
-            return
-        } else {
-            var save = outputBox.value;
-
-            outputBox.value = copiedText;
-
-            setTimeout(function () {
-                setTimeout(function () {
-                    outputBox.value = save;
-                }, 500);
-            }, 200);
-        }
-    }
 }
 
 function clearInput() {
@@ -80,6 +55,46 @@ function clearOutput() {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('output').value = ''
-})
+var copyButton = document.getElementById("copyButton");
+var outputElement = document.getElementById("output");
+
+copyButton.onclick = function () {
+    outputElement.focus();
+    outputElement.select();
+    document.execCommand('copy');
+    clearSelection();
+
+
+
+    notify();
+};
+
+function notify() {
+    var copiedText = "Copied!";
+    copyButton.innerHTML = copiedText;
+
+    setTimeout(function () {
+        copyButton.innerHTML = "Copy";
+    }, 1000);
+}
+
+function clearSelection() {
+    var sel;
+    if ( (sel = document.selection) && sel.empty ) {
+        sel.empty();
+    } else {
+        if (window.getSelection) {
+            window.getSelection().removeAllRanges();
+        }
+        var activeEl = document.activeElement;
+        if (activeEl) {
+            var tagName = activeEl.nodeName.toLowerCase();
+            if ( tagName == "textarea" ||
+                    (tagName == "input" && activeEl.type == "text") ) {
+                // Collapse the selection to the end
+                activeEl.selectionStart = activeEl.selectionEnd;
+            }
+        }
+    }
+}
+

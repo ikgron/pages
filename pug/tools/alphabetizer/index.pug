@@ -22,22 +22,23 @@ head
   .row(style="margin-left: 1vh; margin-right: 1vh;")
     .col-md-7.mx-auto
       h1.text-light(style=`margin-top: 1vh; font-size: ${lfont};`) Input
+      div(id=`inputContainer`)
       textarea.form-control.placeholder1(id=`input`, placeholder=`Separate by semicolons (;) or new lines`, style=`background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none`, oninput=`sort()`)
- 
+
 
   div(style=`text-align: center`)
-    button.btn.btn-animate.btn-clickable(type=`button` class=`btn` style=`font-size: ${lfont}; margin-top: 2vh;` onclick=`clearInput()`) Clear
+    button.btn.btn-animate.btn-clickable(type=`button` class=`btn` style=`font-size: ${lfont}; margin-top: 1vh;` onclick=`clearInput()`) Clear
 
 
   .row(style= "margin-left: 1vh; margin-right: 1vh;")
     .col-md-7.mx-auto
       h1.text-light(style=`margin-top: 0vh; font-size: ${lfont};`) Output
-      textarea.form-control.placeholder1(id=`output`, placeholder=`Click to copy`, style=`background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default`, readonly)
+      div(id=`outputContainer`)
+      textarea.form-control.placeholder1(id=`output`, placeholder=`Output appears here`, style=`background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default`, readonly)
 
+  div(style=`text-align: center`)
+    button.btn.btn-animate.btn-clickable(id="copyButton" type=`button` class=`btn` style=`font-size: ${lfont}; margin-top: 1vh;` onclick=`copyOutput()`) Copy
 
-
-
-  div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
 
 script(src='/pug/tools/alphabetizer/scripts.js')
 
