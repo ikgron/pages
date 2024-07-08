@@ -11,11 +11,11 @@
 script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
 
-div.footer.fixed-bottom.text-centered#line(style=`border-bottom: 2px solid ${color}; margin-bottom: 3.8vh;`)
+div.footer.fixed-bottom.text-centered#line(style=`border-bottom: 2px solid ${color}; margin-bottom: 55pt;`)
   footer.footer.fixed-bottom.text-center(style='background-color: transparent;')
     div(style='border-bottom: 2px solid ${color}; margin-bottom: 1vh;')
     div
-      h1.text-light(style=`display: inline; font-size: ${sfont}; vertical-align: middle;`) This site doesn't use cookies. Why would it?
+      h1.text-light(style=`display: inline; font-size: ${sfont}; vertical-align: middle; padding-bottom: 0.5vh`) This site doesn't use cookies. Why would it?
       button.btn.btn-sm(type='button', style=`color: white; background-color: ${color}; margin-left: 1vh; height: ${sfont + 1}vh; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont + 1}vh;`, onclick='hideFooter()') OK
     div(style='margin-bottom: 1vh;')
 
@@ -23,7 +23,7 @@ script.
   function hideFooter() {
     // Hide footer
     var footer = document.querySelector('.footer.fixed-bottom.text-center');
-    footer.style.display = 'none';
+    footer.style.display = 'hidden';
 
     var line = document.getElementById('line');
     line.style.display = 'block';

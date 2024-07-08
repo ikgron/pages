@@ -1,11 +1,11 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<div class="footer fixed-bottom text-centered" id="line" style="border-bottom: 2px solid undefined; margin-bottom: 3.8vh;">
+<div class="footer fixed-bottom text-centered" id="line" style="border-bottom: 2px solid undefined; margin-bottom: 55pt;">
   <footer class="footer fixed-bottom text-center" style="background-color: transparent;">
     <div style="border-bottom: 2px solid ${color}; margin-bottom: 1vh;"></div>
     <div>
-      <h1 class="text-light" style="display: inline; font-size: undefined; vertical-align: middle;">This site doesn't use cookies. Why would it?</h1>
+      <h1 class="text-light" style="display: inline; font-size: undefined; vertical-align: middle; padding-bottom: 0.5vh">This site doesn't use cookies. Why would it?</h1>
       <button class="btn btn-sm" type="button" style="color: white; background-color: undefined; margin-left: 1vh; height: NaNvh; vertical-align: middle; padding: 0 undefined; line-height: NaNvh;" onclick="hideFooter()">OK</button>
     </div>
     <div style="margin-bottom: 1vh;"></div>
@@ -15,7 +15,7 @@
   function hideFooter() {
     // Hide footer
     var footer = document.querySelector('.footer.fixed-bottom.text-center');
-    footer.style.display = 'none';
+    footer.style.display = 'hidden';
   
     var line = document.getElementById('line');
     line.style.display = 'block';
