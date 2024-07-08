@@ -21,6 +21,29 @@
         -ms-overflow-style: none; /* IE, Edge */
         scrollbar-width: none; /* Firefox */
     }
+    
+    .btn {
+          background-color: black;
+          color: #0E57ED; 
+          border: 2px solid #0E57ED;
+          margin-bottom: 4vh;
+          margin-left: 2vh;
+          margin-right: 2vh;
+          display: inline-block;
+      }
+    
+      .btn:hover {
+          transform-origin: center;
+          color: #0E57ED;
+          border: 2px solid white;
+      }
+  </style>
+  <style>
+    .placeholder1::placeholder {
+      color: #999;
+    }
+    
+    
   </style>
 </head>
 <div class="bg"></div>
@@ -50,7 +73,7 @@
     }
     
     .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
     }
     
     
@@ -68,10 +91,25 @@
       </ul>
     </div>
   </nav>
-  <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; margin-left: 2vh">Coming soon...</h1>
+  <h1 class="text-light" style="margin-top: 8vh; font-size: 40px; text-align: center;">Alphabetizer</h1>
+  <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
+    <div class="col-md-7 mx-auto">
+      <h1 class="text-light" style="margin-top: 1vh; font-size: 30px;">Input</h1>
+      <textarea class="form-control placeholder1" id="input" placeholder="Separate by semicolons (;) or new lines" style="background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none" oninput="sort()"></textarea>
+    </div>
+  </div>
+  <div style="text-align: center">
+    <button class="btn btn-animate btn-clickable btn" type="button" style="font-size: 30px; margin-top: 2vh;" onclick="clearInput()">Clear</button>
+  </div>
+  <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
+    <div class="col-md-7 mx-auto">
+      <h1 class="text-light" style="margin-top: 0vh; font-size: 30px;">Output</h1>
+      <textarea class="form-control placeholder1" id="output" placeholder="Click to copy" style="background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default" readonly></textarea>
+    </div>
+  </div>
   <div style="border-bottom: 2px solid #0E57ED; margin-top: 15vh;"></div>
-  <div></div>
 </div>
+<script src="/pug/tools/alphabetizer/scripts.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <footer class="footer fixed-bottom text-center" style="background-color: transparent; display: none;">
@@ -85,21 +123,24 @@
 <script>
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector("footer");
+    var footer = document.querySelector(`footer`);
     footer.style.display = `none`;
   
     // Store the acknowledgement in local storage
-    localStorage.setItem("footerAcknowledged", "true");
+    localStorage.setItem(`footerAcknowledged`, `true`);
   }
   
   // Check if footer is acknowledged and hide it if it is
   window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
     if (!acknowledged) {
-        var footer = document.querySelector("footer");
+        var footer = document.querySelector(`footer`);
         footer.style.display = `block`
     }
   };
+  
+  
+  
   
     
 </script>

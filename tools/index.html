@@ -9,37 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <link href="https://fonts.bunny.net/css?family=aldrich" rel="stylesheet">
   <style>
-    .btn {
-          background-color: black;
-          color: #0E57ED; 
-          border: 3px solid #0E57ED;
-          transition: background-color 0.3s ease; 
-          margin-bottom: 4vh;
-          margin-left: 2vh;
-          margin-right: 2vh;
-          display: inline-block;
-      }
-    
-      .btn-animate {
-          transition: transform 0.2s ease-in-out;
-      }
-      
-      .btn-animate:hover {
-          transform-origin: center;
-          background-color: #0E57ED;
-          color: black;
-          border: 2px solid white;
-      }
-    
-      .btn:focus,
-      .btn.focus, {
-        background-color: #0E57ED;
-        color: black;
-        border: 2px solid white;
-      }
-      
-  </style>
-  <style>
     body {
         background: black;
         font-family: 'aldrich', monospace;
@@ -52,6 +21,22 @@
         -ms-overflow-style: none; /* IE, Edge */
         scrollbar-width: none; /* Firefox */
     }
+    
+    .btn {
+          background-color: black;
+          color: #0E57ED; 
+          border: 2px solid #0E57ED;
+          margin-bottom: 4vh;
+          margin-left: 2vh;
+          margin-right: 2vh;
+          display: inline-block;
+      }
+    
+      .btn:hover {
+          transform-origin: center;
+          color: #0E57ED;
+          border: 2px solid white;
+      }
   </style>
 </head>
 <div class="bg"></div>
@@ -81,7 +66,7 @@
     }
     
     .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
     }
     
     
@@ -102,7 +87,7 @@
   <h1 class="text-light" style="margin-top: 15vh; font-size: 40px; text-align: center;">Tools</h1>
   <div class="row">
     <div class="col" style="text-align: center; margin-top: 2vh">
-      <button class="btn btn-animate btn-clickable btn" type="button" style="font-size: 40px; margin-top: 1vh;" onclick="window.location.href= `/tools/alphabetizer`">Alphabetizer</button>
+      <button class="btn btn" type="button" style="font-size: 40px; margin-top: 1vh;" onclick="window.location.href= '/tools/alphabetizer'">Alphabetizer</button>
     </div>
   </div>
   <div style="border-bottom: 2px solid #0E57ED; margin-top: 15vh;"></div>
@@ -120,21 +105,24 @@
 <script>
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector("footer");
+    var footer = document.querySelector(`footer`);
     footer.style.display = `none`;
   
     // Store the acknowledgement in local storage
-    localStorage.setItem("footerAcknowledged", "true");
+    localStorage.setItem(`footerAcknowledged`, `true`);
   }
   
   // Check if footer is acknowledged and hide it if it is
   window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
     if (!acknowledged) {
-        var footer = document.querySelector("footer");
+        var footer = document.querySelector(`footer`);
         footer.style.display = `block`
     }
   };
+  
+  
+  
   
     
 </script>

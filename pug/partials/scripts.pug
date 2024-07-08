@@ -2,11 +2,11 @@
 //-   .container-fluid
 //-     .row
 //-       .col-12
-//-         div(style="border-bottom: 2px solid blue;")
+//-         div(style=`border-bottom: 2px solid blue;`)
 //-     .row
 //-       .col-12.d-flex.justify-content-center
-//-         div(style="background-color: black; text-align: center; padding: 10px;")
-//-           a(href="#") Contact
+//-         div(style=`background-color: black; text-align: center; padding: 10px;`)
+//-           a(href=`#`) Contact
 
 script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
@@ -21,20 +21,23 @@ footer.footer.fixed-bottom.text-center(style=`background-color: transparent; dis
 script. 
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector("footer");
+    var footer = document.querySelector(`footer`);
     footer.style.display = `none`;
 
     // Store the acknowledgement in local storage
-    localStorage.setItem("footerAcknowledged", "true");
+    localStorage.setItem(`footerAcknowledged`, `true`);
   }
 
   // Check if footer is acknowledged and hide it if it is
   window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
     if (!acknowledged) {
-        var footer = document.querySelector("footer");
+        var footer = document.querySelector(`footer`);
         footer.style.display = `block`
     }
   };
 
+
+
+  
     

@@ -12,21 +12,24 @@
 <script>
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector("footer");
+    var footer = document.querySelector(`footer`);
     footer.style.display = `none`;
   
     // Store the acknowledgement in local storage
-    localStorage.setItem("footerAcknowledged", "true");
+    localStorage.setItem(`footerAcknowledged`, `true`);
   }
   
   // Check if footer is acknowledged and hide it if it is
   window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
     if (!acknowledged) {
-        var footer = document.querySelector("footer");
+        var footer = document.querySelector(`footer`);
         footer.style.display = `block`
     }
   };
+  
+  
+  
   
     
 </script>
