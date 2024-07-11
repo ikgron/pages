@@ -88,71 +88,53 @@
       </ul>
     </div>
   </nav>
-  <h1 class="text-light" style="margin-top: 8vh; font-size: 40px; text-align: center;">Alphabetizer</h1>
+  <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; text-align: center;">Alphabetizer</h1>
   <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
     <div class="col-md-7 mx-auto">
-      <h1 class="text-light" style="margin-top: 1vh; font-size: 30px;">Input</h1>
+      <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Input</h1>
       <div id="inputContainer"></div>
       <textarea class="form-control placeholder1" id="input" placeholder="Separate by semicolons (;) or new lines" style="background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none" oninput="sort()"></textarea>
     </div>
   </div>
   <div style="text-align: center">
-    <button class="btn btn-animate btn-clickable btn" type="button" style="font-size: 30px; margin-top: 1vh;" onclick="clearInput()">Clear</button>
+    <button class="btn btn-animate btn-clickable btn" type="button" style="font-size: 20px; margin-top: 1vh;" onclick="clearInput()">Clear</button>
   </div>
   <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
     <div class="col-md-7 mx-auto">
-      <h1 class="text-light" style="margin-top: 0vh; font-size: 30px;">Output</h1>
+      <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Output</h1>
       <div id="outputContainer"></div>
       <textarea class="form-control placeholder1" id="output" placeholder="Output appears here" style="background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default" readonly></textarea>
     </div>
   </div>
   <div style="text-align: center">
-    <button class="btn btn-animate btn-clickable btn" id="copyButton" type="button" style="font-size: 30px; margin-top: 1vh;" onclick="copyOutput()">Copy</button>
+    <button class="btn btn-animate btn-clickable btn" id="copyButton" type="button" style="font-size: 20px; margin-top: 1vh; margin-bottom: 40vh;" onclick="copyOutput()">Copy</button>
   </div>
 </div>
 <script src="/pug/tools/alphabetizer/scripts.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<div class="footer fixed-bottom text-centered" id="line" style="border-bottom: 2px solid #0E57ED; margin-bottom: 55pt;">
-  <footer class="footer fixed-bottom text-center" style="background-color: transparent;">
-    <div style="border-bottom: 2px solid ${color}; margin-bottom: 1vh;"></div>
-    <div>
-      <h1 class="text-light" style="display: inline; font-size: 20px; vertical-align: middle; padding-bottom: 0.5vh">This site doesn't use cookies. Why would it?</h1>
-      <button class="btn btn-sm" type="button" style="color: white; background-color: #0E57ED; margin-left: 1vh; height: 20px1vh; vertical-align: middle; padding: 0 20px; line-height: 20px1vh;" onclick="hideFooter()">OK</button>
-    </div>
-    <div style="margin-bottom: 1vh;"></div>
-  </footer>
-</div>
+<footer class="footer fixed-bottom text-center" style="background-color: black; display: none;">
+  <div style="border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;">
+    <h1 class="text-light" style="font-size: 20px; vertical-align: middle; display: inline;">This site doesn't use cookies. Why would it?</h1>
+    <button class="btn btn-sm" type="button" onclick="hideFooter()" style="margin-left: 1vh; height: 20px0.5vh; vertical-align: middle; padding: 0 20px; line-height: 20px;">OK</button>
+  </div>
+</footer>
 <script>
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector('.footer.fixed-bottom.text-center');
-    footer.style.display = 'hidden';
+    var footer = document.querySelector("footer");
+    footer.style.display = `none`;
   
-    var line = document.getElementById('line');
-    line.style.display = 'block';
-  
-    localStorage.setItem('footerAcknowledged', 'true');
+    // Store the acknowledgement in local storage
+    localStorage.setItem("footerAcknowledged", "true");
   }
   
+  // Check if footer is acknowledged and hide it if they have
   window.onload = function() {
-    var acknowledged = localStorage.getItem('footerAcknowledged');
-    if (acknowledged) {
-      var footer = document.querySelector('.footer.fixed-bottom.text-center');
-      footer.style.display = 'none';
-  
-      var line = document.getElementById('line');
-      line.style.display = 'block';
+    var acknowledged = localStorage.getItem("footerAcknowledged");
+    if (!acknowledged) {
+        var footer = document.querySelector("footer");
+        footer.style.display = `block`
     }
   };
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
 </script>

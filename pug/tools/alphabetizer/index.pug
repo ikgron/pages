@@ -17,27 +17,28 @@ head
 .content
   include /partials/navbar.pug  
             
-  h1.text-light(style=`margin-top: 8vh; font-size: ${xlfont}; text-align: center;`) Alphabetizer
+  h1.text-light(style=`margin-top: 15vh; font-size: ${lfont}; text-align: center;`) Alphabetizer
 
   .row(style="margin-left: 1vh; margin-right: 1vh;")
     .col-md-7.mx-auto
-      h1.text-light(style=`margin-top: 1vh; font-size: ${lfont};`) Input
+      h1.text-light(style=`margin-top: 0vh; font-size: ${sfont};`) Input
       div(id=`inputContainer`)
       textarea.form-control.placeholder1(id=`input`, placeholder=`Separate by semicolons (;) or new lines`, style=`background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none`, oninput=`sort()`)
 
 
   div(style=`text-align: center`)
-    button.btn.btn-animate.btn-clickable(type=`button` class=`btn` style=`font-size: ${lfont}; margin-top: 1vh;` onclick=`clearInput()`) Clear
+    button.btn.btn-animate.btn-clickable(type=`button` class=`btn` style=`font-size: ${sfont}; margin-top: 1vh;` onclick=`clearInput()`) Clear
 
 
   .row(style= "margin-left: 1vh; margin-right: 1vh;")
     .col-md-7.mx-auto
-      h1.text-light(style=`margin-top: 0vh; font-size: ${lfont};`) Output
+      h1.text-light(style=`margin-top: 0vh; font-size: ${sfont};`) Output
       div(id=`outputContainer`)
       textarea.form-control.placeholder1(id=`output`, placeholder=`Output appears here`, style=`background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default`, readonly)
 
   div(style=`text-align: center`)
-    button.btn.btn-animate.btn-clickable(id="copyButton" type=`button` class=`btn` style=`font-size: ${lfont}; margin-top: 1vh;` onclick=`copyOutput()`) Copy
+    button.btn.btn-animate.btn-clickable(id="copyButton" type=`button` class=`btn` style=`font-size: ${sfont}; margin-top: 1vh; margin-bottom: 40vh;` onclick=`copyOutput()`) Copy
+
 
 
 script(src='/pug/tools/alphabetizer/scripts.js')

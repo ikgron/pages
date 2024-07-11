@@ -2,52 +2,36 @@
 //-   .container-fluid
 //-     .row
 //-       .col-12
-//-         div(style=`border-bottom: 2px solid blue;`)
+//-         div(style="border-bottom: 2px solid blue;")
 //-     .row
 //-       .col-12.d-flex.justify-content-center
-//-         div(style=`background-color: black; text-align: center; padding: 10px;`)
-//-           a(href=`#`) Contact
+//-         div(style="background-color: black; text-align: center; padding: 10px;")
+//-           a(href="#") Contact
 
 script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
 
-div.footer.fixed-bottom.text-centered#line(style=`border-bottom: 2px solid ${color}; margin-bottom: 55pt;`)
-  footer.footer.fixed-bottom.text-center(style='background-color: transparent;')
-    div(style='border-bottom: 2px solid ${color}; margin-bottom: 1vh;')
-    div
-      h1.text-light(style=`display: inline; font-size: ${sfont}; vertical-align: middle; padding-bottom: 0.5vh`) This site doesn't use cookies. Why would it?
-      button.btn.btn-sm(type='button', style=`color: white; background-color: ${color}; margin-left: 1vh; height: ${sfont + 1}vh; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont + 1}vh;`, onclick='hideFooter()') OK
-    div(style='margin-bottom: 1vh;')
+footer.footer.fixed-bottom.text-center(style=`background-color: black; display: none;`)
+  div(style=`border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;`)
+    h1.text-light(style=`font-size: ${sfont}; vertical-align: middle; display: inline;`) This site doesn't use cookies. Why would it?
+    button(type='button' class='btn btn-sm' onclick='hideFooter()' style=`margin-left: 1vh; height: ${sfont + '0.5vh'}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont};`) OK
 
-script.
+
+script. 
   function hideFooter() {
     // Hide footer
-    var footer = document.querySelector('.footer.fixed-bottom.text-center');
-    footer.style.display = 'hidden';
+    var footer = document.querySelector("footer");
+    footer.style.display = `none`;
 
-    var line = document.getElementById('line');
-    line.style.display = 'block';
-
-    localStorage.setItem('footerAcknowledged', 'true');
+    // Store the acknowledgement in local storage
+    localStorage.setItem("footerAcknowledged", "true");
   }
 
+  // Check if footer is acknowledged and hide it if they have
   window.onload = function() {
-    var acknowledged = localStorage.getItem('footerAcknowledged');
-    if (acknowledged) {
-      var footer = document.querySelector('.footer.fixed-bottom.text-center');
-      footer.style.display = 'none';
-
-      var line = document.getElementById('line');
-      line.style.display = 'block';
+    var acknowledged = localStorage.getItem("footerAcknowledged");
+    if (!acknowledged) {
+        var footer = document.querySelector("footer");
+        footer.style.display = `block`
     }
   };
-
-
-
-
-
-
-
-
-  
-    
