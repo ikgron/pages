@@ -47,12 +47,6 @@ function updateSortedOutput(inputValue) {
 function clearInput() {
     document.getElementById('input').value = ''
     sort();
-    // setTimeout(function () {
-    //     clearButton.style.pointerEvents = "none";
-    //     clearButton.addEventListener("mouseout", () => {
-    //         clearButton.style.pointerEvents = "auto";
-    //     })
-    // }, 1000);
 }
 
 function clearOutput() {
@@ -75,17 +69,29 @@ copyButton.onclick = function () {
     notify();
 };
 
+let timeoutId;
+
 function notify() {
+    var copyButton = document.getElementById('copyButton'); 
     var copiedText = "Copied!";
+    
+    clearTimeout(timeoutId);
+
     copyButton.innerHTML = copiedText;
 
-    setTimeout(function () {
+    timeoutId = setTimeout(function () {
         copyButton.innerHTML = "Copy";
-    //     copyButton.style.pointerEvents = "none";
-    //     copyButton.addEventListener("mouseout", () => {
-    //         copyButton.style.pointerEvents = "auto";
-    //     })
     }, 1000);
+
+    copyButton.addEventListener("click", function() {
+        clearTimeout(timeoutId);
+
+        copyButton.innerHTML = copiedText;
+
+        timeoutId = setTimeout(function () {
+            copyButton.innerHTML = "Copy";
+        }, 1000);
+    });
 }
 
 function clearSelection() {
@@ -101,7 +107,6 @@ function clearSelection() {
             var tagName = activeEl.nodeName.toLowerCase();
             if (tagName == "textarea" ||
                 (tagName == "input" && activeEl.type == "text")) {
-                // Collapse the selection to the end
                 activeEl.selectionStart = activeEl.selectionEnd;
             }
         }
