@@ -71,6 +71,8 @@
     
     .navbar-toggler-icon {
     background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
+    -webkit-filter: brightness(400);
+    filter: brightness(400);
     }
     
     
@@ -97,7 +99,7 @@
     </div>
   </div>
   <div style="text-align: center">
-    <button class="btn btn-animate btn-clickable btn" type="button" style="font-size: 20px; margin-top: 1vh;" onclick="clearInput()">Clear</button>
+    <button class="btn btn-animate btn-clickable btn" id="clearButton" type="button" style="font-size: 20px; margin-top: 1vh;" onclick="clearInput()">Clear</button>
   </div>
   <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
     <div class="col-md-7 mx-auto">
