@@ -1,28 +1,40 @@
 
 <style>
-  body {
-      background: black;
-      font-family: 'aldrich', monospace;
-  }
+    body {
+        background: black;
+        font-family: 'aldrich', monospace;
+    }
+    
+    html {
+        ::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+        }
+        -ms-overflow-style: none; /* IE, Edge */
+        scrollbar-width: none; /* Firefox */
+    }
   
-  html {
-      ::-webkit-scrollbar {
-          display: none; /* Chrome, Safari */
+    .btn {
+          background-color: black;
+          color: #0E57ED; 
+          border: 2px solid #0E57ED;
+          display: inline-block;
       }
-      -ms-overflow-style: none; /* IE, Edge */
-      scrollbar-width: none; /* Firefox */
+  
+    //-   .btn:hover {
+    //-       transform-origin: center;
+    //-       color: #0E57ED;
+    //-       border: 2px solid white;
+    //-   }
+  
+      @media (hover: hover) {
+        .btn:hover {
+            transform-origin: center;
+            color: #0E57ED;
+            border: 2px solid white;
+        }
   }
   
-  .btn {
-        background-color: black;
-        color: #0E57ED; 
-        border: 2px solid #0E57ED;
-        display: inline-block;
-    }
+    
   
-    .btn:hover {
-        transform-origin: center;
-        color: #0E57ED;
-        border: 2px solid white;
-    }
+    
 </style>

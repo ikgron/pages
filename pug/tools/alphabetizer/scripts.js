@@ -47,12 +47,12 @@ function updateSortedOutput(inputValue) {
 function clearInput() {
     document.getElementById('input').value = ''
     sort();
-    setTimeout(function () {
-        clearButton.style.pointerEvents = "none";
-        clearButton.addEventListener("mouseout", () => {
-            clearButton.style.pointerEvents = "auto";
-        })
-    }, 1000);
+    // setTimeout(function () {
+    //     clearButton.style.pointerEvents = "none";
+    //     clearButton.addEventListener("mouseout", () => {
+    //         clearButton.style.pointerEvents = "auto";
+    //     })
+    // }, 1000);
 }
 
 function clearOutput() {
@@ -81,10 +81,10 @@ function notify() {
 
     setTimeout(function () {
         copyButton.innerHTML = "Copy";
-        copyButton.style.pointerEvents = "none";
-        copyButton.addEventListener("mouseout", () => {
-            copyButton.style.pointerEvents = "auto";
-        })
+    //     copyButton.style.pointerEvents = "none";
+    //     copyButton.addEventListener("mouseout", () => {
+    //         copyButton.style.pointerEvents = "auto";
+    //     })
     }, 1000);
 }
 
