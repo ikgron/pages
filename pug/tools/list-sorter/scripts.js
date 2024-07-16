@@ -1,38 +1,38 @@
-let prevInputLength = 0;
+let prevInput = 0;
 
 function sort() {
-    var inputBox = document.getElementById('input');
+    var inputBox = document.getElementById(`input`);
 
     var inputValue = inputBox.value.trim();
 
-    if (inputValue.length < prevInputLength) {
+    if (inputValue.length < prevInput) {
         updateSortedOutput(inputValue);
     } else {
         updateSortedOutput(inputValue);
     }
 
-    prevInputLength = inputValue.length;
+    prevInput = inputValue.length;
 }
 
 function updateSortedOutput(inputValue) {
 
     var items;
-    var sortMethod = document.getElementById('sortMethod').value;
+    var sortMethod = document.getElementById(`sortMethod`).value;
     var reversed = document.getElementById(`reverseCheckbox`).checked;
 
-    if (inputValue.includes('\n')) {
-        items = inputValue.split('\n');
-    } else if (inputValue.includes(';')) {
-        items = inputValue.split(';');
+    if (inputValue.includes(`\n`)) {
+        items = inputValue.split(`\n`);
+    } else if (inputValue.includes(`;`)) {
+        items = inputValue.split(`;`);
     } else {
         items = [inputValue];
     }
 
-    items = items.map(item => item.trim().replace(/^(\s*-\s*\[\s*([xX]|\s)*\]\s*)/, '')).filter(item => item !== '');
-    
-    if (sortMethod === 'alphabetical') {
+    items = items.map(item => item.trim().replace(/^(\s*-\s*\[\s*([xX]|\s)*\]\s*)/, ``)).filter(item => item !== ``);
+
+    if (sortMethod === `alphabetical`) {
         items.sort(Intl.Collator().compare);
-    } else if (sortMethod === 'length') {
+    } else if (sortMethod === `length`) {
         items.sort((a, b) => a.length - b.length);
     }
 
@@ -42,25 +42,25 @@ function updateSortedOutput(inputValue) {
 
 
     var outputValue;
-    if (inputValue.includes('\n')) {
-        outputValue = items.join('\n');
-    } else if (inputValue.includes(';')) {
-        outputValue = items.join('; ');
+    if (inputValue.includes(`\n`)) {
+        outputValue = items.join(`\n`);
+    } else if (inputValue.includes(`;`)) {
+        outputValue = items.join(`; `);
     } else {
-        outputValue = items.join('');
+        outputValue = items.join(``);
     }
 
-    var outputBox = document.getElementById('output');
+    var outputBox = document.getElementById(`output`);
     outputBox.value = outputValue;
 }
 
 function clearInput() {
-    document.getElementById('input').value = ''
+    document.getElementById(`input`).value = ``
     sort();
 }
 
 function clearOutput() {
-    document.getElementById('output').value = ''
+    document.getElementById(`output`).value = ``
 }
 
 
@@ -71,18 +71,16 @@ var outputElement = document.getElementById("output");
 copyButton.onclick = function () {
     outputElement.focus();
     outputElement.select();
-    document.execCommand('copy');
+    document.execCommand(`copy`);
+
     clearSelection();
-
-
-
     notify();
 };
 
 let timeoutId;
 
 function notify() {
-    var copyButton = document.getElementById('copyButton');
+    var copyButton = document.getElementById(`copyButton`);
     var copiedText = "Copied!";
 
     clearTimeout(timeoutId);

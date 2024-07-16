@@ -22,6 +22,11 @@
         scrollbar-width: none; /* Firefox */
     }
     
+    .placeholder1::placeholder {
+        color: #999;
+      }
+    
+    
     .btn.bttn {
         background-color: black;
         color: #0E57ED; 
@@ -42,43 +47,39 @@
         border: 2px outset grey;
     
     }
-  </style>
-</head>
-<div class="bg"></div>
-<div class="vignette"></div>
-<div class="content">
-  <style>
+    
     .nav-link,
     .navbar-brand,
     .dropdown-item {
-    color: white;
+        color: white;
     }
     
     .nav-link:focus,
     .nav-link:hover,
     .navbar-brand:hover {
-    color: #0E57ED;
-    text-decoration: underline; 
+        color: #0E57ED;
+        text-decoration: underline; 
     }
     
     .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
+        display: block;
     }
     
     .dropdown-item:hover {
-    background-color: #0E57ED;
-    color: white;
+        background-color: #0E57ED;
+        color: white;
     }
     
     .navbar-toggler-icon {
-    background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
-    -webkit-filter: brightness(400);
-    filter: brightness(400);
+        background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
+        -webkit-filter: brightness(400);
+        filter: brightness(400);
     }
-    
-    
-    
   </style>
+</head>
+<div class="bg"></div>
+<div class="vignette"></div>
+<div class="content">
   <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid #0E57ED;"><a class="nav-link" style="padding-left: 1.5vh; font-size: 30px;" href="/">ikgron</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" style="color: white"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">

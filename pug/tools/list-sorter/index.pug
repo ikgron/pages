@@ -6,12 +6,6 @@ head
   include /partials/head.pug
   include /partials/styles.pug
 
-  style.
-      .placeholder1::placeholder {
-        color: #999;
-      }
-
-
 .bg
 .vignette
 .content
@@ -20,12 +14,12 @@ head
   h1.text-light(style=`margin-top: 15vh; font-size: ${lfont}; text-align: center;`) List Sorter
 
   div(style=`text-align: center; color: white;`)
-    label(for=`sortMethod' style='color: white;`) Sort by:
-    select#sortMethod(onchange='sort()', class=`form-select-sm`, style=`background-color: black; color: white;`)
-      option(value='alphabetical') Alphabetical
-      option(value='length') Length
+    label(for=`sortMethod` style=`color: white;`) Sort by:
+    select#sortMethod(onchange=`sort()`, class=`form-select-sm`, style=`background-color: black; color: white;`)
+      option(value=`alphabetical`) Alphabetical
+      option(value=`length`) Length
 
-    label(for='reverseCheckbox' style='color: white; margin-left: 10px;')
+    label(for=`reverseCheckbox` style=`color: white; margin-left: 10px;`)
       input#reverseCheckbox(type=`checkbox` onchange=`sort()`)
       |  Reverse?
 
@@ -51,6 +45,6 @@ head
 
 
 
-script(src='/pug/tools/list-sorter/scripts.js')
+script(src=`/pug/tools/list-sorter/scripts.js`)
 
 include /partials/scripts.pug

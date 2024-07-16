@@ -1,34 +1,5 @@
 include /partials/variables.pug
-style.
-    .nav-link,
-    .navbar-brand,
-    .dropdown-item {
-    color: white;
-    }
-    
-    .nav-link:focus,
-    .nav-link:hover,
-    .navbar-brand:hover {
-    color: #{color};
-    text-decoration: underline; 
-    }
 
-    .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    }
-
-    .dropdown-item:hover {
-    background-color: #{color};
-    color: white;
-    }
-
-    .navbar-toggler-icon {
-    background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
-    -webkit-filter: brightness(400);
-    filter: brightness(400);
-    }
-
-    
 
 nav.navbar.navbar-expand-lg.fixed-top(style=`background-color: black; border-bottom: 2px solid ${color};`)
 
