@@ -100,7 +100,7 @@
 <footer class="footer fixed-bottom text-center" style="background-color: black; display: none;">
   <div style="border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;">
     <h1 class="text-light" style="font-size: 20px; vertical-align: middle; display: inline;">This site doesn't use cookies. Why would it?</h1>
-    <button class="bttn btn-sm" type="button" onclick="hideFooter()" style="margin-left: 1vh; height: 20px0.5vh; vertical-align: middle; padding: 0 20px; line-height: 20px;">OK</button>
+    <button class="bttn btn-sm" type="button" onclick="hideFooter()" style="margin-left: 1vh; height: 20px0.5vh; vertical-align: middle; padding: 0 20px; line-height: 20px; color: black">OK</button>
   </div>
 </footer>
 <script>
@@ -113,7 +113,7 @@
     localStorage.setItem("footerAcknowledged", "true");
   }
   
-  // Check if footer is acknowledged and hide it if they have
+  // Check if message is acknowledged
   window.onload = function() {
     var acknowledged = localStorage.getItem("footerAcknowledged");
     if (!acknowledged) {

@@ -14,7 +14,7 @@ script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'
 footer.footer.fixed-bottom.text-center(style=`background-color: black; display: none;`)
   div(style=`border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;`)
     h1.text-light(style=`font-size: ${sfont}; vertical-align: middle; display: inline;`) This site doesn't use cookies. Why would it?
-    button(type='button' class='bttn btn-sm' onclick='hideFooter()' style=`margin-left: 1vh; height: ${sfont + '0.5vh'}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont};`) OK
+    button(type='button' class='bttn btn-sm' onclick='hideFooter()' style=`margin-left: 1vh; height: ${sfont + '0.5vh'}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont}; color: black`) OK
 
 
 script. 
@@ -27,7 +27,7 @@ script.
     localStorage.setItem("footerAcknowledged", "true");
   }
 
-  // Check if footer is acknowledged and hide it if they have
+  // Check if message is acknowledged
   window.onload = function() {
     var acknowledged = localStorage.getItem("footerAcknowledged");
     if (!acknowledged) {

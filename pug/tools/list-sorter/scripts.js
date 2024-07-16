@@ -2,7 +2,6 @@ let prevInputLength = 0;
 
 function sort() {
     var inputBox = document.getElementById('input');
-    var outputBox = document.getElementById('output');
 
     var inputValue = inputBox.value.trim();
 
@@ -16,7 +15,11 @@ function sort() {
 }
 
 function updateSortedOutput(inputValue) {
+
     var items;
+    var sortMethod = document.getElementById('sortMethod').value;
+    var reversed = document.getElementById(`reverseCheckbox`).checked;
+
     if (inputValue.includes('\n')) {
         items = inputValue.split('\n');
     } else if (inputValue.includes(';')) {
@@ -25,8 +28,18 @@ function updateSortedOutput(inputValue) {
         items = [inputValue];
     }
 
-    items = items.map(item => item.trim()).filter(item => item !== '');
-    items.sort(Intl.Collator().compare);
+    items = items.map(item => item.trim().replace(/^(\s*-\s*\[\s*([xX]|\s)*\]\s*)/, '')).filter(item => item !== '');
+    
+    if (sortMethod === 'alphabetical') {
+        items.sort(Intl.Collator().compare);
+    } else if (sortMethod === 'length') {
+        items.sort((a, b) => a.length - b.length);
+    }
+
+    if (reversed) {
+        items.reverse();
+    }
+
 
     var outputValue;
     if (inputValue.includes('\n')) {
@@ -39,9 +52,6 @@ function updateSortedOutput(inputValue) {
 
     var outputBox = document.getElementById('output');
     outputBox.value = outputValue;
-
-
-
 }
 
 function clearInput() {
@@ -72,9 +82,9 @@ copyButton.onclick = function () {
 let timeoutId;
 
 function notify() {
-    var copyButton = document.getElementById('copyButton'); 
+    var copyButton = document.getElementById('copyButton');
     var copiedText = "Copied!";
-    
+
     clearTimeout(timeoutId);
 
     copyButton.innerHTML = copiedText;
@@ -83,7 +93,7 @@ function notify() {
         copyButton.innerHTML = "Copy";
     }, 1000);
 
-    copyButton.addEventListener("click", function() {
+    copyButton.addEventListener("click", function () {
         clearTimeout(timeoutId);
 
         copyButton.innerHTML = copiedText;
