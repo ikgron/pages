@@ -14,11 +14,30 @@ function sort() {
     prevInput = inputValue.length;
 }
 
+let reversed = false;
+
+function toggleReverse() {
+    reversed = !reversed;
+
+    var reverseButton = document.getElementById(`reverseButton`);
+    if (reversed) {
+        reverseButton.style.backgroundColor = `#0E57ED`;
+        reverseButton.style.color = `black`;
+    } else {
+        reverseButton.style.backgroundColor = ``;
+        reverseButton.style.color = ``;
+        reverseButton.style.border = ``;
+    }
+
+    sort();
+}
+
 function updateSortedOutput(inputValue) {
 
     var items;
     var sortMethod = document.getElementById(`sortMethod`).value;
-    var reversed = document.getElementById(`reverseCheckbox`).checked;
+
+    const isReversed = reversed;
 
     if (inputValue.includes(`\n`)) {
         items = inputValue.split(`\n`);
@@ -36,7 +55,7 @@ function updateSortedOutput(inputValue) {
         items.sort((a, b) => a.length - b.length);
     }
 
-    if (reversed) {
+    if (isReversed) {
         items.reverse();
     }
 

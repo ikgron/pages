@@ -14,14 +14,15 @@ head
   h1.text-light(style=`margin-top: 15vh; font-size: ${lfont}; text-align: center;`) List Sorter
 
   div(style=`text-align: center; color: white;`)
-    label(for=`sortMethod` style=`color: white;`) Sort by:
-    select#sortMethod(onchange=`sort()`, class=`form-select-sm`, style=`background-color: black; color: white;`)
-      option(value=`alphabetical`) Alphabetical
+    label(for=`sortMethod` style=`color: white; font-size: ${sfont};`)
+    select#sortMethod(onchange=`sort()`, class=`form-select-sm`, style=`background-color: black; color: ${color}; height: 4vh; font-size: ${sfont}; margin: 1vh;`)
+      option(value=`alphabetical` ) Alphabetical
       option(value=`length`) Length
 
-    label(for=`reverseCheckbox` style=`color: white; margin-left: 10px;`)
-      input#reverseCheckbox(type=`checkbox` onchange=`sort()`)
-      |  Reverse?
+    button.btn.btn-animate.btn-clickable(id=`reverseButton` type=`button` class=`bttn` style=`font-size: ${sfont}; text-align: center; line-height: 1vh; height: 4vh; margin: 1vh;` onclick=`toggleReverse()` onchange=`sort()`) Reverse Output
+
+    
+
 
   .row(style="margin-left: 1vh; margin-right: 1vh;")
     .col-md-7.mx-auto
@@ -41,7 +42,9 @@ head
       textarea.form-control.placeholder1(id=`output`, placeholder=`Output appears here`, style=`background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default`, readonly)
 
   div(style=`text-align: center`)
-    button.btn.btn-animate.btn-clickable(id="copyButton" type=`button` class=`bttn` style=`font-size: ${sfont}; margin-top: 1vh; margin-bottom: 0vh;` onclick=`copyOutput()`) Copy
+    button.btn.btn-animate.btn-clickable(id="copyButton" type=`button` class=`bttn` style=`font-size: ${sfont}; margin-top: 1vh; margin-left: 1vw; margin-right: 1vh; margin-bottom: 0vh;` onclick=`copyOutput()`) Copy
+
+    
 
 
 

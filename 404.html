@@ -35,7 +35,8 @@
     }
     
     @media (hover: hover) and (pointer: fine) {
-        .btn.bttn:hover {
+        .btn.bttn:hover,
+        #sortMethod:hover {
             transform-origin: center;
             color: #0E57ED;
             border: 2px solid white;
@@ -74,6 +75,12 @@
         background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
         -webkit-filter: brightness(400);
         filter: brightness(400);
+    }
+    
+    #sortMethod,
+    .btn.bttn {
+        border: 2px solid #0E57ED;
+        border-radius: 5px;
     }
   </style>
 </head>

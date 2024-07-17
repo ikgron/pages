@@ -27,7 +27,8 @@ style.
     }
 
     @media (hover: hover) and (pointer: fine) {
-        .btn.bttn:hover {
+        .btn.bttn:hover,
+        #sortMethod:hover {
             transform-origin: center;
             color: #{color};
             border: 2px solid white;
@@ -68,6 +69,11 @@ style.
         filter: brightness(400);
     }
 
+    #sortMethod,
+    .btn.bttn {
+        border: 2px solid #{color};
+        border-radius: 5px;
+    }
 
     
 
