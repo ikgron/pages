@@ -1,37 +1,24 @@
-//- footer.footer.fixed-bottom
-//-   .container-fluid
-//-     .row
-//-       .col-12
-//-         div(style="border-bottom: 2px solid blue;")
-//-     .row
-//-       .col-12.d-flex.justify-content-center
-//-         div(style="background-color: black; text-align: center; padding: 10px;")
-//-           a(href="#") Contact
-
 script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
 
-footer.footer.fixed-bottom.text-center(style=`background-color: black; display: none;`)
-  div(style=`border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;`)
-    h1.text-light(style=`font-size: ${sfont}; vertical-align: middle; display: inline;`) This site doesn't use cookies. Why would it?
-    button(type='button' class='bttn btn-sm' onclick='hideFooter()' style=`margin-left: 1vh; height: ${sfont + '0.5vh'}; vertical-align: middle; padding: 0 ${sfont}; line-height: ${sfont}; color: black`) OK
+footer.footer.fixed-bottom.text-center
+  div
+    h1.text-light This site doesn't use cookies. Why would it?
+    button(type='button', class='bttn btn-sm', onclick='hideFooter()') OK
 
-
-script. 
+script.
   function hideFooter() {
-    // Hide footer
-    var footer = document.querySelector("footer");
-    footer.style.display = `none`;
 
-    // Store the acknowledgement in local storage
+    var footer = document.querySelector("footer");
+    footer.style.display = 'none';
+
     localStorage.setItem("footerAcknowledged", "true");
   }
 
-  // Check if message is acknowledged
   window.onload = function() {
     var acknowledged = localStorage.getItem("footerAcknowledged");
     if (!acknowledged) {
         var footer = document.querySelector("footer");
-        footer.style.display = `block`
+        footer.style.display = 'block';
     }
   };

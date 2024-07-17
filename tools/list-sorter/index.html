@@ -1,159 +1,226 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-<head>
-  <title>List Sorter | ikgron</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/images/out.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/images/out.ico" style="width: 180px; height: 180px;">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <link href="https://fonts.bunny.net/css?family=aldrich" rel="stylesheet">
-  <style>
-    body {
-        background: black;
-        font-family: 'aldrich', monospace;
-    }
-    
-    html {
-        ::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
-        }
-        -ms-overflow-style: none; /* IE, Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-    
-    .placeholder1::placeholder {
-        color: #999;
+<html lang="en">
+  <head>
+    <title>List Sorter | ikgron</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/out.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/out.ico" style="width: 180px; height: 180px;">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://fonts.bunny.net/css?family=aldrich" rel="stylesheet">
+    <style>
+      body {
+          background: black;
+          font-family: 'aldrich', monospace;
       }
-    
-    
-    .btn.bttn {
-        background-color: black;
-        color: #0E57ED; 
-        border: 2px solid #0E57ED;
-        display: inline-block;
-    }
-    
-    @media (hover: hover) and (pointer: fine) {
-        .btn.bttn:hover,
-        #sortMethod:hover {
-            transform-origin: center;
-            color: #0E57ED;
-            border: 2px solid white;
+      
+      html {
+          ::-webkit-scrollbar {
+              display: none; /* Chrome, Safari */
+          }
+          -ms-overflow-style: none; /* IE, Edge */
+          scrollbar-width: none; /* Firefox */
+      }
+      
+      .placeholder1::placeholder {
+          color: #999;
         }
-    }
-    
-    button {
-        background-color : lightgray;
-        border: 2px outset grey;
-    
-    }
-    
-    .nav-link,
-    .navbar-brand,
-    .dropdown-item {
-        color: white;
-    }
-    
-    .nav-link:focus,
-    .nav-link:hover,
-    .navbar-brand:hover {
-        color: #0E57ED;
-        text-decoration: underline; 
-    }
-    
-    .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    
-    .dropdown-item:hover {
-        background-color: #0E57ED;
-        color: white;
-    }
-    
-    .navbar-toggler-icon {
-        background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
-        -webkit-filter: brightness(400);
-        filter: brightness(400);
-    }
-    
-    #sortMethod,
-    .btn.bttn {
-        border: 2px solid #0E57ED;
-        border-radius: 5px;
-    }
-  </style>
-</head>
-<div class="bg"></div>
-<div class="vignette"></div>
-<div class="content">
-  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; border-bottom: 2px solid #0E57ED;"><a class="nav-link" style="padding-left: 1.5vh; font-size: 30px;" href="/">ikgron</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" style="color: white"></span></button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav" style="margin-left: auto;">
-        <li class="nav-item"><a class="nav-link" style="padding-left: 2vh; font-size: 30px;" href="/work">Work</a></li>
-        <li class="nav-item"><a class="nav-link" style="padding-left: 2vh; font-size: 30px;" href="/about">About</a></li>
-        <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" style="padding-left: 2vh; padding-right: 2vh; font-size: 30px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-          <div class="dropdown-menu dropdown-menu-end" style="right: 0; background-color: black;" aria-labelledby="navbarDropdown"><a class="dropdown-item" style="padding-left: 2vh; font-size: 30px;" href="/tools">Tools</a></div>
-        </li>
-      </ul>
+      
+      #sortMethod,
+      .btn.bttn {
+          background-color: black;
+          color: #0E57ED; 
+          border: 2px solid #0E57ED;
+          display: inline-block;
+          border-radius: 5px;
+          margin: 1vh;
+          height: 4vh;
+          text-align: center; /* Center text horizontally */
+          line-height: inherit; /* Center text vertically */
+          padding: 0 10px; /* Adjust padding as necessary */
+      }
+      
+      @media (hover: hover) and (pointer: fine) {
+          .btn.bttn:hover,
+          #sortMethod:hover {
+              transform-origin: center;
+              color: #0E57ED;
+              border: 2px solid white;
+          }
+      }
+      
+      button {
+          background-color : lightgray;
+          border: 2px outset grey;
+      }
+      
+      textarea.form-control,
+      textarea.form-control:focus {
+          background-color: black;
+          color: white;
+          height: 25vh;
+          border: 1px solid white;
+          resize: none;
+          cursor: default;
+          font-size: 20px;
+          padding: 0.5vh;
+          margin-top: 1vh;
+      }
+      
+      textarea.form-control[readonly] {
+          cursor: default;
+      }
+      
+      /* Navbar */
+      .nav-link,
+      .navbar-brand,
+      .dropdown-item {
+          color: white;
+      }
+      .nav-link:focus,
+      .nav-link:hover,
+      .navbar-brand:hover {
+          color: #0E57ED;
+          text-decoration: underline; 
+      }
+      .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+      }
+      .dropdown-item:hover {
+          background-color: #0E57ED;
+          color: white;
+      }
+      .navbar-toggler-icon {
+          background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
+          -webkit-filter: brightness(400);
+          filter: brightness(400);
+      }
+      nav {
+          background-color: black;
+          border-bottom: 2px solid #0E57ED;
+      }
+      a.nav-link {
+          padding-left: 1.5vh;
+          font-size: 30px;
+      }
+      button.navbar-toggler {
+          color: white;
+      }
+      ul.navbar-nav {
+          margin-left: auto;
+      }
+      .nav-item a.nav-link {
+          padding-left: 2vh;
+          font-size: 30px;
+      }
+      .dropdown-menu {
+          right: 0;
+          background-color: black;
+      }
+      .dropdown-item {
+          padding-left: 2vh;
+          font-size: 30px;
+      }
+      
+      /* Scripts */
+      footer.footer {
+          background-color: black;
+          display: none;
+      }
+      footer.footer div {
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 1vh;
+          display: inline-block;
+      }
+      footer.footer h1.text-light {
+          font-size: 20px;
+          vertical-align: middle;
+          display: inline;
+      }
+      footer.footer button.bttn.btn-sm {
+          margin-left: 1vh;
+          height: calc(20px + 0.5vh);
+          vertical-align: middle;
+          padding: 0 20px; 
+          line-height: 20px;
+          color: black;
+      }
+      
+      /* List Sorter */
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="content">
+        <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="/work">Work</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+              <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; text-align: center;">List Sorter</h1>
+        <div style="text-align: center; color: white;">
+          <label for="sortMethod"></label>
+          <select class="form-select-sm" id="sortMethod" onchange="sort()">
+            <option value="alphabetical">Alphabetical</option>
+            <option value="length">Length</option>
+          </select>
+          <button class="btn btn-animate btn-clickable bttn" id="reverseButton" type="button" onclick="toggleReverse()">Reverse Output</button>
+        </div>
+        <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
+          <div class="col-md-7 mx-auto">
+            <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Input</h1>
+            <div id="inputContainer"></div>
+            <textarea class="form-control placeholder1" id="input" placeholder="Separate by semicolons (;) or new lines" oninput="sort()"></textarea>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <button class="btn btn-animate btn-clickable bttn" id="clearButton" type="button" onclick="clearInput()">Clear</button>
+        </div>
+        <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
+          <div class="col-md-7 mx-auto">
+            <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Output</h1>
+            <div id="outputContainer"></div>
+            <textarea class="form-control placeholder1" id="output" placeholder="Output appears here" readonly></textarea>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" onclick="copyOutput()">Copy</button>
+        </div>
+      </div>
     </div>
-  </nav>
-  <h1 class="text-light" style="margin-top: 15vh; font-size: 30px; text-align: center;">List Sorter</h1>
-  <div style="text-align: center; color: white;">
-    <label for="sortMethod" style="color: white; font-size: 20px;"></label>
-    <select class="form-select-sm" id="sortMethod" onchange="sort()" style="background-color: black; color: #0E57ED; height: 4vh; font-size: 20px; margin: 1vh;">
-      <option value="alphabetical">Alphabetical</option>
-      <option value="length">Length</option>
-    </select>
-    <button class="btn btn-animate btn-clickable bttn" id="reverseButton" type="button" style="font-size: 20px; text-align: center; line-height: 1vh; height: 4vh; margin: 1vh;" onclick="toggleReverse()" onchange="sort()">Reverse Output</button>
-  </div>
-  <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
-    <div class="col-md-7 mx-auto">
-      <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Input</h1>
-      <div id="inputContainer"></div>
-      <textarea class="form-control placeholder1" id="input" placeholder="Separate by semicolons (;) or new lines" style="background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none" oninput="sort()"></textarea>
-    </div>
-  </div>
-  <div style="text-align: center">
-    <button class="btn btn-animate btn-clickable bttn" id="clearButton" type="button" style="font-size: 20px; margin-top: 1vh;" onclick="clearInput()">Clear</button>
-  </div>
-  <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
-    <div class="col-md-7 mx-auto">
-      <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Output</h1>
-      <div id="outputContainer"></div>
-      <textarea class="form-control placeholder1" id="output" placeholder="Output appears here" style="background-color: black; color: white; height: 25vh; border: 1px solid white; resize: none; cursor: default" readonly></textarea>
-    </div>
-  </div>
-  <div style="text-align: center">
-    <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" style="font-size: 20px; margin-top: 1vh; margin-left: 1vw; margin-right: 1vh; margin-bottom: 0vh;" onclick="copyOutput()">Copy</button>
-  </div>
-</div>
-<script src="/pug/tools/list-sorter/scripts.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<footer class="footer fixed-bottom text-center" style="background-color: black; display: none;">
-  <div style="border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;">
-    <h1 class="text-light" style="font-size: 20px; vertical-align: middle; display: inline;">This site doesn't use cookies. Why would it?</h1>
-    <button class="bttn btn-sm" type="button" onclick="hideFooter()" style="margin-left: 1vh; height: 20px0.5vh; vertical-align: middle; padding: 0 20px; line-height: 20px; color: black">OK</button>
-  </div>
-</footer>
-<script>
-  function hideFooter() {
-    // Hide footer
-    var footer = document.querySelector("footer");
-    footer.style.display = `none`;
-  
-    // Store the acknowledgement in local storage
-    localStorage.setItem("footerAcknowledged", "true");
-  }
-  
-  // Check if message is acknowledged
-  window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
-    if (!acknowledged) {
+    <script src="/pug/tools/list-sorter/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer class="footer fixed-bottom text-center">
+      <div>
+        <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
+        <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
+      </div>
+    </footer>
+    <script>
+      function hideFooter() {
+      
         var footer = document.querySelector("footer");
-        footer.style.display = `block`
-    }
-  };
-</script>
+        footer.style.display = 'none';
+      
+        localStorage.setItem("footerAcknowledged", "true");
+      }
+      
+      window.onload = function() {
+        var acknowledged = localStorage.getItem("footerAcknowledged");
+        if (!acknowledged) {
+            var footer = document.querySelector("footer");
+            footer.style.display = 'block';
+        }
+      };
+    </script>
+  </body>
+</html>

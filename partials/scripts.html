@@ -1,28 +1,26 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<footer class="footer fixed-bottom text-center" style="background-color: black; display: none;">
-  <div style="border: 1px solid white; border-radius: 5px; padding: 1vh; display: inline-block;">
-    <h1 class="text-light" style="font-size: undefined; vertical-align: middle; display: inline;">This site doesn't use cookies. Why would it?</h1>
-    <button class="bttn btn-sm" type="button" onclick="hideFooter()" style="margin-left: 1vh; height: undefined0.5vh; vertical-align: middle; padding: 0 undefined; line-height: undefined; color: black">OK</button>
+<footer class="footer fixed-bottom text-center">
+  <div>
+    <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
+    <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
   </div>
 </footer>
 <script>
   function hideFooter() {
-    // Hide footer
-    var footer = document.querySelector("footer");
-    footer.style.display = `none`;
   
-    // Store the acknowledgement in local storage
+    var footer = document.querySelector("footer");
+    footer.style.display = 'none';
+  
     localStorage.setItem("footerAcknowledged", "true");
   }
   
-  // Check if message is acknowledged
   window.onload = function() {
     var acknowledged = localStorage.getItem("footerAcknowledged");
     if (!acknowledged) {
         var footer = document.querySelector("footer");
-        footer.style.display = `block`
+        footer.style.display = 'block';
     }
   };
 </script>

@@ -17,12 +17,18 @@
       color: #999;
     }
   
-  
+  #sortMethod,
   .btn.bttn {
       background-color: black;
       color: #0E57ED; 
       border: 2px solid #0E57ED;
       display: inline-block;
+      border-radius: 5px;
+      margin: 1vh;
+      height: 4vh;
+      text-align: center; /* Center text horizontally */
+      line-height: inherit; /* Center text vertically */
+      padding: 0 10px; /* Adjust padding as necessary */
   }
   
   @media (hover: hover) and (pointer: fine) {
@@ -37,40 +43,100 @@
   button {
       background-color : lightgray;
       border: 2px outset grey;
-  
   }
   
+  textarea.form-control,
+  textarea.form-control:focus {
+      background-color: black;
+      color: white;
+      height: 25vh;
+      border: 1px solid white;
+      resize: none;
+      cursor: default;
+      font-size: 20px;
+      padding: 0.5vh;
+      margin-top: 1vh;
+  }
+  
+  textarea.form-control[readonly] {
+      cursor: default;
+  }
+  
+  /* Navbar */
   .nav-link,
   .navbar-brand,
   .dropdown-item {
       color: white;
   }
-  
   .nav-link:focus,
   .nav-link:hover,
   .navbar-brand:hover {
       color: #0E57ED;
       text-decoration: underline; 
   }
-  
   .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
       display: block;
   }
-  
   .dropdown-item:hover {
       background-color: #0E57ED;
       color: white;
   }
-  
   .navbar-toggler-icon {
       background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
       -webkit-filter: brightness(400);
       filter: brightness(400);
   }
-  
-  #sortMethod,
-  .btn.bttn {
-      border: 2px solid #0E57ED;
-      border-radius: 5px;
+  nav {
+      background-color: black;
+      border-bottom: 2px solid #0E57ED;
   }
+  a.nav-link {
+      padding-left: 1.5vh;
+      font-size: 30px;
+  }
+  button.navbar-toggler {
+      color: white;
+  }
+  ul.navbar-nav {
+      margin-left: auto;
+  }
+  .nav-item a.nav-link {
+      padding-left: 2vh;
+      font-size: 30px;
+  }
+  .dropdown-menu {
+      right: 0;
+      background-color: black;
+  }
+  .dropdown-item {
+      padding-left: 2vh;
+      font-size: 30px;
+  }
+  
+  /* Scripts */
+  footer.footer {
+      background-color: black;
+      display: none;
+  }
+  footer.footer div {
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 1vh;
+      display: inline-block;
+  }
+  footer.footer h1.text-light {
+      font-size: 20px;
+      vertical-align: middle;
+      display: inline;
+  }
+  footer.footer button.bttn.btn-sm {
+      margin-left: 1vh;
+      height: calc(20px + 0.5vh);
+      vertical-align: middle;
+      padding: 0 20px; 
+      line-height: 20px;
+      color: black;
+  }
+  
+  /* List Sorter */
 </style>
