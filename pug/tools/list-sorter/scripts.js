@@ -43,6 +43,8 @@ function updateSortedOutput(inputValue) {
         items = inputValue.split(`\n`);
     } else if (inputValue.includes(`;`)) {
         items = inputValue.split(`;`);
+    } else if (inputValue.includes(`,`)) {
+        items = inputValue.split(`,`)
     } else {
         items = [inputValue];
     }
@@ -65,7 +67,10 @@ function updateSortedOutput(inputValue) {
         outputValue = items.join(`\n`);
     } else if (inputValue.includes(`;`)) {
         outputValue = items.join(`; `);
-    } else {
+    } else if (inputValue.includes(`,`)) {
+        outputValue = items.join(`, `)
+    }
+     else {
         outputValue = items.join(``);
     }
 

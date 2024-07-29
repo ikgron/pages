@@ -25,7 +25,7 @@ html(lang='en')
           .col-md-7.mx-auto
             h1.text-light(style=`margin-top: 0vh; font-size: ${sfont};`) Input
             div(id='inputContainer')
-            textarea#input.form-control.placeholder1(placeholder='Separate by semicolons (;) or new lines', oninput='sort()')
+            textarea#input.form-control.placeholder1(placeholder='Separate by commas, semicolons, or new lines.', oninput='sort()')
 
         div(style='text-align: center;')
           button.btn.btn-animate.btn-clickable(id='clearButton', type='button', class='bttn', onclick='clearInput()') Clear
@@ -34,7 +34,7 @@ html(lang='en')
           .col-md-7.mx-auto
             h1.text-light(style=`margin-top: 0vh; font-size: ${sfont};`) Output
             div(id='outputContainer')
-            textarea#output.form-control.placeholder1(placeholder='Output appears here', readonly)
+            textarea#output.form-control.placeholder1(placeholder='Output appears here.', readonly)
 
         div(style='text-align: center;')
           button.btn.btn-animate.btn-clickable(id='copyButton', type='button', class='bttn', onclick='copyOutput()') Copy

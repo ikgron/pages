@@ -49,8 +49,9 @@
           .btn.bttn:hover,
           #sortMethod:hover {
               transform-origin: center;
-              color: #0E57ED;
-              border: 2px solid white;
+              color: black;
+              border: 2px solid #0E57ED;
+              background-color: #0E57ED;
           }
       }
       
@@ -187,7 +188,7 @@
           <div class="col-md-7 mx-auto">
             <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Input</h1>
             <div id="inputContainer"></div>
-            <textarea class="form-control placeholder1" id="input" placeholder="Separate by semicolons (;) or new lines" oninput="sort()"></textarea>
+            <textarea class="form-control placeholder1" id="input" placeholder="Separate by commas, semicolons, or new lines." oninput="sort()"></textarea>
           </div>
         </div>
         <div style="text-align: center;">
@@ -197,7 +198,7 @@
           <div class="col-md-7 mx-auto">
             <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Output</h1>
             <div id="outputContainer"></div>
-            <textarea class="form-control placeholder1" id="output" placeholder="Output appears here" readonly></textarea>
+            <textarea class="form-control placeholder1" id="output" placeholder="Output appears here." readonly></textarea>
           </div>
         </div>
         <div style="text-align: center;">
