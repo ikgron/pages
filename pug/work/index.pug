@@ -9,13 +9,32 @@ head
 .content
   include ../partials/navbar.pug
 
-  h1.text-light(style=`margin-top: 15vh; font-size: ${lfont}; margin-left: 2vh`) My Work
+  //- h1.text-light(style=`margin-top: 15vh; font-size: ${lfont}; margin-left: 2vh`) My Work
 
-  h1.text-light(style=`margin-top: 1vh; font-size: ${sfont}; margin-left: 2vh`) Check out my 
-    a(href=`https://codeberg.org/parser/`, target=`_blank` style=`text-decoration: underline; color: ${color};`) Codeberg
-    |  (primary) or my 
-    a(href=`https://github.com/ikgron`, target=`_blank` style=`text-decoration: underline; color: ${color};`) Github
-    |  (secondary/mirror).
+  //- h1.text-light(style=`margin-top: 1vh; font-size: ${sfont}; margin-left: 2vh`) Check out my 
+  //-   a(href=`https://codeberg.org/parser/`, target=`_blank` style=`text-decoration: underline; color: ${color};`) Codeberg
+  //-   |  (primary) or my 
+  //-   a(href=`https://github.com/ikgron`, target=`_blank` style=`text-decoration: underline; color: ${color};`) Github
+  //-   |  (secondary/mirror).
+
+  .portfolio-grid(style=`margin-top: 15vh;`)
+    .portfolio-item
+      a(href=`/tools/list-sorter/`, style=`display: block; text-decoration: none;`)
+        img(src=`../images/sorter.png`, alt=`Project 1`, style=`width: 100%; height: auto;`)
+        .portfolio-info
+          h1(style=`font-size: ${lfont};`) List Sorter
+          p A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.
+
+
+    .portfolio-item
+      a(href=`/`, style=`display: block; text-decoration: none;`)
+        img(src=`../images/homepage.png`, alt=`Project 2`, style=`width: 100%; height: auto;`)
+        .portfolio-info
+          h1(style=`font-size: ${lfont};`) www.ikgron.com
+          p This website 👍
+          p(style=`font-size: ${xsfont}`) (Pretty cool right?)
+
+
 
   div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
 

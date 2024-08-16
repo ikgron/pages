@@ -30,7 +30,8 @@
     .btn.bttn,
     .btn-clickable {
         background-color: black;
-        color: #0E57ED; 
+        color: #0E57ED;
+        font-size: 20px; 
         border: 2px solid #0E57ED;
         border-radius: 5px;
         margin: 1vh;
@@ -38,16 +39,20 @@
         text-align: center;
         vertical-align: top;
         box-sizing: border-box;
+        transition: color 0.3s, border 0.3s, background-color 0.3s;
     }
     
-    #sortMethod {
-        font-size: 20px;
-        box-sizing: border-box;
+    #toolsButton {
+        height: 5rem;
+        width: 10rem;
+        font-size: 25px;
+        margin: 2vh;
     }
     
     @media (hover: hover) and (pointer: fine) {
         .btn.bttn:hover,
-        #sortMethod:hover {
+        #sortMethod:hover,
+        #toolsButton:hover {
             transform-origin: center;
             color: black;
             border: 2px solid #0E57ED;
@@ -81,11 +86,24 @@
         cursor: default;
     }
     
+    #icon {
+        margin-left: 2vh;
+        margin-right: 2vh;
+        filter: invert(1);
+        height: 50px;
+        width: 50px;
+        user-select: none; /* Chrome, Opera, Edge */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE/Edge */
+    }
+    
     /* Navbar */
     .nav-link,
     .navbar-brand,
     .dropdown-item {
         color: white;
+        transition: color 0.3s;
     }
     .nav-link:focus,
     .nav-link:hover,
@@ -99,6 +117,7 @@
     .dropdown-item:hover {
         background-color: #0E57ED;
         color: white;
+        transition: background-color 0.3s;
     }
     .navbar-toggler-icon {
         background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
@@ -118,6 +137,7 @@
     }
     ul.navbar-nav {
         margin-left: auto;
+        margin-right: 1.5vh;
     }
     .nav-item a.nav-link {
         padding-left: 2vh;
@@ -157,7 +177,49 @@
         color: black;
     }
     
-    /* List Sorter */
+    /* Portfolio */
+    .portfolio-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vh;
+        margin-left: 1vh;
+        margin-right: 1vh;
+        justify-content: center;
+    }
+    
+    .portfolio-item {
+        width: 350px;
+        border: 2px solid white;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        background: black;
+        transition: border 0.5s;
+    }
+    
+    .portfolio-item:hover {
+        border: 2px solid #0E57ED;
+        transform-origin: center;
+    }
+    
+    .portfolio-item img {
+        display: block;
+        height: auto;
+    }
+    
+    .portfolio-info {
+        padding: 10px;
+    }
+    
+    .portfolio-info h2 {
+        margin: 0;
+        color: #0E57ED;
+    }
+    
+    .portfolio-info p {
+        font-size: 20px;
+        color: white;
+    }
   </style>
 </head>
 <div class="bg"></div>
@@ -166,8 +228,9 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/work">Work</a></li>
         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/work">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
         <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
         </li>
@@ -177,7 +240,7 @@
   <h1 class="text-light" style="margin-top: 15vh; font-size: 40px; text-align: center;">Tools</h1>
   <div class="row">
     <div class="col" style="text-align: center; margin-top: 2vh">
-      <button class="btn bttn" type="button" onclick="window.location.href= '/tools/list-sorter'">List Sorter</button>
+      <button class="btn bttn" id="toolsButton" type="button" onclick="window.location.href= '/tools/list-sorter'">List Sorter</button>
     </div>
   </div>
   <div style="border-bottom: 2px solid #0E57ED; margin-top: 15vh;"></div>
