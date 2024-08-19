@@ -8,5 +8,5 @@
 
 ## Features
 
-- My Work
 - About Me
+- Portfolio
