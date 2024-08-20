@@ -11,9 +11,9 @@ html(lang='en')
       .content
         include /partials/navbar.pug  
             
-        h1.text-light(style=`text-align: center;`) List Sorter
+        h1(style=`text-align: center;`) List Sorter
 
-        div(style='text-align: center; color: white;')
+        div(style='text-align: center;')
           label(for='sortMethod')
           select#sortMethod(onchange='sort()', class='form-select-sm')
             option(value='alphabetical') Alphabetical
@@ -21,23 +21,23 @@ html(lang='en')
 
           button.btn.btn-animate.btn-clickable(id='reverseButton', type='button', class='bttn', onclick='toggleReverse()') Reverse Output
 
-        .row(style='margin-left: 1vh; margin-right: 1vh;')
+        .row
           .col-md-7.mx-auto
-            h1.text-light(style=`margin-top: 0vh; font-size: ${sfont};`) Input
+            h2 Input
             div(id='inputContainer')
             textarea#input.form-control.placeholder1(placeholder='Separate by commas, semicolons, or new lines.', oninput='sort()')
 
         div(style='text-align: center;')
           button.btn.btn-animate.btn-clickable(id='clearButton', type='button', class='bttn', onclick='clearInput()') Clear
 
-        .row(style='margin-left: 1vh; margin-right: 1vh;')
+        .row
           .col-md-7.mx-auto
-            h1.text-light(style=`margin-top: 0vh; font-size: ${sfont};`) Output
+            h2 Output
             div(id='outputContainer')
             textarea#output.form-control.placeholder1(placeholder='Output appears here.', readonly)
 
         div(style='text-align: center;')
-          button.btn.btn-animate.btn-clickable(id='copyButton', type='button', class='bttn', onclick='copyOutput()' style=`margin-bottom: 2rem;`) Copy
+          button.btn.btn-animate.btn-clickable(id='copyButton', type='button', class='bttn', onclick='copyOutput()') Copy
 
     script(src='/pug/tools/list-sorter/scripts.js')
     include /partials/scripts.pug

@@ -17,10 +17,12 @@
       body h1 {
           font-size: 30px;
           margin-top: 7rem;
+          color: white;
       }
       body h2 {
           font-size: 20px;
           margin-top: 1rem;
+          color: white;
       }
       hr {
           border-bottom: 2px solid #0E57ED;
@@ -37,6 +39,14 @@
       button {
           background-color : lightgray;
           border: 2px outset grey;
+      }
+      .email {
+          text-decoration: underline; 
+          color: #0E57ED;
+      }
+      
+      .row {
+          margin: 1rem;
       }
       
       /* contact */
@@ -245,8 +255,8 @@
             </ul>
           </div>
         </nav>
-        <h1 class="text-light" style="text-align: center;">List Sorter</h1>
-        <div style="text-align: center; color: white;">
+        <h1 style="text-align: center;">List Sorter</h1>
+        <div style="text-align: center;">
           <label for="sortMethod"></label>
           <select class="form-select-sm" id="sortMethod" onchange="sort()">
             <option value="alphabetical">Alphabetical</option>
@@ -254,9 +264,9 @@
           </select>
           <button class="btn btn-animate btn-clickable bttn" id="reverseButton" type="button" onclick="toggleReverse()">Reverse Output</button>
         </div>
-        <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
+        <div class="row">
           <div class="col-md-7 mx-auto">
-            <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Input</h1>
+            <h2>Input</h2>
             <div id="inputContainer"></div>
             <textarea class="form-control placeholder1" id="input" placeholder="Separate by commas, semicolons, or new lines." oninput="sort()"></textarea>
           </div>
@@ -264,15 +274,15 @@
         <div style="text-align: center;">
           <button class="btn btn-animate btn-clickable bttn" id="clearButton" type="button" onclick="clearInput()">Clear</button>
         </div>
-        <div class="row" style="margin-left: 1vh; margin-right: 1vh;">
+        <div class="row">
           <div class="col-md-7 mx-auto">
-            <h1 class="text-light" style="margin-top: 0vh; font-size: 20px;">Output</h1>
+            <h2>Output</h2>
             <div id="outputContainer"></div>
             <textarea class="form-control placeholder1" id="output" placeholder="Output appears here." readonly></textarea>
           </div>
         </div>
         <div style="text-align: center;">
-          <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" onclick="copyOutput()" style="margin-bottom: 2rem;">Copy</button>
+          <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" onclick="copyOutput()">Copy</button>
         </div>
       </div>
     </div>
