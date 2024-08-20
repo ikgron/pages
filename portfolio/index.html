@@ -1,326 +1,330 @@
 <!DOCTYPE html>
-<head>
-  <title>Portfolio | ikgron</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/images/out.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/images/out.ico" style="width: 180px; height: 180px;">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <link href="https://fonts.bunny.net/css?family=aldrich" rel="stylesheet">
-  <style>
-    /* Global */
-    body {
-        background: black;
-        font-family: 'aldrich', monospace;
-    }
-    
-    h1, h2 {
-        color: white;
-    }
-    
-    h1 {
-        font-size: 30px;
-        margin-top: 7rem;
-    }
-    
-    h2 {
-        font-size: 20px;
-        margin-top: 1rem;
-    }
-    
-    hr {
-        border-bottom: 2px solid #0E57ED;
-        margin-top: 11rem;
-        opacity: 1;
-    }
-    
-    html {
-        ::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
-        }
-        -ms-overflow-style: none; /* IE, Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-    
-    button {
-        background-color: lightgray;
-        border: 2px outset grey;
-    }
-    
-    .email {
-        text-decoration: underline; 
-        color: #0E57ED;
-    }
-    
-    .row {
-        margin: 1rem;
-    }
-    
-    /* Contact */
-    .icon {
-        margin: 1rem;
-        filter: invert(1);
-        height: 50px;
-        width: 50px;
-        user-select: none;
-    }
-    
-    /* List Sorter */
-    textarea.form-control,
-    textarea.form-control:focus {
-        background-color: black;
-        color: white;
-        height: 16rem;
-        border: 1px solid white;
-        resize: none;
-        cursor: default;
-        font-size: 20px;
-        padding: 0.5rem;
-        margin-top: 1rem;
-    }
-    
-    textarea.form-control[readonly] {
-        cursor: default;
-    }
-    
-    #copyButton {
-        margin-bottom: 3rem;
-    }
-    
-    #toolsButton {
-        height: 5rem;
-        width: 10rem;
-        font-size: 20px;
-        margin: 1rem;
-    }
-    
-    @media (hover: hover) and (pointer: fine) {
-        .btn.bttn:hover,
-        #sortMethod:hover,
-        #toolsButton:hover {
-            transform-origin: center;
-            color: black;
-            border: 2px solid #0E57ED;
-            background-color: #0E57ED;
-        }
-    }
-    
-    #sortMethod,
-    .btn.bttn,
-    .btn-clickable {
-        background-color: black;
-        color: #0E57ED;
-        font-size: 20px;
-        border: 2px solid #0E57ED;
-        border-radius: 5px;
-        margin: 1rem;
-        height: 3rem;
-        text-align: center;
-        vertical-align: top;
-        box-sizing: border-box;
-        transition: color 0.3s, border 0.3s, background-color 0.3s;
-    }
-    
-    .placeholder1::placeholder {
-        color: #999;
-    }
-    
-    /* Navbar */
-    .nav-link,
-    .navbar-brand,
-    .dropdown-item {
-        color: white;
-        transition: color 0.3s;
-    }
-    
-    .nav-link:focus,
-    .nav-link:hover,
-    .navbar-brand:hover {
-        color: #0E57ED;
-        text-decoration: underline;
-    }
-    
-    .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    
-    .dropdown-item:hover {
-        background-color: #0E57ED;
-        color: white;
-        transition: background-color 0.3s;
-    }
-    
-    .navbar-toggler-icon {
-        background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
-        -webkit-filter: brightness(400);
-        filter: brightness(400);
-    }
-    
-    nav {
-        background-color: black;
-        border-bottom: 2px solid #0E57ED;
-    }
-    
-    a.nav-link {
-        padding-left: 1rem;
-        font-size: 30px;
-    }
-    
-    button.navbar-toggler {
-        color: white;
-    }
-    
-    ul.navbar-nav {
-        margin-left: auto;
-        margin-right: 1rem;
-    }
-    
-    .nav-item a.nav-link {
-        padding-left: 1rem;
-        font-size: 30px;
-    }
-    
-    .dropdown-menu {
-        right: 0;
-        background-color: black;
-    }
-    
-    .dropdown-item {
-        padding-left: 1rem;
-        font-size: 30px;
-    }
-    
-    /* Footer */
-    footer.footer {
-        background-color: black;
-        display: none;
-    }
-    
-    footer.footer div {
-        border: 1px solid white;
-        border-radius: 5px;
-        padding: 1rem;
-        display: inline-block;
-    }
-    
-    footer.footer h1.text-light {
-        font-size: 20px;
-        vertical-align: middle;
-        display: inline;
-    }
-    
-    footer.footer button.bttn.btn-sm {
-        margin-left: 1rem;
-        height: calc(20px + 0.5rem);
-        vertical-align: middle;
-        padding: 0 20px;
-        line-height: 20px;
-        color: black;
-    }
-    
-    /* Portfolio */
-    .portfolio-grid {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 11rem;
-        gap: 2rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        justify-content: center;
-    }
-    
-    .portfolio-item {
-        width: 350px;
-        border: 2px solid white;
-        border-radius: 5px;
-        overflow: hidden;
-        text-align: center;
-        background: black;
-        transition: border 0.3s ease-in-out;
-    }
-    
-    .portfolio-info h1 {
-        font-size: 30px;
-    }
-    
-    .portfolio-item a {
-        display: block;
-        text-decoration: none;
-    }
-    
-    .portfolio-item:hover {
-        border: 2px solid #0E57ED;
-    }
-    
-    .portfolio-item img {
-        display: block;
-        width: 100%;
-        height: 10rem;
-        transition: opacity 0.3s ease-in-out;
-    }
-    
-    .portfolio-info {
-        padding: 10px;
-    }
-    
-    .portfolio-info p {
-        font-size: 20px;
-        color: white;
-    }
-  </style>
-</head>
-<div class="bg"></div>
-<div class="content">
-  <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-        <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
-        </li>
-      </ul>
+<html>
+  <head>
+    <title>Portfolio | ikgron</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/out.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/out.ico" sizes="180x180">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=aldrich">
+    <style>
+      /* Global */
+      body {
+          background: black;
+          font-family: 'aldrich', monospace;
+      }
+      
+      h1, h2 {
+          color: white;
+      }
+      
+      h1 {
+          font-size: 30px;
+          margin-top: 7rem;
+      }
+      
+      h2 {
+          font-size: 20px;
+          margin-top: 1rem;
+      }
+      
+      hr {
+          border-bottom: 2px solid #0E57ED;
+          margin-top: 11rem;
+          opacity: 1;
+      }
+      
+      html {
+          ::-webkit-scrollbar {
+              display: none; /* Chrome, Safari */
+          }
+          -ms-overflow-style: none; /* IE, Edge */
+          scrollbar-width: none; /* Firefox */
+      }
+      
+      button {
+          background-color: lightgray;
+          border: 2px outset grey;
+      }
+      
+      .email {
+          text-decoration: underline; 
+          color: #0E57ED;
+      }
+      
+      .row {
+          margin: 1rem;
+      }
+      
+      /* Contact */
+      .icon {
+          margin: 1rem;
+          margin-top: 2rem;
+          filter: invert(1);
+          height: 50px;
+          width: 50px;
+          user-select: none;
+      }
+      
+      /* List Sorter */
+      textarea.form-control,
+      textarea.form-control:focus {
+          background-color: black;
+          color: white;
+          height: 16rem;
+          border: 1px solid white;
+          resize: none;
+          cursor: default;
+          font-size: 20px;
+          padding: 0.5rem;
+          margin-top: 1rem;
+      }
+      
+      textarea.form-control[readonly] {
+          cursor: default;
+      }
+      
+      #copyButton {
+          margin-bottom: 3rem;
+      }
+      
+      #toolsButton {
+          height: 5rem;
+          width: 10rem;
+          font-size: 20px;
+          margin: 1rem;
+      }
+      
+      @media (hover: hover) and (pointer: fine) {
+          .btn.bttn:hover,
+          #sortMethod:hover,
+          #toolsButton:hover {
+              transform-origin: center;
+              color: black;
+              border: 2px solid #0E57ED;
+              background-color: #0E57ED;
+          }
+      }
+      
+      #sortMethod,
+      .btn.bttn,
+      .btn-clickable {
+          background-color: black;
+          color: #0E57ED;
+          font-size: 20px;
+          border: 2px solid #0E57ED;
+          border-radius: 5px;
+          margin: 1rem;
+          height: 3rem;
+          text-align: center;
+          vertical-align: top;
+          box-sizing: border-box;
+          transition: color 0.3s, border 0.3s, background-color 0.3s;
+      }
+      
+      .placeholder1::placeholder {
+          color: #999;
+      }
+      
+      /* Navbar */
+      .nav-link,
+      .navbar-brand,
+      .dropdown-item {
+          color: white;
+          transition: color 0.3s;
+      }
+      
+      .nav-link:focus,
+      .nav-link:hover,
+      .navbar-brand:hover {
+          color: #0E57ED;
+          text-decoration: underline;
+      }
+      
+      .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+      }
+      
+      .dropdown-item:hover {
+          background-color: #0E57ED;
+          color: white;
+          transition: background-color 0.3s;
+      }
+      
+      .navbar-toggler-icon {
+          background-image: url(data:image/svg+xml,%3csvg xmlns=`http://www.w3.org/2000/svg` viewBox=`0 0 30 30`%3e%3cpath stroke=`white` stroke-linecap=`round` stroke-miterlimit=`10` stroke-width=`1` d=`M4 7h22M4 15h22M4 23h22`/%3e%3c/svg%3e);
+          -webkit-filter: brightness(400);
+          filter: brightness(400);
+      }
+      
+      nav {
+          background-color: black;
+          border-bottom: 2px solid #0E57ED;
+      }
+      
+      a.nav-link {
+          padding-left: 1rem;
+          font-size: 30px;
+      }
+      
+      button.navbar-toggler {
+          color: white;
+      }
+      
+      ul.navbar-nav {
+          margin-left: auto;
+          margin-right: 1rem;
+      }
+      
+      .nav-item a.nav-link {
+          padding-left: 1rem;
+          font-size: 30px;
+      }
+      
+      .dropdown-menu {
+          right: 0;
+          background-color: black;
+      }
+      
+      .dropdown-item {
+          padding-left: 1rem;
+          font-size: 30px;
+      }
+      
+      /* Footer */
+      footer.footer {
+          background-color: black;
+          display: none;
+      }
+      
+      footer.footer div {
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 1rem;
+          display: inline-block;
+      }
+      
+      footer.footer h1.text-light {
+          font-size: 20px;
+          vertical-align: middle;
+          display: inline;
+      }
+      
+      footer.footer button.bttn.btn-sm {
+          margin-left: 1rem;
+          height: calc(20px + 0.5rem);
+          vertical-align: middle;
+          padding: 0 20px;
+          line-height: 20px;
+          color: black;
+      }
+      
+      /* Portfolio */
+      .portfolio-grid {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 11rem;
+          gap: 2rem;
+          margin-left: 1rem;
+          margin-right: 1rem;
+          justify-content: center;
+      }
+      
+      .portfolio-item {
+          width: 350px;
+          border: 2px solid white;
+          border-radius: 5px;
+          overflow: hidden;
+          text-align: center;
+          background: black;
+          transition: border 0.3s ease-in-out;
+      }
+      
+      .portfolio-info h1 {
+          font-size: 30px;
+      }
+      
+      .portfolio-item a {
+          display: block;
+          text-decoration: none;
+      }
+      
+      .portfolio-item:hover {
+          border: 2px solid #0E57ED;
+      }
+      
+      .portfolio-item img {
+          display: block;
+          width: 100%;
+          height: 10rem;
+          transition: opacity 0.3s ease-in-out;
+      }
+      
+      .portfolio-info {
+          padding: 10px;
+      }
+      
+      .portfolio-info p {
+          font-size: 20px;
+          color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="content">
+        <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+              <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="portfolio-grid">
+          <div class="portfolio-item"><a href="/tools/list-sorter/"><img src="../images/sorter.png" alt="Project 1" loading="lazy">
+              <div class="portfolio-info">
+                <h1>List Sorter</h1>
+                <p>A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.</p>
+              </div></a></div>
+          <div class="portfolio-item"><a href="/"><img src="../images/homepage.png" alt="Project 2" loading="lazy">
+              <div class="portfolio-info">
+                <h1>www.ikgron.com</h1>
+                <p>This website 👍</p>
+                <p style="font-size: 15px">(Pretty cool right?)</p>
+              </div></a></div>
+        </div>
+        <hr>
+      </div>
     </div>
-  </nav>
-  <div class="portfolio-grid">
-    <div class="portfolio-item"><a href="/tools/list-sorter/"><img src="../images/sorter.png" alt="Project 1" loading="lazy">
-        <div class="portfolio-info">
-          <h1>List Sorter</h1>
-          <p>A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.</p>
-        </div></a></div>
-    <div class="portfolio-item"><a href="/"><img src="../images/homepage.png" alt="Project 2" loading="lazy">
-        <div class="portfolio-info">
-          <h1>www.ikgron.com</h1>
-          <p>This website 👍</p>
-          <p style="font-size: 15px">(Pretty cool right?)</p>
-        </div></a></div>
-  </div>
-  <hr>
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<footer class="footer fixed-bottom text-center">
-  <div>
-    <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
-    <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
-  </div>
-</footer>
-<script>
-  function hideFooter() {
-  
-    var footer = document.querySelector("footer");
-    footer.style.display = 'none';
-  
-    localStorage.setItem("footerAcknowledged", "true");
-  }
-  
-  window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
-    if (!acknowledged) {
-        var footer = document.querySelector("footer");
-        footer.style.display = 'block';
-    }
-  };
-</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer class="footer fixed-bottom text-center">
+      <div>
+        <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
+        <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
+      </div>
+    </footer>
+    <script>
+      function hideFooter() {
+        var footer = document.querySelector(`footer`);
+        footer.style.display = `none`;
+        localStorage.setItem(`footerAcknowledged`, `true`);
+      }
+      
+      window.onload = function() {
+        var acknowledged = localStorage.getItem(`footerAcknowledged`);
+        if (!acknowledged) {
+          var footer = document.querySelector(`footer`);
+          footer.style.display = `block`;
+        }
+      };
+    </script>
+  </body>
+</html>

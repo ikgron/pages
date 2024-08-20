@@ -1,24 +1,26 @@
-script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
-script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+script(src=`https://code.jquery.com/jquery-3.5.1.slim.min.js`)
+script(src=`https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js`)
 
 footer.footer.fixed-bottom.text-center
   div
     h1.text-light This site doesn't use cookies. Why would it?
-    button(type='button', class='bttn btn-sm', onclick='hideFooter()') OK
+    button(
+      type=`button`
+      class=`bttn btn-sm`
+      onclick=`hideFooter()`
+    ) OK
 
 script.
   function hideFooter() {
-
-    var footer = document.querySelector("footer");
-    footer.style.display = 'none';
-
-    localStorage.setItem("footerAcknowledged", "true");
+    var footer = document.querySelector(`footer`);
+    footer.style.display = `none`;
+    localStorage.setItem(`footerAcknowledged`, `true`);
   }
 
   window.onload = function() {
-    var acknowledged = localStorage.getItem("footerAcknowledged");
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
     if (!acknowledged) {
-        var footer = document.querySelector("footer");
-        footer.style.display = 'block';
+      var footer = document.querySelector(`footer`);
+      footer.style.display = `block`;
     }
   };

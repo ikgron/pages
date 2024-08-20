@@ -1,18 +1,31 @@
 include /partials/variables.pug
 
 nav.navbar.navbar-expand-lg.fixed-top
-  a.nav-link(href='/') ikgron
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+  a.nav-link(href=`/`) ikgron
+  button.navbar-toggler(
+    type=`button`
+    data-toggle=`collapse`
+    data-target=`#navbarNav`
+    aria-controls=`navbarNav`
+    aria-expanded=`false`
+    aria-label=`Toggle navigation`
+  )
     span.navbar-toggler-icon
   #navbarNav.collapse.navbar-collapse
     ul.navbar-nav
       li.nav-item
-        a.nav-link(href='/about') About
+        a.nav-link(href=`/about`) About
       li.nav-item
-        a.nav-link(href='/portfolio') Portfolio
+        a.nav-link(href=`/portfolio`) Portfolio
       li.nav-item
-        a.nav-link(href='/contact') Contact
-      li.nav-item.dropdown(style='position: relative')
-        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') More
-        .dropdown-menu.dropdown-menu-end(aria-labelledby='navbarDropdown')
-          a.dropdown-item(href='/tools') Tools
+        a.nav-link(href=`/contact`) Contact
+      li.nav-item.dropdown(style=`position: relative`)
+        a#navbarDropdown.nav-link.dropdown-toggle(
+          href=`#`
+          role=`button`
+          data-toggle=`dropdown`
+          aria-haspopup=`true`
+          aria-expanded=`false`
+        ) More
+        .dropdown-menu.dropdown-menu-end(aria-labelledby=`navbarDropdown`)
+          a.dropdown-item(href=`/tools`) Tools
