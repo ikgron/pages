@@ -1,11 +1,24 @@
 include variables.pug
 
 style.
+    /* body */
     body {
         background: black;
         font-family: 'aldrich', monospace;
     }
-    
+    body h1 {
+        font-size: #{lfont};
+        margin-top: 7rem;
+    }
+    body h2 {
+        font-size: #{sfont};
+        margin-top: 1rem;
+    }
+    hr {
+        border-bottom: 2px solid #{color};
+        margin-top: 15vh;
+        opacity: 1;
+    }
     html {
         ::-webkit-scrollbar {
             display: none; /* Chrome, Safari */
@@ -13,11 +26,59 @@ style.
         -ms-overflow-style: none; /* IE, Edge */
         scrollbar-width: none; /* Firefox */
     }
+    button {
+        background-color : lightgray;
+        border: 2px outset grey;
+    }
 
-    .placeholder1::placeholder {
-        color: #999;
-      }
+    /* contact */
+    .icon {
+        margin: 2vh;
+        filter: invert(1);
+        height: 50px;
+        width: 50px;
+        user-select: none; /* Chrome, Opera, Edge */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE/Edge */
+    }
 
+
+    /* list sorter */
+    textarea.form-control,
+    textarea.form-control:focus {
+        background-color: black;
+        color: white;
+        height: 23vh;
+        border: 1px solid white;
+        resize: none;
+        cursor: default;
+        font-size: #{sfont};
+        padding: 0.5vh;
+        margin-top: 1vh;
+    }
+    textarea.form-control[readonly] {
+        cursor: default;
+    }
+    #copyButton {
+        margin-bottom: 5vh;
+    }
+    #toolsButton {
+        height: 5rem;
+        width: 10rem;
+        font-size: #{sfont};
+        margin: 2vh;
+    }
+    @media (hover: hover) and (pointer: fine) {
+        .btn.bttn:hover,
+        #sortMethod:hover,
+        #toolsButton:hover {
+            transform-origin: center;
+            color: black;
+            border: 2px solid #{color};
+            background-color: #{color};
+        }
+    }
     #sortMethod,
     .btn.bttn,
     .btn-clickable {
@@ -33,63 +94,11 @@ style.
         box-sizing: border-box;
         transition: color 0.3s, border 0.3s, background-color 0.3s;
     }
-
-    #toolsButton {
-        height: 5rem;
-        width: 10rem;
-        font-size: #{sfont};
-        margin: 2vh;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .btn.bttn:hover,
-        #sortMethod:hover,
-        #toolsButton:hover {
-            transform-origin: center;
-            color: black;
-            border: 2px solid #{color};
-            background-color: #{color};
-        }
-    }
-
-    button {
-        background-color : lightgray;
-        border: 2px outset grey;
-    }
-
-    #copyButton {
-        margin-bottom: 5vh;
-    }
-
-    textarea.form-control,
-    textarea.form-control:focus {
-        background-color: black;
-        color: white;
-        height: 23vh;
-        border: 1px solid white;
-        resize: none;
-        cursor: default;
-        font-size: #{sfont};
-        padding: 0.5vh;
-        margin-top: 1vh;
-    }
-
-    textarea.form-control[readonly] {
-        cursor: default;
-    }
-
-    .icon {
-        margin: 2vh;
-        filter: invert(1);
-        height: 50px;
-        width: 50px;
-        user-select: none; /* Chrome, Opera, Edge */
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE/Edge */
-    }
+    .placeholder1::placeholder {
+        color: #999;
+      }
     
-    /* Navbar */
+    /* navbar */
     .nav-link,
     .navbar-brand,
     .dropdown-item {
@@ -143,7 +152,7 @@ style.
         font-size: #{lfont};
     }
 
-    /* Scripts */
+    /* scripts */
     footer.footer {
         background-color: black;
         display: none;
@@ -168,16 +177,16 @@ style.
         color: black;
     }
 
-    /* Portfolio */
+    /* portfolio */
     .portfolio-grid {
         display: flex;
         flex-wrap: wrap;
+        margin-top: 11rem;
         gap: 2vh;
         margin-left: 1vh;
         margin-right: 1vh;
         justify-content: center;
     }
-
     .portfolio-item {
         width: 350px;
         border: 2px solid white;
@@ -187,27 +196,25 @@ style.
         background: black;
         transition: border 0.3s ease-in-out;
     }
-
+    .portfolio-info h1 {
+        font-size: #{lfont};
+    }
+    .portfolio-item a {
+        display: block;
+        text-decoration: none;
+    }
     .portfolio-item:hover {
         border: 2px solid #{color};
     }
-
     .portfolio-item img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 10rem;
         transition: opacity 0.3s ease-in-out;
     }
-
     .portfolio-info {
         padding: 10px;
     }
-
-    .portfolio-info h2 {
-        margin: 0;
-        color: #{color};
-    }
-
     .portfolio-info p {
         font-size: #{sfont};
         color: white;

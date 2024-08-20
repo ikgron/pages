@@ -10,9 +10,9 @@ head
 .content
   include /partials/navbar.pug
 
-  h1.text-light(style=`margin-top: 7rem; font-size: ${xlfont}; text-align: center;`) Contact Me!
+  h1.text-light(style=`text-align: center;`) Contact Me!
   
-  h1.text-light(style=`margin-top: 1vh; font-size: ${sfont}; text-align: center;`) Email: 
+  h2.text-light(style=`text-align: center;`) Email: 
     a.email(href=`mailto:contactme@ikgron.com`, style=`text-decoration: underline; color: ${color}; margin-left:`) contactme@ikgron.com
 
     br(style=`margin-bottom: 3vh;`)
@@ -24,7 +24,7 @@ head
         img.icon(src='https://pngimg.com/uploads/github/github_PNG80.png')
 
 
-  div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
+  hr
 
 
 include /partials/scripts.pug

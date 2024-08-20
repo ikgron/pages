@@ -9,11 +9,24 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <link href="https://fonts.bunny.net/css?family=aldrich" rel="stylesheet">
   <style>
+    /* body */
     body {
         background: black;
         font-family: 'aldrich', monospace;
     }
-    
+    body h1 {
+        font-size: 30px;
+        margin-top: 7rem;
+    }
+    body h2 {
+        font-size: 20px;
+        margin-top: 1rem;
+    }
+    hr {
+        border-bottom: 2px solid #0E57ED;
+        margin-top: 15vh;
+        opacity: 1;
+    }
     html {
         ::-webkit-scrollbar {
             display: none; /* Chrome, Safari */
@@ -21,11 +34,59 @@
         -ms-overflow-style: none; /* IE, Edge */
         scrollbar-width: none; /* Firefox */
     }
+    button {
+        background-color : lightgray;
+        border: 2px outset grey;
+    }
     
-    .placeholder1::placeholder {
-        color: #999;
-      }
+    /* contact */
+    .icon {
+        margin: 2vh;
+        filter: invert(1);
+        height: 50px;
+        width: 50px;
+        user-select: none; /* Chrome, Opera, Edge */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE/Edge */
+    }
     
+    
+    /* list sorter */
+    textarea.form-control,
+    textarea.form-control:focus {
+        background-color: black;
+        color: white;
+        height: 23vh;
+        border: 1px solid white;
+        resize: none;
+        cursor: default;
+        font-size: 20px;
+        padding: 0.5vh;
+        margin-top: 1vh;
+    }
+    textarea.form-control[readonly] {
+        cursor: default;
+    }
+    #copyButton {
+        margin-bottom: 5vh;
+    }
+    #toolsButton {
+        height: 5rem;
+        width: 10rem;
+        font-size: 20px;
+        margin: 2vh;
+    }
+    @media (hover: hover) and (pointer: fine) {
+        .btn.bttn:hover,
+        #sortMethod:hover,
+        #toolsButton:hover {
+            transform-origin: center;
+            color: black;
+            border: 2px solid #0E57ED;
+            background-color: #0E57ED;
+        }
+    }
     #sortMethod,
     .btn.bttn,
     .btn-clickable {
@@ -41,63 +102,11 @@
         box-sizing: border-box;
         transition: color 0.3s, border 0.3s, background-color 0.3s;
     }
+    .placeholder1::placeholder {
+        color: #999;
+      }
     
-    #toolsButton {
-        height: 5rem;
-        width: 10rem;
-        font-size: 20px;
-        margin: 2vh;
-    }
-    
-    @media (hover: hover) and (pointer: fine) {
-        .btn.bttn:hover,
-        #sortMethod:hover,
-        #toolsButton:hover {
-            transform-origin: center;
-            color: black;
-            border: 2px solid #0E57ED;
-            background-color: #0E57ED;
-        }
-    }
-    
-    button {
-        background-color : lightgray;
-        border: 2px outset grey;
-    }
-    
-    #copyButton {
-        margin-bottom: 5vh;
-    }
-    
-    textarea.form-control,
-    textarea.form-control:focus {
-        background-color: black;
-        color: white;
-        height: 23vh;
-        border: 1px solid white;
-        resize: none;
-        cursor: default;
-        font-size: 20px;
-        padding: 0.5vh;
-        margin-top: 1vh;
-    }
-    
-    textarea.form-control[readonly] {
-        cursor: default;
-    }
-    
-    .icon {
-        margin: 2vh;
-        filter: invert(1);
-        height: 50px;
-        width: 50px;
-        user-select: none; /* Chrome, Opera, Edge */
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE/Edge */
-    }
-    
-    /* Navbar */
+    /* navbar */
     .nav-link,
     .navbar-brand,
     .dropdown-item {
@@ -151,7 +160,7 @@
         font-size: 30px;
     }
     
-    /* Scripts */
+    /* scripts */
     footer.footer {
         background-color: black;
         display: none;
@@ -176,16 +185,16 @@
         color: black;
     }
     
-    /* Portfolio */
+    /* portfolio */
     .portfolio-grid {
         display: flex;
         flex-wrap: wrap;
+        margin-top: 11rem;
         gap: 2vh;
         margin-left: 1vh;
         margin-right: 1vh;
         justify-content: center;
     }
-    
     .portfolio-item {
         width: 350px;
         border: 2px solid white;
@@ -195,27 +204,25 @@
         background: black;
         transition: border 0.3s ease-in-out;
     }
-    
+    .portfolio-info h1 {
+        font-size: 30px;
+    }
+    .portfolio-item a {
+        display: block;
+        text-decoration: none;
+    }
     .portfolio-item:hover {
         border: 2px solid #0E57ED;
     }
-    
     .portfolio-item img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 10rem;
         transition: opacity 0.3s ease-in-out;
     }
-    
     .portfolio-info {
         padding: 10px;
     }
-    
-    .portfolio-info h2 {
-        margin: 0;
-        color: #0E57ED;
-    }
-    
     .portfolio-info p {
         font-size: 20px;
         color: white;
@@ -237,9 +244,9 @@
       </ul>
     </div>
   </nav>
-  <h1 class="text-light" style="margin-top: 7rem; font-size: 30px; margin-left: 2vh">Home</h1>
-  <h1 class="text-light" style="margin-top: 1vh; font-size: 20px; margin-left: 2vh">- A fine website by ikgron.</h1>
-  <div style="border-bottom: 2px solid #0E57ED; margin-top: 15vh;"></div>
+  <h1 class="text-light" style="margin-left: 2vh">Home</h1>
+  <h2 class="text-light" style="margin-left: 2vh">- A fine website by ikgron.</h2>
+  <hr>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

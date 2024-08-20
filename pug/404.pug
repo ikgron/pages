@@ -10,15 +10,15 @@ head
 .content
   include /partials/navbar.pug  
             
-  h1.text-light(style=`margin-top: 7rem; font-size: ${lfont}; margin-left: 2vh`) 404
+  h1.text-light(style=`margin-left: 2vh`) 404
 
-  h1.text-light(style=`margin-top: 1vh; font-size: ${sfont}; margin-left: 2vh`) Are you sure you're in the right place? Would you like to 
+  h2.text-light(style=`margin-left: 2vh`) - Are you sure you're in the right place? Would you like to 
     a(href='/', style='text-decoration: underline; color: ${color};') go Home
     | ?
 
 
 
-  div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
+  hr
 
 
 include /partials/scripts.pug

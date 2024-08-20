@@ -17,26 +17,25 @@ head
   //-   a(href=`https://github.com/ikgron`, target=`_blank` style=`text-decoration: underline; color: ${color};`) Github
   //-   |  (secondary/mirror).
 
-  .portfolio-grid(style=`margin-top: 15vh;`)
+  .portfolio-grid
     .portfolio-item
-      a(href=`/tools/list-sorter/`, style=`display: block; text-decoration: none;`)
-        img(src=`../images/sorter.png`, alt=`Project 1`, style=`width: 100%; height: auto;`, loading=`lazy`)
+      a(href=`/tools/list-sorter/`)
+        img(src=`../images/sorter.png`, alt=`Project 1`, loading=`lazy`)
         .portfolio-info
-          h1(style=`font-size: ${lfont};`) List Sorter
+          h1 List Sorter
           p A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.
 
 
     .portfolio-item
-      a(href=`/`, style=`display: block; text-decoration: none;`)
-        img(src=`../images/homepage.png`, alt=`Project 2`, style=`width: 100%; height: auto;` loading=`lazy`)
+      a(href=`/`)
+        img(src=`../images/homepage.png`, alt=`Project 2`, loading=`lazy`)
         .portfolio-info
-          h1(style=`font-size: ${lfont};`) www.ikgron.com
+          h1 www.ikgron.com
           p This website 👍
           p(style=`font-size: ${xsfont}`) (Pretty cool right?)
 
 
-
-  div(style=`border-bottom: 2px solid ${color}; margin-top: 15vh;`)
+  hr
 
 
 include ../partials/scripts.pug
