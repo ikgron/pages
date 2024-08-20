@@ -185,17 +185,18 @@ style.
         overflow: hidden;
         text-align: center;
         background: black;
-        transition: border 0.5s;
+        transition: border 0.3s ease-in-out;
     }
 
     .portfolio-item:hover {
         border: 2px solid #{color};
-        transform-origin: center;
     }
 
     .portfolio-item img {
         display: block;
+        width: 100%;
         height: auto;
+        transition: opacity 0.3s ease-in-out;
     }
 
     .portfolio-info {
