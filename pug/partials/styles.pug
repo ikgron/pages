@@ -1,26 +1,32 @@
 include variables.pug
 
 style.
-    /* body */
+    /* Global */
     body {
         background: black;
         font-family: 'aldrich', monospace;
     }
-    body h1 {
+
+    h1, h2 {
+        color: white;
+    }
+
+    h1 {
         font-size: #{lfont};
         margin-top: 7rem;
-        color: white;
     }
-    body h2 {
+
+    h2 {
         font-size: #{sfont};
         margin-top: 1rem;
-        color: white;
     }
+
     hr {
         border-bottom: 2px solid #{color};
-        margin-top: 15vh;
+        margin-top: 11rem;
         opacity: 1;
     }
+
     html {
         ::-webkit-scrollbar {
             display: none; /* Chrome, Safari */
@@ -28,57 +34,59 @@ style.
         -ms-overflow-style: none; /* IE, Edge */
         scrollbar-width: none; /* Firefox */
     }
+
     button {
-        background-color : lightgray;
+        background-color: lightgray;
         border: 2px outset grey;
     }
+
     .email {
         text-decoration: underline; 
         color: #{color};
     }
-    
+
     .row {
         margin: 1rem;
     }
 
-    /* contact */
+    /* Contact */
     .icon {
-        margin: 2vh;
+        margin: 1rem;
         filter: invert(1);
         height: 50px;
         width: 50px;
-        user-select: none; /* Chrome, Opera, Edge */
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE/Edge */
+        user-select: none;
     }
 
-
-    /* list sorter */
+    /* List Sorter */
     textarea.form-control,
     textarea.form-control:focus {
         background-color: black;
         color: white;
-        height: 23vh;
+        height: 16rem;
         border: 1px solid white;
         resize: none;
         cursor: default;
         font-size: #{sfont};
-        padding: 0.5vh;
-        margin-top: 1vh;
+        padding: 0.5rem;
+        margin-top: 1rem;
     }
+
     textarea.form-control[readonly] {
         cursor: default;
     }
+
     #copyButton {
-        margin-bottom: 5vh;
+        margin-bottom: 3rem;
     }
+
     #toolsButton {
         height: 5rem;
         width: 10rem;
         font-size: #{sfont};
-        margin: 2vh;
+        margin: 1rem;
     }
+
     @media (hover: hover) and (pointer: fine) {
         .btn.bttn:hover,
         #sortMethod:hover,
@@ -89,114 +97,131 @@ style.
             background-color: #{color};
         }
     }
+
     #sortMethod,
     .btn.bttn,
     .btn-clickable {
         background-color: black;
         color: #{color};
-        font-size: #{sfont}; 
+        font-size: #{sfont};
         border: 2px solid #{color};
         border-radius: 5px;
-        margin: 1vh;
+        margin: 1rem;
         height: 3rem;
         text-align: center;
         vertical-align: top;
         box-sizing: border-box;
         transition: color 0.3s, border 0.3s, background-color 0.3s;
     }
+
     .placeholder1::placeholder {
         color: #999;
-      }
-    
-    /* navbar */
+    }
+
+    /* Navbar */
     .nav-link,
     .navbar-brand,
     .dropdown-item {
         color: white;
         transition: color 0.3s;
     }
+
     .nav-link:focus,
     .nav-link:hover,
     .navbar-brand:hover {
         color: #{color};
-        text-decoration: underline; 
+        text-decoration: underline;
     }
+
     .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
         display: block;
     }
+
     .dropdown-item:hover {
         background-color: #{color};
         color: white;
         transition: background-color 0.3s;
     }
+
     .navbar-toggler-icon {
-        background-image: url(`data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e`);
+        background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
         -webkit-filter: brightness(400);
         filter: brightness(400);
     }
+
     nav {
         background-color: black;
         border-bottom: 2px solid #{color};
     }
+
     a.nav-link {
-        padding-left: 1.5vh;
+        padding-left: 1rem;
         font-size: #{lfont};
     }
+
     button.navbar-toggler {
         color: white;
     }
+
     ul.navbar-nav {
         margin-left: auto;
-        margin-right: 1.5vh;
+        margin-right: 1rem;
     }
+
     .nav-item a.nav-link {
-        padding-left: 2vh;
+        padding-left: 1rem;
         font-size: #{lfont};
     }
+
     .dropdown-menu {
         right: 0;
         background-color: black;
     }
+
     .dropdown-item {
-        padding-left: 2vh;
+        padding-left: 1rem;
         font-size: #{lfont};
     }
 
-    /* scripts */
+    /* Footer */
     footer.footer {
         background-color: black;
         display: none;
     }
+
     footer.footer div {
         border: 1px solid white;
         border-radius: 5px;
-        padding: 1vh;
+        padding: 1rem;
         display: inline-block;
     }
+
     footer.footer h1.text-light {
         font-size: #{sfont};
         vertical-align: middle;
         display: inline;
     }
+
     footer.footer button.bttn.btn-sm {
-        margin-left: 1vh;
-        height: calc(#{sfont} + 0.5vh);
+        margin-left: 1rem;
+        height: calc(#{sfont} + 0.5rem);
         vertical-align: middle;
-        padding: 0 #{sfont}; 
+        padding: 0 #{sfont};
         line-height: #{sfont};
         color: black;
     }
 
-    /* portfolio */
+    /* Portfolio */
     .portfolio-grid {
         display: flex;
         flex-wrap: wrap;
         margin-top: 11rem;
-        gap: 2vh;
-        margin-left: 1vh;
-        margin-right: 1vh;
+        gap: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
         justify-content: center;
     }
+
     .portfolio-item {
         width: 350px;
         border: 2px solid white;
@@ -206,25 +231,31 @@ style.
         background: black;
         transition: border 0.3s ease-in-out;
     }
+
     .portfolio-info h1 {
         font-size: #{lfont};
     }
+
     .portfolio-item a {
         display: block;
         text-decoration: none;
     }
+
     .portfolio-item:hover {
         border: 2px solid #{color};
     }
+
     .portfolio-item img {
         display: block;
         width: 100%;
         height: 10rem;
         transition: opacity 0.3s ease-in-out;
     }
+
     .portfolio-info {
         padding: 10px;
     }
+
     .portfolio-info p {
         font-size: #{sfont};
         color: white;
