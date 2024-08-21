@@ -6,27 +6,25 @@ html
     include ../partials/head.pug
     include ../partials/styles.pug
 
-  body
-    .bg
-      .content
-        include ../partials/navbar.pug
+body
+  include ../partials/navbar.pug
 
-        .portfolio-grid
-          .portfolio-item
-            a(href=`/tools/list-sorter/`)
-              img(src=`../images/sorter.png` alt=`Project 1` loading=`lazy`)
-              .portfolio-info
-                h1 List Sorter
-                p A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.
+  .portfolio-grid
+    .portfolio-item
+      a(href=`/tools/list-sorter/`)
+        img(src=`../images/sorter.png` alt=`Project 1` loading=`lazy`)
+        .portfolio-info
+          h1 List Sorter
+          p A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.
 
-          .portfolio-item
-            a(href=`/`)
-              img(src=`../images/homepage.png` alt=`Project 2` loading=`lazy`)
-              .portfolio-info
-                h1 www.ikgron.com
-                p This website 👍
-                p(style=`font-size: ${xsfont}`) (Pretty cool right?)
+    .portfolio-item
+      a(href=`/`)
+        img(src=`../images/homepage.png` alt=`Project 2` loading=`lazy`)
+        .portfolio-info
+          h1 www.ikgron.com
+          p This website 👍
+          p(style=`font-size: ${xsfont}`) (Pretty cool right?)
 
-        hr
+  hr
 
-    include ../partials/scripts.pug
+include ../partials/scripts.pug

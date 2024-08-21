@@ -271,60 +271,56 @@
       }
     </style>
   </head>
-  <body>
-    <div class="bg">
-      <div class="content">
-        <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
-              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-              <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="portfolio-grid">
-          <div class="portfolio-item"><a href="/tools/list-sorter/"><img src="../images/sorter.png" alt="Project 1" loading="lazy">
-              <div class="portfolio-info">
-                <h1>List Sorter</h1>
-                <p>A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.</p>
-              </div></a></div>
-          <div class="portfolio-item"><a href="/"><img src="../images/homepage.png" alt="Project 2" loading="lazy">
-              <div class="portfolio-info">
-                <h1>www.ikgron.com</h1>
-                <p>This website 👍</p>
-                <p style="font-size: 15px">(Pretty cool right?)</p>
-              </div></a></div>
-        </div>
-        <hr>
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <footer class="footer fixed-bottom text-center">
-      <div>
-        <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
-        <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
-      </div>
-    </footer>
-    <script>
-      function hideFooter() {
-        var footer = document.querySelector(`footer`);
-        footer.style.display = `none`;
-        localStorage.setItem(`footerAcknowledged`, `true`);
-      }
-      
-      window.onload = function() {
-        var acknowledged = localStorage.getItem(`footerAcknowledged`);
-        if (!acknowledged) {
-          var footer = document.querySelector(`footer`);
-          footer.style.display = `block`;
-        }
-      };
-    </script>
-  </body>
 </html>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="portfolio-grid">
+    <div class="portfolio-item"><a href="/tools/list-sorter/"><img src="../images/sorter.png" alt="Project 1" loading="lazy">
+        <div class="portfolio-info">
+          <h1>List Sorter</h1>
+          <p>A simple sorter that organizes items into a list by their first character or length. Recognizes characters from different languages.</p>
+        </div></a></div>
+    <div class="portfolio-item"><a href="/"><img src="../images/homepage.png" alt="Project 2" loading="lazy">
+        <div class="portfolio-info">
+          <h1>www.ikgron.com</h1>
+          <p>This website 👍</p>
+          <p style="font-size: 15px">(Pretty cool right?)</p>
+        </div></a></div>
+  </div>
+  <hr>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<footer class="footer fixed-bottom text-center">
+  <div>
+    <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
+    <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
+  </div>
+</footer>
+<script>
+  function hideFooter() {
+    var footer = document.querySelector(`footer`);
+    footer.style.display = `none`;
+    localStorage.setItem(`footerAcknowledged`, `true`);
+  }
+  
+  window.onload = function() {
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
+    if (!acknowledged) {
+      var footer = document.querySelector(`footer`);
+      footer.style.display = `block`;
+    }
+  };
+</script>

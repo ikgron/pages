@@ -271,76 +271,72 @@
       }
     </style>
   </head>
-  <body>
-    <div class="bg">
-      <div class="content">
-        <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
-              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-              <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <h1 style="text-align: center;">List Sorter</h1>
-        <div style="text-align: center;">
-          <label for="sortMethod"></label>
-          <select class="form-select-sm" id="sortMethod" onchange="sort()">
-            <option value="alphabetical">Alphabetical</option>
-            <option value="length">Length</option>
-          </select>
-          <button class="btn btn-animate btn-clickable bttn" id="reverseButton" type="button" onclick="toggleReverse()">Reverse Output</button>
-        </div>
-        <div class="row">
-          <div class="col-md-7 mx-auto">
-            <h2>Input</h2>
-            <div id="inputContainer"></div>
-            <textarea class="form-control placeholder1" id="input" placeholder="Separate by commas, semicolons, or new lines." oninput="sort()"></textarea>
-          </div>
-        </div>
-        <div style="text-align: center;">
-          <button class="btn btn-animate btn-clickable bttn" id="clearButton" type="button" onclick="clearInput()">Clear</button>
-        </div>
-        <div class="row">
-          <div class="col-md-7 mx-auto">
-            <h2>Output</h2>
-            <div id="outputContainer"></div>
-            <textarea class="form-control placeholder1" id="output" placeholder="Output appears here." readonly></textarea>
-          </div>
-        </div>
-        <div style="text-align: center;">
-          <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" onclick="copyOutput()">Copy</button>
-        </div>
-      </div>
-    </div>
-    <script src="/pug/tools/list-sorter/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <footer class="footer fixed-bottom text-center">
-      <div>
-        <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
-        <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
-      </div>
-    </footer>
-    <script>
-      function hideFooter() {
-        var footer = document.querySelector(`footer`);
-        footer.style.display = `none`;
-        localStorage.setItem(`footerAcknowledged`, `true`);
-      }
-      
-      window.onload = function() {
-        var acknowledged = localStorage.getItem(`footerAcknowledged`);
-        if (!acknowledged) {
-          var footer = document.querySelector(`footer`);
-          footer.style.display = `block`;
-        }
-      };
-    </script>
-  </body>
 </html>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1 style="text-align: center;">List Sorter</h1>
+  <div style="text-align: center;">
+    <label for="sortMethod"></label>
+    <select class="form-select-sm" id="sortMethod" onchange="sort()">
+      <option value="alphabetical">Alphabetical</option>
+      <option value="length">Length</option>
+    </select>
+    <button class="btn btn-animate btn-clickable bttn" id="reverseButton" type="button" onclick="toggleReverse()">Reverse Output</button>
+  </div>
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+      <h2>Input</h2>
+      <div id="inputContainer"></div>
+      <textarea class="form-control placeholder1" id="input" placeholder="Separate by commas, semicolons, or new lines." oninput="sort()"></textarea>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <button class="btn btn-animate btn-clickable bttn" id="clearButton" type="button" onclick="clearInput()">Clear</button>
+  </div>
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+      <h2>Output</h2>
+      <div id="outputContainer"></div>
+      <textarea class="form-control placeholder1" id="output" placeholder="Output appears here." readonly></textarea>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" onclick="copyOutput()">Copy</button>
+  </div>
+</body>
+<script src="/pug/tools/list-sorter/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<footer class="footer fixed-bottom text-center">
+  <div>
+    <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
+    <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
+  </div>
+</footer>
+<script>
+  function hideFooter() {
+    var footer = document.querySelector(`footer`);
+    footer.style.display = `none`;
+    localStorage.setItem(`footerAcknowledged`, `true`);
+  }
+  
+  window.onload = function() {
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
+    if (!acknowledged) {
+      var footer = document.querySelector(`footer`);
+      footer.style.display = `block`;
+    }
+  };
+</script>

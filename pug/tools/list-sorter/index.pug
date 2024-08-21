@@ -6,38 +6,36 @@ html(lang='en')
     include /partials/head.pug
     include /partials/styles.pug
 
-  body
-    .bg
-      .content
-        include /partials/navbar.pug  
-            
-        h1(style=`text-align: center;`) List Sorter
+body
+  include /partials/navbar.pug  
+      
+  h1(style=`text-align: center;`) List Sorter
 
-        div(style='text-align: center;')
-          label(for='sortMethod')
-          select#sortMethod(onchange='sort()', class='form-select-sm')
-            option(value='alphabetical') Alphabetical
-            option(value='length') Length
+  div(style='text-align: center;')
+    label(for='sortMethod')
+    select#sortMethod(onchange='sort()', class='form-select-sm')
+      option(value='alphabetical') Alphabetical
+      option(value='length') Length
 
-          button.btn.btn-animate.btn-clickable(id='reverseButton', type='button', class='bttn', onclick='toggleReverse()') Reverse Output
+    button.btn.btn-animate.btn-clickable(id='reverseButton', type='button', class='bttn', onclick='toggleReverse()') Reverse Output
 
-        .row
-          .col-md-7.mx-auto
-            h2 Input
-            div(id='inputContainer')
-            textarea#input.form-control.placeholder1(placeholder='Separate by commas, semicolons, or new lines.', oninput='sort()')
+  .row
+    .col-md-7.mx-auto
+      h2 Input
+      div(id='inputContainer')
+      textarea#input.form-control.placeholder1(placeholder='Separate by commas, semicolons, or new lines.', oninput='sort()')
 
-        div(style='text-align: center;')
-          button.btn.btn-animate.btn-clickable(id='clearButton', type='button', class='bttn', onclick='clearInput()') Clear
+  div(style='text-align: center;')
+    button.btn.btn-animate.btn-clickable(id='clearButton', type='button', class='bttn', onclick='clearInput()') Clear
 
-        .row
-          .col-md-7.mx-auto
-            h2 Output
-            div(id='outputContainer')
-            textarea#output.form-control.placeholder1(placeholder='Output appears here.', readonly)
+  .row
+    .col-md-7.mx-auto
+      h2 Output
+      div(id='outputContainer')
+      textarea#output.form-control.placeholder1(placeholder='Output appears here.', readonly)
 
-        div(style='text-align: center;')
-          button.btn.btn-animate.btn-clickable(id='copyButton', type='button', class='bttn', onclick='copyOutput()') Copy
+  div(style='text-align: center;')
+    button.btn.btn-animate.btn-clickable(id='copyButton', type='button', class='bttn', onclick='copyOutput()') Copy
 
-    script(src='/pug/tools/list-sorter/scripts.js')
-    include /partials/scripts.pug
+script(src='/pug/tools/list-sorter/scripts.js')
+include /partials/scripts.pug

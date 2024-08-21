@@ -6,17 +6,14 @@ html(lang=`en`)
     include /partials/head.pug
     include /partials/styles.pug
 
-  body
-    .bg
-      .content
-        include /partials/navbar.pug
+body
+  include /partials/navbar.pug
 
-        h1(style=`text-align: center;`) Tools
+  h1(style=`text-align: center;`) Tools
 
-        .row
-          .col(style=`text-align: center; margin-top: 2rem`)
-            button#toolsButton.btn(type=`button` class=`bttn` onclick=`window.location.href="/tools/list-sorter"`) List Sorter
+  div(style=`text-align: center; margin-top: 2rem`)
+    button#toolsButton.btn(type=`button` class=`bttn` onclick=`window.location.href="/tools/list-sorter"`) List Sorter
 
-        hr
+  hr
 
-    include /partials/scripts.pug
+include /partials/scripts.pug
