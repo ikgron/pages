@@ -51,11 +51,18 @@ function updateSortedOutput(inputValue) {
 
     items = items.map(item => item.trim().replace(/^(\s*-\s*\[\s*([xX]|\s)*\]\s*)/, ``)).filter(item => item !== ``);
 
-    if (sortMethod === `alphabetical`) {
+    if (sortMethod === "alphabetical") {
         items.sort(Intl.Collator().compare);
-    } else if (sortMethod === `length`) {
+    } else if (sortMethod === "length") {
         items.sort((a, b) => a.length - b.length);
+    } else if (sortMethod === "numerical") {
+        items.sort((a, b) => {
+            const numA = parseInt(a.replace(/[^0-9]/g, ''), 10);
+            const numB = parseInt(b.replace(/[^0-9]/g, ''), 10);
+            return numA - numB;
+        });
     }
+    
 
     if (isReversed) {
         items.reverse();
