@@ -57,12 +57,12 @@ function updateSortedOutput(inputValue) {
         items.sort((a, b) => a.length - b.length);
     } else if (sortMethod === "numerical") {
         items.sort((a, b) => {
-            const numA = parseInt(a.replace(/[^0-9]/g, ''), 10);
-            const numB = parseInt(b.replace(/[^0-9]/g, ''), 10);
+            const numA = parseFloat(a.replace(/[^0-9.]/g, ''));
+            const numB = parseFloat(b.replace(/[^0-9.]/g, ''));
             return numA - numB;
         });
     }
-    
+
 
     if (isReversed) {
         items.reverse();
@@ -77,7 +77,7 @@ function updateSortedOutput(inputValue) {
     } else if (inputValue.includes(`,`)) {
         outputValue = items.join(`, `)
     }
-     else {
+    else {
         outputValue = items.join(``);
     }
 
