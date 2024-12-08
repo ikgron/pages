@@ -18,6 +18,13 @@ script(
 )
 
 link(
-  rel=`stylesheet`
-  href=`https://fonts.bunny.net/css?family=aldrich`
+  rel='stylesheet' 
+  href='https://fonts.bunny.net/css?family=aldrich' 
+  integrity='sha384-Lw/IxlCxvuF4AtBtuB9+1a1wfvD9syys+dlj8Wet9oyYrqqIEzQJtPlOZpthHAt7' 
+  crossorigin='anonymous'
 )
+
+
+meta(
+  http-equiv="Content-Security-Policy" 
+  content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.bunny.net 'unsafe-inline'; img-src 'self' data:;")
