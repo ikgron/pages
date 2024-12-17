@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>List Sorter | ikgron</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/out.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/out.ico" sizes="180x180">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.bunny.net/css?family=aldrich" integrity="sha384-Lw/IxlCxvuF4AtBtuB9+1a1wfvD9syys+dlj8Wet9oyYrqqIEzQJtPlOZpthHAt7" crossorigin="anonymous">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.bunny.net 'unsafe-inline'; img-src 'self' data:;">
+    <style>
+      /* Global */
+      body {
+          background: black;
+          font-family: 'aldrich', monospace;
+      }
+      
+      h1, h2 {
+          color: white;
+      }
+      
+      h1 {
+          font-size: 30px;
+          margin-top: 7rem;
+      }
+      
+      h2 {
+          font-size: 20px;
+          margin-top: 1rem;
+      }
+      
+      hr {
+          border-bottom: 2px solid #0E57ED;
+          margin-top: 11rem;
+          opacity: 1;
+      }
+      
+      html {
+          ::-webkit-scrollbar {
+              display: none; /* Chrome, Safari */
+          }
+          -ms-overflow-style: none; /* IE, Edge */
+          scrollbar-width: none; /* Firefox */
+      }
+      
+      button {
+          background-color: lightgray;
+          border: 2px outset grey;
+      }
+      
+      .email {
+          text-decoration: underline; 
+          color: #0E57ED;
+      }
+      
+      .row {
+          margin: 1rem;
+      }
+      
+      /* Contact */
+      .icon {
+          margin: 1rem;
+          margin-top: 2rem;
+          filter: invert(1);
+          height: 50px;
+          width: 50px;
+          user-select: none;
+          -webkit-user-select: none;
+      }
+      
+      /* List Sorter */
+      textarea.form-control,
+      textarea.form-control:focus {
+          background-color: black;
+          color: white;
+          height: 16rem;
+          border: 1px solid white;
+          resize: none;
+          cursor: default;
+          font-size: 20px;
+          padding: 0.5rem;
+          margin-top: 1rem;
+      }
+      
+      textarea.form-control[readonly] {
+          cursor: default;
+      }
+      
+      #copyButton {
+          margin-bottom: 3rem;
+      }
+      
+      #toolsButton {
+          height: 5rem;
+          width: 10rem;
+          font-size: 20px;
+          margin: 1rem;
+      }
+      
+      @media (hover: hover) and (pointer: fine) {
+          .btn.bttn:hover,
+          #sortMethod:hover,
+          #toolsButton:hover {
+              transform-origin: center;
+              color: black;
+              border: 2px solid #0E57ED;
+              background-color: #0E57ED;
+          }
+      }
+      
+      #sortMethod,
+      .btn.bttn,
+      .btn-clickable {
+          background-color: black;
+          color: #0E57ED;
+          font-size: 20px;
+          border: 2px solid #0E57ED;
+          border-radius: 5px;
+          margin: 1rem;
+          height: 3rem;
+          text-align: center;
+          vertical-align: top;
+          box-sizing: border-box;
+          transition: color 0.3s, border 0.3s, background-color 0.3s;
+      }
+      
+      .placeholder1::placeholder {
+          color: #999;
+      }
+      
+      /* Navbar */
+      .nav-link,
+      .navbar-brand,
+      .dropdown-item {
+          color: white;
+          transition: color 0.3s;
+      }
+      
+      .nav-link:focus,
+      .nav-link:hover,
+      .navbar-brand:hover {
+          color: #0E57ED;
+          text-decoration: underline;
+      }
+      
+      .navbar-nav:hover .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+      }
+      
+      .dropdown-item:hover {
+          background-color: #0E57ED;
+          color: white;
+          transition: background-color 0.3s;
+      }
+      
+      .navbar-toggler-icon {
+          background-image: url(data:image/svg+xml,%3csvg xmlns=`http://www.w3.org/2000/svg` viewBox=`0 0 30 30`%3e%3cpath stroke=`white` stroke-linecap=`round` stroke-miterlimit=`10` stroke-width=`1` d=`M4 7h22M4 15h22M4 23h22`/%3e%3c/svg%3e);
+          -webkit-filter: brightness(400);
+          filter: brightness(400);
+      }
+      
+      nav {
+          border-bottom: 2px solid #0E57ED;
+      }
+      
+      a.nav-link {
+          padding-left: 1rem;
+          font-size: 30px;
+      }
+      
+      ul.navbar-nav {
+          margin-left: auto;
+          margin-right: 1rem;
+      }
+      
+      .nav-item a.nav-link {
+          padding-left: 1rem;
+          font-size: 30px;
+      }
+      
+      .dropdown-menu {
+          right: 0;
+          background-color: black;
+      }
+      
+      .dropdown-item {
+          padding-left: 1rem;
+          font-size: 30px;
+      }
+      
+      /* Footer */
+      footer.footer {
+          background-color: black;
+          display: none;
+      }
+      
+      footer.footer div {
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 1rem;
+          display: inline-block;
+      }
+      
+      footer.footer h1.text-light {
+          font-size: 20px;
+          vertical-align: middle;
+          display: inline;
+      }
+      
+      footer.footer button.bttn.btn-sm {
+          margin-left: 1rem;
+          height: calc(20px + 0.5rem);
+          vertical-align: middle;
+          padding: 0 20px;
+          line-height: 20px;
+          color: black;
+      }
+      
+      /* Portfolio */
+      .portfolio-grid {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 11rem;
+          gap: 2rem;
+          margin-left: 1rem;
+          margin-right: 1rem;
+          justify-content: center;
+      }
+      
+      .portfolio-item {
+          width: 350px;
+          border: 2px solid white;
+          border-radius: 5px;
+          overflow: hidden;
+          text-align: center;
+          background: black;
+          transition: border 0.3s ease-in-out;
+      }
+      
+      .portfolio-info h1 {
+          font-size: 30px;
+      }
+      
+      .portfolio-item a {
+          display: block;
+          text-decoration: none;
+      }
+      
+      .portfolio-item:hover {
+          border: 2px solid #0E57ED;
+      }
+      
+      .portfolio-item img {
+          display: block;
+          width: 100%;
+          height: 10rem;
+          transition: opacity 0.3s ease-in-out;
+      }
+      
+      .portfolio-info {
+          padding: 10px;
+      }
+      
+      .portfolio-info p {
+          font-size: 20px;
+          color: white;
+      }
+      
+      
+      /* Snowflakes */
+      .snowflake {
+          background: white;
+          border-radius: 50%;
+          position: absolute;
+          top: -10vh; 
+          z-index: 10;
+          animation: snowfall linear infinite;
+          filter: blur(2px);
+      }
+      
+      @keyframes snowfall {
+          0% {
+              transform: translate3d(var(--left-ini), 0, 0);
+          }
+          100% {
+              transform: translate3d(var(--left-end), 110vh, 0);
+          }
+      }
+      
+    </style>
+    <div class="snowflake" style="--left-ini: 8.16375392552068vw; --left-end: -7.2235209430709535vw; width: 0.5602420701154351vw; height: 0.5602420701154351vw; left: 13.707830181317737vw; animation-duration: 14.671891315062691s; animation-delay: -2.0110793757299117s;"></div>
+    <div class="snowflake" style="--left-ini: 3.1440229664722708vw; --left-end: 9.928610506213008vw; width: 0.4134910898418177vw; height: 0.4134910898418177vw; left: 54.01299996488716vw; animation-duration: 16.466129657928935s; animation-delay: -3.3614269484497084s;"></div>
+    <div class="snowflake" style="--left-ini: -4.17898136223156vw; --left-end: -8.986812436097495vw; width: 0.9380947516182354vw; height: 0.9380947516182354vw; left: 85.56342869726792vw; animation-duration: 11.105486276621406s; animation-delay: -5.965302921885376s;"></div>
+    <div class="snowflake" style="--left-ini: -9.106535921003127vw; --left-end: -9.83776532210824vw; width: 0.34562369952663397vw; height: 0.34562369952663397vw; left: 31.960923715349487vw; animation-duration: 12.279733955517564s; animation-delay: -2.2633949003412157s;"></div>
+    <div class="snowflake" style="--left-ini: -1.0881619296642633vw; --left-end: 3.985474525603161vw; width: 0.9428740794771862vw; height: 0.9428740794771862vw; left: 69.6771910467969vw; animation-duration: 14.636533817397998s; animation-delay: -2.033790581094914s;"></div>
+    <div class="snowflake" style="--left-ini: 6.127803904045198vw; --left-end: 4.988389495877957vw; width: 0.4067742445150206vw; height: 0.4067742445150206vw; left: 94.57591289697555vw; animation-duration: 17.22140376180363s; animation-delay: -8.365697344680278s;"></div>
+    <div class="snowflake" style="--left-ini: -5.917173991367921vw; --left-end: 6.732212274794826vw; width: 0.6963016333302031vw; height: 0.6963016333302031vw; left: 78.52188691059612vw; animation-duration: 14.863412822272434s; animation-delay: -1.791361903145492s;"></div>
+    <div class="snowflake" style="--left-ini: -4.8883777369395265vw; --left-end: 5.839962428432607vw; width: 0.44162961581087434vw; height: 0.44162961581087434vw; left: 71.5641187305889vw; animation-duration: 14.349963837122008s; animation-delay: -5.446460167701657s;"></div>
+    <div class="snowflake" style="--left-ini: 9.929225474922458vw; --left-end: -8.886493929287177vw; width: 0.8028951794196826vw; height: 0.8028951794196826vw; left: 75.7537269819911vw; animation-duration: 13.447583211141627s; animation-delay: -1.2185365390029146s;"></div>
+    <div class="snowflake" style="--left-ini: -9.340320618404036vw; --left-end: -7.5164120635209475vw; width: 0.4988603067167226vw; height: 0.4988603067167226vw; left: 60.01007285372222vw; animation-duration: 12.084982855516602s; animation-delay: -0.9396057699613869s;"></div>
+    <div class="snowflake" style="--left-ini: 3.077212285641826vw; --left-end: -5.844445697250333vw; width: 0.49998536197891874vw; height: 0.49998536197891874vw; left: 88.94809608222427vw; animation-duration: 7.654275380205416s; animation-delay: -7.238978816069501s;"></div>
+    <div class="snowflake" style="--left-ini: 7.671974979348043vw; --left-end: -3.34181727607064vw; width: 0.62903186475386vw; height: 0.62903186475386vw; left: 82.05193342948174vw; animation-duration: 14.131062174183224s; animation-delay: -4.219549377405598s;"></div>
+    <div class="snowflake" style="--left-ini: -2.4212911989542807vw; --left-end: 3.477820489833249vw; width: 0.5441990909715881vw; height: 0.5441990909715881vw; left: 59.73835870037385vw; animation-duration: 15.031946959585271s; animation-delay: -4.429164068852705s;"></div>
+    <div class="snowflake" style="--left-ini: 0.4816558608885515vw; --left-end: 8.869780200930851vw; width: 0.20789735886636385vw; height: 0.20789735886636385vw; left: 15.793742392553645vw; animation-duration: 13.591709045296119s; animation-delay: -2.6094963062368826s;"></div>
+    <div class="snowflake" style="--left-ini: 5.441717072787542vw; --left-end: 9.455302365938586vw; width: 0.588320647842338vw; height: 0.588320647842338vw; left: 4.11714245726742vw; animation-duration: 11.37226268418242s; animation-delay: -6.124297412718478s;"></div>
+    <div class="snowflake" style="--left-ini: 8.077734362534848vw; --left-end: -4.358641873785256vw; width: 0.7726215224680317vw; height: 0.7726215224680317vw; left: 61.3502412015235vw; animation-duration: 16.562608812535423s; animation-delay: -0.8394070960707678s;"></div>
+    <div class="snowflake" style="--left-ini: -1.2548638774577192vw; --left-end: -3.1378502028528343vw; width: 0.2120638055472952vw; height: 0.2120638055472952vw; left: 17.294823528946935vw; animation-duration: 10.824134858503049s; animation-delay: -7.0334037708190555s;"></div>
+    <div class="snowflake" style="--left-ini: -6.661511348935858vw; --left-end: 6.11137219644576vw; width: 0.7238469960456577vw; height: 0.7238469960456577vw; left: 27.34272330297509vw; animation-duration: 8.886954144333723s; animation-delay: -0.044361262607384155s;"></div>
+    <div class="snowflake" style="--left-ini: 9.97149969882389vw; --left-end: -5.17739441990849vw; width: 0.7036525248794041vw; height: 0.7036525248794041vw; left: 28.339905363337458vw; animation-duration: 8.11605072516744s; animation-delay: -1.868689198332898s;"></div>
+    <div class="snowflake" style="--left-ini: 6.272034388271575vw; --left-end: -7.7332742336188565vw; width: 0.5895521890252222vw; height: 0.5895521890252222vw; left: 51.09300299241137vw; animation-duration: 10.48030794133304s; animation-delay: -1.2803059143800644s;"></div>
+    <div class="snowflake" style="--left-ini: -9.226656083369726vw; --left-end: -5.479978827493039vw; width: 0.5809720894892412vw; height: 0.5809720894892412vw; left: 70.45640734955097vw; animation-duration: 8.871952384397535s; animation-delay: -3.0640331874827664s;"></div>
+    <div class="snowflake" style="--left-ini: 0.10874615505669283vw; --left-end: -9.496677486964646vw; width: 0.4133715484228498vw; height: 0.4133715484228498vw; left: 24.820301252914035vw; animation-duration: 15.114871588985919s; animation-delay: -9.653574468690287s;"></div>
+    <div class="snowflake" style="--left-ini: 9.55909353012931vw; --left-end: 5.1125277830034666vw; width: 0.7299949260232563vw; height: 0.7299949260232563vw; left: 88.19481853214053vw; animation-duration: 12.638965512835735s; animation-delay: -2.1269350710866686s;"></div>
+    <div class="snowflake" style="--left-ini: 1.6555113267429vw; --left-end: 7.961069969751886vw; width: 0.7620850682041511vw; height: 0.7620850682041511vw; left: 42.94871911840836vw; animation-duration: 8.759585995739554s; animation-delay: -7.444375135438661s;"></div>
+    <div class="snowflake" style="--left-ini: 1.9234313682161321vw; --left-end: 3.47081742304351vw; width: 0.5124631335842826vw; height: 0.5124631335842826vw; left: 0.17623434867666266vw; animation-duration: 12.862261225047337s; animation-delay: -1.5378522987404164s;"></div>
+    <div class="snowflake" style="--left-ini: 4.700071104954468vw; --left-end: -7.686534729358061vw; width: 0.22587296544808294vw; height: 0.22587296544808294vw; left: 50.49038384314404vw; animation-duration: 8.462811378126641s; animation-delay: -3.0919042700811983s;"></div>
+    <div class="snowflake" style="--left-ini: -4.488374394171193vw; --left-end: 4.582589706108591vw; width: 0.6588377703629564vw; height: 0.6588377703629564vw; left: 53.791619866247146vw; animation-duration: 8.307619477140797s; animation-delay: -8.357052999086045s;"></div>
+    <div class="snowflake" style="--left-ini: 5.139589037816359vw; --left-end: -4.958297797025946vw; width: 0.7334371923890277vw; height: 0.7334371923890277vw; left: 55.40733575470627vw; animation-duration: 9.974250486534284s; animation-delay: -9.18626139385565s;"></div>
+    <div class="snowflake" style="--left-ini: -4.346132260805193vw; --left-end: 7.9551229800638446vw; width: 0.8138390646685671vw; height: 0.8138390646685671vw; left: 30.742753502072695vw; animation-duration: 16.5861585973217s; animation-delay: -4.727275913119097s;"></div>
+    <div class="snowflake" style="--left-ini: 7.470880706331386vw; --left-end: 8.074545434757123vw; width: 0.933461144507526vw; height: 0.933461144507526vw; left: 65.39897921838647vw; animation-duration: 11.86912696407729s; animation-delay: -7.073239374735973s;"></div>
+    <div class="snowflake" style="--left-ini: -8.439170560581362vw; --left-end: 8.470804951320751vw; width: 0.9140275306104386vw; height: 0.9140275306104386vw; left: 37.15848710321279vw; animation-duration: 13.16764763790429s; animation-delay: -9.75609364329866s;"></div>
+    <div class="snowflake" style="--left-ini: 6.371076039333786vw; --left-end: -8.00777019834246vw; width: 0.5690410009420752vw; height: 0.5690410009420752vw; left: 5.399490743339674vw; animation-duration: 15.054601474715568s; animation-delay: -0.38778283183593s;"></div>
+    <div class="snowflake" style="--left-ini: 6.216916819854546vw; --left-end: -1.007548362390187vw; width: 0.3338585138105795vw; height: 0.3338585138105795vw; left: 28.095773773032896vw; animation-duration: 9.217922200681238s; animation-delay: -5.08145076668397s;"></div>
+    <div class="snowflake" style="--left-ini: -6.225550079801003vw; --left-end: -0.3027291411109765vw; width: 0.5923366234049317vw; height: 0.5923366234049317vw; left: 8.066157370830851vw; animation-duration: 14.64879033829587s; animation-delay: -1.723645809147163s;"></div>
+    <div class="snowflake" style="--left-ini: -9.677882287035224vw; --left-end: 8.02855734208173vw; width: 0.9208149522635674vw; height: 0.9208149522635674vw; left: 81.2372978455275vw; animation-duration: 8.155988390046595s; animation-delay: -1.462927849422988s;"></div>
+    <div class="snowflake" style="--left-ini: 8.968072667321447vw; --left-end: -7.665172551680679vw; width: 0.5606310968675576vw; height: 0.5606310968675576vw; left: 70.34328026417715vw; animation-duration: 13.562663142154523s; animation-delay: -4.709950159850205s;"></div>
+    <div class="snowflake" style="--left-ini: 6.256723677109406vw; --left-end: -1.591728302839325vw; width: 0.579191115835836vw; height: 0.579191115835836vw; left: 5.74119936702655vw; animation-duration: 8.283969981853199s; animation-delay: -1.5780846394767178s;"></div>
+    <div class="snowflake" style="--left-ini: 0.919636456471661vw; --left-end: -3.967935451310116vw; width: 0.980980624289066vw; height: 0.980980624289066vw; left: 23.01850965425498vw; animation-duration: 12.929283734657805s; animation-delay: -8.955904406276245s;"></div>
+    <div class="snowflake" style="--left-ini: -5.992330331750311vw; --left-end: -5.554298162464066vw; width: 0.563528357364115vw; height: 0.563528357364115vw; left: 99.7419081496329vw; animation-duration: 10.172385348746733s; animation-delay: -2.23502191586453s;"></div>
+    <div class="snowflake" style="--left-ini: 8.058947407406208vw; --left-end: -6.390546916724373vw; width: 0.6521311782983161vw; height: 0.6521311782983161vw; left: 56.23215732545446vw; animation-duration: 13.361298288655632s; animation-delay: -0.5071636511284328s;"></div>
+    <div class="snowflake" style="--left-ini: -7.163962230722376vw; --left-end: 8.091397554332875vw; width: 0.8969005512113428vw; height: 0.8969005512113428vw; left: 15.421180826531856vw; animation-duration: 9.9553918700078s; animation-delay: -1.1387142745026946s;"></div>
+    <div class="snowflake" style="--left-ini: -3.7111225820721083vw; --left-end: -2.9976579530312275vw; width: 0.3310998306624716vw; height: 0.3310998306624716vw; left: 34.015712788413936vw; animation-duration: 11.907939282427332s; animation-delay: -3.5694354124674232s;"></div>
+    <div class="snowflake" style="--left-ini: -2.7848120812528077vw; --left-end: -7.620355051390724vw; width: 0.34039647371442017vw; height: 0.34039647371442017vw; left: 48.91107785318278vw; animation-duration: 10.451853320669326s; animation-delay: -8.233724269893594s;"></div>
+    <div class="snowflake" style="--left-ini: -0.5424663498304927vw; --left-end: -4.900047450618694vw; width: 0.28453401297002084vw; height: 0.28453401297002084vw; left: 18.77025949628046vw; animation-duration: 10.203563559334349s; animation-delay: -4.096189051294791s;"></div>
+    <div class="snowflake" style="--left-ini: 9.770916486698042vw; --left-end: -3.171524867484967vw; width: 0.7127263730635904vw; height: 0.7127263730635904vw; left: 36.932717350481695vw; animation-duration: 14.294725691568566s; animation-delay: -9.190312706991314s;"></div>
+    <div class="snowflake" style="--left-ini: -1.3790005344255363vw; --left-end: -9.320356630157498vw; width: 0.5555096733654725vw; height: 0.5555096733654725vw; left: 10.149360716495037vw; animation-duration: 15.186814824741688s; animation-delay: -7.0186036817581225s;"></div>
+    <div class="snowflake" style="--left-ini: 1.756688785857854vw; --left-end: -5.82570669671604vw; width: 0.30502839384973585vw; height: 0.30502839384973585vw; left: 51.73678305520095vw; animation-duration: 14.632381300990996s; animation-delay: -8.72758074004695s;"></div>
+    <div class="snowflake" style="--left-ini: 8.249337197054551vw; --left-end: 3.2910439623172785vw; width: 0.7031906673521511vw; height: 0.7031906673521511vw; left: 17.90297212768952vw; animation-duration: 9.06156825044941s; animation-delay: -1.0008926143705388s;"></div>
+    <div class="snowflake" style="--left-ini: 7.020181271135357vw; --left-end: -0.7686253292025604vw; width: 0.6133635264521948vw; height: 0.6133635264521948vw; left: 70.41054483670727vw; animation-duration: 12.622611731371693s; animation-delay: -0.8639501179154796s;"></div>
+    <div class="snowflake" style="--left-ini: -8.025739861917351vw; --left-end: -3.9087837784499957vw; width: 0.26619535531654076vw; height: 0.26619535531654076vw; left: 61.03715269641972vw; animation-duration: 8.374579263936342s; animation-delay: -1.9249801841891023s;"></div>
+  </head>
+</html>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top"><a class="nav-link" href="/">ikgron</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item dropdown" style="position: relative"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/tools">Tools</a></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1 style="text-align: center;">List Sorter</h1>
+  <div style="text-align: center;">
+    <label for="sortMethod"></label>
+    <select class="form-select-sm" id="sortMethod" onchange="sort()">
+      <option value="alphabetical">Alphabetical</option>
+      <option value="length">Length</option>
+      <option value="numerical">Numerical</option>
+    </select>
+    <button class="btn btn-animate btn-clickable bttn" id="reverseButton" type="button" onclick="toggleReverse()">Reverse Output</button>
+  </div>
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+      <h2>Input</h2>
+      <div id="inputContainer"></div>
+      <textarea class="form-control placeholder1" id="input" placeholder="Separate by commas, semicolons, or new lines." oninput="sort()"></textarea>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <button class="btn btn-animate btn-clickable bttn" id="clearButton" type="button" onclick="clearInput()">Clear</button>
+  </div>
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+      <h2>Output</h2>
+      <div id="outputContainer"></div>
+      <textarea class="form-control placeholder1" id="output" placeholder="Output appears here." readonly></textarea>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <button class="btn btn-animate btn-clickable bttn" id="copyButton" type="button" onclick="copyOutput()">Copy</button>
+  </div>
+</body>
+<script src="/pug/tools/list-sorter/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<footer class="footer fixed-bottom text-center">
+  <div>
+    <h1 class="text-light">This site doesn't use cookies. Why would it?</h1>
+    <button class="bttn btn-sm" type="button" onclick="hideFooter()">OK</button>
+  </div>
+</footer>
+<script>
+  function hideFooter() {
+    var footer = document.querySelector(`footer`);
+    footer.style.display = `none`;
+    localStorage.setItem(`footerAcknowledged`, `true`);
+  }
+  
+  window.onload = function() {
+    var acknowledged = localStorage.getItem(`footerAcknowledged`);
+    if (!acknowledged) {
+      var footer = document.querySelector(`footer`);
+      footer.style.display = `block`;
+    }
+  };
+</script>

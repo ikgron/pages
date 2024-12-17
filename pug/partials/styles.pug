@@ -152,7 +152,6 @@ style.
     }
 
     nav {
-        background-color: black;
         border-bottom: 2px solid #{color};
     }
 
@@ -258,3 +257,33 @@ style.
         font-size: #{sfont};
         color: white;
     }
+
+
+    /* Snowflakes */
+    .snowflake {
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: -10vh; 
+        z-index: 10;
+        animation: snowfall linear infinite;
+        filter: blur(2px);
+    }
+
+    @keyframes snowfall {
+        0% {
+            transform: translate3d(var(--left-ini), 0, 0);
+        }
+        100% {
+            transform: translate3d(var(--left-end), 110vh, 0);
+        }
+    }
+    
+each _, i in Array(50)
+    - var size = Math.random() * 0.8 + 0.2;
+    - var leftIni = Math.random() * 20 - 10;
+    - var leftEnd = Math.random() * 20 - 10;
+    - var animationDuration = 7.5 + Math.random() * 10;
+    - var animationDelay = -Math.random() * 10;
+    - var opacity = Math.random() * 0.4 + 0.1;
+    div.snowflake(style=`--left-ini: ${leftIni}vw; --left-end: ${leftEnd}vw; width: ${size}vw; height: ${size}vw; left: ${Math.random() * 100}vw; animation-duration: ${animationDuration}s; animation-delay: ${animationDelay}s;`)
