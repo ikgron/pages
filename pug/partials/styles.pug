@@ -12,8 +12,9 @@ style.
         font-family: 'Aldrich Regular', monospace;
     }
 
-    h1, h2 {
+    h1, h2, p {
         color: white;
+        margin: 1rem;
     }
 
     h1 {
@@ -23,7 +24,6 @@ style.
 
     h2 {
         font-size: #{sfont};
-        margin-top: 1rem;
     }
 
     hr {
@@ -49,15 +49,11 @@ style.
         text-decoration: underline; 
         color: #{color};
     }
-
-    .row {
-        margin: 1rem;
-    }
+    
 
     /* Contact */
     .icon {
-        margin: 1rem;
-        margin-top: 2rem;
+        margin: 2rem;
         filter: invert(1);
         height: 50px;
         width: 50px;
@@ -188,8 +184,8 @@ style.
     }
 
     nav img {
-        width: 5vh;
-        height: 5vh;
+        width: 2rem;
+        height: 2rem;
         margin-right: 0.3vh;
         filter: invert(0);
     }
@@ -300,19 +296,19 @@ style.
 
 - var currentTime = Date.now(); 
     
-each _, i in Array(50)
-    - var size = Math.random() * 0.5 + 0.5;
+each _, i in Array(100)
+    - var size = Math.random() * (15 - 5) + 5;
     - var leftIni = Math.random() * 20 - 10;
     - var leftEnd = Math.random() * 20 - 10;
-    - var animationDuration = 7.5 + Math.random() * 10;
+    - var animationDuration = 7.5 + Math.random() * 30;
     - var animationDelay = -Math.random() * 10;
     - var opacity = Math.random() * 0.5 + 0.5;
 
     div.snowflake(
         style=`--left-ini: ${leftIni}vw; 
         --left-end: ${leftEnd}vw; 
-        width: ${size}vw; 
-        height: ${size}vw; 
+        width: ${size}px; 
+        height: ${size}px; 
         opacity: ${opacity}; 
         left: ${Math.random() * 100}vw; 
         animation-duration: ${animationDuration}s; 
