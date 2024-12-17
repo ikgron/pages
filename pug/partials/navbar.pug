@@ -1,11 +1,13 @@
 include /partials/variables.pug
 
 nav.navbar.navbar-expand-lg.fixed-top
-  a.nav-link(href=`/`) ikgron
+  a.nav-link(href=`/`)
+    img(src=`/res/images/penguin.png`, alt=`icon`)
+    | ikgron
   button.navbar-toggler(
     type=`button`
-    data-toggle=`collapse`
-    data-target=`#navbarNav`
+    data-bs-toggle=`collapse`
+    data-bs-target=`#navbarNav`
     aria-controls=`navbarNav`
     aria-expanded=`false`
     aria-label=`Toggle navigation`
@@ -23,7 +25,7 @@ nav.navbar.navbar-expand-lg.fixed-top
         a#navbarDropdown.nav-link.dropdown-toggle(
           href=`#`
           role=`button`
-          data-toggle=`dropdown`
+          data-bs-toggle=`dropdown`
           aria-haspopup=`true`
           aria-expanded=`false`
         ) More

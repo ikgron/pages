@@ -9,22 +9,27 @@ html(lang=`en`)
 body
   include /partials/navbar.pug
 
-  h1(style=`text-align: center;`) Contact Me!
+  style.
+    body {
+      text-align: center;
+    }
 
-  h2(style=`text-align: center;`) Email: 
+  h1 Contact Me!
+
+  h2 Email: 
     a.email(href=`mailto:contactme@ikgron.com`) contactme@ikgron.com
 
     br
 
     a(href=`https://codeberg.org/parser` target=`_blank` title=`Codeberg`)
       img.icon(
-        src=`/images/codeberg.svg`
+        src=`/res/images/codeberg.svg`
         alt=`Codeberg Icon`
       )
 
     a(href=`https://github.com/ikgron/` target=`_blank` title=`Github`)
       img.icon(
-        src=`/images/github.png`
+        src=`/res/images/github.png`
         alt=`Github Icon`
       )
 

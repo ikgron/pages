@@ -5,13 +5,22 @@ html(lang=`en`)
     title Home | ikgron
     include /partials/head.pug
     include /partials/styles.pug
+  
+  style. 
+    p {
+      color: white;
+    }
+    .container {
+      max-width: 50em;
+      min-height: 11rem;
+    }
 
 body
   include /partials/navbar.pug
+  div.container
+    h1(style=`margin-left: 1rem`) Home
 
-  h1(style=`margin-left: 1rem`) Home
-
-  h2(style=`margin-left: 1rem`) - A fine website by ikgron.
+    h2(style=`margin-left: 1rem`) - A fine website by ikgron.
 
   hr
 

@@ -1,12 +1,8 @@
-script(src=`https://code.jquery.com/jquery-3.5.1.slim.min.js`)
-script(src=`https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js`)
-
 footer.footer.fixed-bottom.text-center
   div
     h1.text-light This site doesn't use cookies. Why would it?
-    button(
+    button#cookie-button(
       type=`button`
-      class=`bttn btn-sm`
       onclick=`hideFooter()`
     ) OK
 
