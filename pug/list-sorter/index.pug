@@ -11,28 +11,34 @@ body
       
   //- h1(style=`text-align: center;`) List Sorter
 
-  div(style='text-align: center; margin-top: 7rem;')
-    label(for='sortMethod')
-    select#sortMethod.list-button.btn.bttn(onchange='sort()', class='form-select-sm')
-      option(value='alphabetical') Alphabetical
-      option(value='length') Length
-      option(value=`numerical`) Numerical
+  //- div(style='text-align: center; margin-top: 7rem;')
+  //-   label(for='sortMethod')
+  //-     select#sortMethod.list-button.btn.bttn(onchange='sort()', class='form-select-sm')
+  //-       option(value='alphabetical') Alphabetical
+  //-       option(value='length') Length
+  //-       option(value=`numerical`) Numerical
 
-    button.btn.btn-animate.btn-clickable.list-button(id='reverseButton', type='button', class='bttn', onclick='toggleReverse()') Reverse Output
+  //-   button.btn.btn-animate.btn-clickable.list-button(id='reverseButton', type='button', class='bttn', onclick='toggleReverse()') Reverse Output
 
-  .row(style='max-width: 80%; margin: 0 auto;')
+  .row(style='max-width: 80%; margin: 0 auto; margin-top: 7rem;')
     .col-md-5.mx-auto
       h2 Input
       div(id='inputContainer')
       textarea#input.form-control.placeholder1(placeholder='Separate by commas, semicolons, or new lines.', oninput='sort()')
-      div(style='text-align: center;')
+      div(style='text-align: left;')
+        label(for='sortMethod')
+          select#sortMethod.list-button.btn.bttn(onchange='sort()', class='form-select-sm')
+            option(value='alphabetical') Alphabetical
+            option(value='length') Length
+            option(value=`numerical`) Numerical
         button.btn.btn-animate.btn-clickable.list-button(id='clearButton', type='button', class='bttn', onclick='clearInput()') Clear
 
     .col-md-5.mx-auto
       h2 Output
       div(id='outputContainer')
       textarea#output.form-control.placeholder1(placeholder='Output appears here.', readonly)
-      div(style='text-align: center;')
+      div(style='text-align: left;')
+        button.btn.btn-animate.btn-clickable.list-button(id='reverseButton', type='button', class='bttn', onclick='toggleReverse()') Reverse Output
         button.btn.btn-animate.btn-clickable.list-button(id='copyButton', type='button', class='bttn', onclick='copyOutput()') Copy
 
 

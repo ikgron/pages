@@ -78,42 +78,36 @@ style.
         cursor: default;
     }
 
-    #copyButton {
-        margin-bottom: 3rem;
-    }
-
     #toolsButton {
         font-size: #{sfont};
         padding: 2rem;
         height: auto;
-        margin: 1rem;
     }
 
     @media (hover: hover) and (pointer: fine) {
         .btn.bttn:hover,
         #sortMethod:hover,
         #toolsButton:hover {
-            transform-origin: center;
             color: black;
             border: 2px solid #{color};
             background-color: #{color};
         }
     }
 
-    .btn.bttn {
+    .bttn {
         background-color: black;
         color: #{color};
         font-size: #{sfont};
         border: 2px solid #{color};
         border-radius: 5px;
         text-align: center;
-        vertical-align: top;
         box-sizing: border-box;
         transition: color 0.3s, border 0.3s, background-color 0.3s;
     }
 
     .list-button {
-        margin: 1rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
         height: 3rem;
     }
 
@@ -226,7 +220,7 @@ style.
     .portfolio-grid {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 11rem;
+        margin-top: 7rem;
         gap: 2rem;
         margin-left: 1rem;
         margin-right: 1rem;
