@@ -11,3 +11,6 @@ link(
 script(
   src='/res/bootstrap/js/bootstrap.bundle.min.js'
   )
+
+meta(http-equiv='Content-Security-Policy' content="\
+  default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self';")
