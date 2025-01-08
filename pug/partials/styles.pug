@@ -18,11 +18,22 @@ style.
 
     h1 {
         font-size: #{lfont};
+    }
+
+    h1.title {
+        font-size: #{lfont};
         margin-top: 7rem;
     }
 
-    h2 {
+    h2,
+    a {
         font-size: #{sfont};
+    }
+
+    h2.link,
+    a {
+        text-decoration: underline; 
+        color: #{color};
     }
 
     hr {
@@ -267,6 +278,7 @@ style.
     }
 
 
+//- <-- Delete this
     /* Snowflakes */
     .snowflake {
         background: white;
@@ -286,24 +298,25 @@ style.
             transform: translate3d(var(--left-end), 110vh, 0);
         }
     }
+//- <-- Delete this 
+    then Shift+Tab this:
+    - var currentTime = Date.now(); 
+        
+    each _, i in Array(100)
+        - var size = Math.random() * (15 - 5) + 5;
+        - var leftIni = Math.random() * 20 - 10;
+        - var leftEnd = Math.random() * 20 - 10;
+        - var animationDuration = 7.5 + Math.random() * 30;
+        - var animationDelay = -Math.random() * 10;
+        - var opacity = Math.random() * 0.5 + 0.5;
 
-- var currentTime = Date.now(); 
-    
-each _, i in Array(100)
-    - var size = Math.random() * (15 - 5) + 5;
-    - var leftIni = Math.random() * 20 - 10;
-    - var leftEnd = Math.random() * 20 - 10;
-    - var animationDuration = 7.5 + Math.random() * 30;
-    - var animationDelay = -Math.random() * 10;
-    - var opacity = Math.random() * 0.5 + 0.5;
-
-    div.snowflake(
-        style=`--left-ini: ${leftIni}vw; 
-        --left-end: ${leftEnd}vw; 
-        width: ${size}px; 
-        height: ${size}px; 
-        opacity: ${opacity}; 
-        left: ${Math.random() * 100}vw; 
-        animation-duration: ${animationDuration}s; 
-        animation-delay: ${animationDelay}s;`
-    )
+        div.snowflake(
+            style=`--left-ini: ${leftIni}vw; 
+            --left-end: ${leftEnd}vw; 
+            width: ${size}px; 
+            height: ${size}px; 
+            opacity: ${opacity}; 
+            left: ${Math.random() * 100}vw; 
+            animation-duration: ${animationDuration}s; 
+            animation-delay: ${animationDelay}s;`
+        )
