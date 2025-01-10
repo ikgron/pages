@@ -1,12 +1,6 @@
-# www.ikgron.com
+## https://ikgron.com | https://praser.net
 
 ## About
 
-- Staticly hosted using [Codeberg Pages](https://codeberg.page/)
+- hosted by [Cloudflare Pages](https://pages.cloudflare.com/)
 - Built and rendered using [Pug](https://pugjs.org/api/getting-started.html) and [Bootstrap](https://getbootstrap.com/)
-- Fonts provided by [Bunny Fonts](https://fonts.bunny.net/)
-
-## Features
-
-- About Me
-- Portfolio
